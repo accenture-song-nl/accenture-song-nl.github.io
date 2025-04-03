@@ -53,10 +53,10 @@ function getAnimation(){
     masterTL.from("#text2C", 0.3, {x:-300, ease:Sine.easeInOut}, "switchBg+=0.8")
     masterTL.from("#cta", 0.5, {scale:0, ease:Back.easeOut}, "switchBg+=1.2")
 
-    masterTL.from("#borderT", 0.3, {width:0, ease:Sine.easeInOut}, "switchBg+=1.5")
-    masterTL.from("#borderR", 0.3, {height:0, ease:Sine.easeInOut}, "switchBg+=1.8")
-    masterTL.from("#borderB", 0.3, {width:0, ease:Sine.easeInOut}, "switchBg+=2.1")
-    masterTL.from("#borderL", 0.3, {height:0, ease:Sine.easeInOut}, "switchBg+=2.4")
+    // masterTL.from("#borderT", 0.3, {width:0, ease:Sine.easeInOut}, "switchBg+=1.5")
+    // masterTL.from("#borderR", 0.3, {height:0, ease:Sine.easeInOut}, "switchBg+=1.8")
+    // masterTL.from("#borderB", 0.3, {width:0, ease:Sine.easeInOut}, "switchBg+=2.1")
+    // masterTL.from("#borderL", 0.3, {height:0, ease:Sine.easeInOut}, "switchBg+=2.4")
 
     masterTL.add("animateCTA", "-=0");
     masterTL.to("#ctaOver", 0.25, {opacity:1, ease:Sine.easeInOut}, "animateCTA");
