@@ -95,24 +95,24 @@ img, div, object{
 
 #borderR{
     background: #b51919;
-    width: 6px;
+    width: 7px;
     height: 180px;
     top: 0px;
-    left: 944px;
+    left: 943px;
 }
 
 #borderB{
     background: #b51919;
     width: 929px;
-    height: 6px;
-    top: 174px;
+    height: 7px;
+    top: 173px;
     right: 20px;
 }
 
 #borderL{
     background: #b51919;
-    width: 6px;
+    width: 7px;
     height: 182px;
-    bottom: 70px;
+    bottom: 69px;
     left: 21px;
 }
