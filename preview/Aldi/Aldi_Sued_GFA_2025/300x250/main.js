@@ -33,16 +33,16 @@ function getAnimation(){
     masterTL.from("#person", 1.5, {scale:1.3, transformOrigin:"50% 20%", ease:Power2.easeInOut}, "start")
     masterTL.from("#text1a", 0.3, {x:-20, opacity:0, ease:Sine.easeOut}, "start+=1.5")
     masterTL.from("#highlight1aWrapper", 0.5, {width:0, ease:Sine.easeInOut}, "start+=1.7")
-    masterTL.from("#text1b", 0.3, {x:20, opacity:0, ease:Sine.easeOut}, "start+=2.1")
-    masterTL.from("#highlight1bWrapper", 0.5, {width:0, ease:Sine.easeInOut}, "start+=2.3")
-    masterTL.from("#text1c", 0.3, {x:-20, opacity:0, ease:Sine.easeOut}, "start+=2.7")
-    masterTL.from("#highlight1cWrapper", 0.5, {width:0, ease:Sine.easeInOut}, "start+=2.9")
-    masterTL.to("#text1a", 0.3, {x:-20, opacity:0, ease:Sine.easeIn}, "start+=4.5")
-    masterTL.to("#text1b", 0.3, {x:-20, opacity:0, ease:Sine.easeIn}, "start+=4.8")
-    masterTL.to("#text1c", 0.3, {x:-20, opacity:0, ease:Sine.easeIn}, "start+=5")
-    masterTL.to("#highlight1aWrapper", 0.5, {width:0, ease:Sine.easeInOut}, "start+=4.7")
-    masterTL.to("#highlight1bWrapper", 0.5, {width:0, ease:Sine.easeInOut}, "start+=5")
-    masterTL.to("#highlight1cWrapper", 0.5, {width:0, ease:Sine.easeInOut}, "start+=5.2")
+    masterTL.from("#text1b", 0.3, {x:20, opacity:0, ease:Sine.easeOut}, "start+=1.8")
+    masterTL.from("#highlight1bWrapper", 0.5, {width:0, ease:Sine.easeInOut}, "start+=2")
+    masterTL.from("#text1c", 0.3, {x:-20, opacity:0, ease:Sine.easeOut}, "start+=2.1")
+    masterTL.from("#highlight1cWrapper", 0.5, {width:0, ease:Sine.easeInOut}, "start+=2.3")
+    masterTL.to("#text1a", 0.3, {x:-20, opacity:0, ease:Sine.easeIn}, "start+=3.5")
+    masterTL.to("#text1b", 0.3, {x:-20, opacity:0, ease:Sine.easeIn}, "start+=3.8")
+    masterTL.to("#text1c", 0.3, {x:-20, opacity:0, ease:Sine.easeIn}, "start+=4")
+    masterTL.to("#highlight1aWrapper", 0.5, {width:0, ease:Sine.easeInOut}, "start+=3.7")
+    masterTL.to("#highlight1bWrapper", 0.5, {width:0, ease:Sine.easeInOut}, "start+=4")
+    masterTL.to("#highlight1cWrapper", 0.5, {width:0, ease:Sine.easeInOut}, "start+=4.2")
     
     masterTL.add("showText2", "-=1");
     masterTL.to("#bg", 5, {scale:1.05, transformOrigin:"50% 20%", ease:Sine.easeInOut}, "showText2")
@@ -50,7 +50,7 @@ function getAnimation(){
     masterTL.from("#text2", 0.3, {x:-20, opacity:0, ease:Sine.easeOut}, "showText2+=1")
     masterTL.from("#highlight2Wrapper", 0.5, {width:0, ease:Sine.easeInOut}, "showText2+=1.2")
 
-    var stickerDur = 2;
+    var stickerDur = 1;
     masterTL.add("stickerStart", "-=3")
     masterTL.from("#stickerBackReset", stickerDur/4, {opacity:0, ease:"power1.inOut"}, "stickerStart");    
     masterTL.to("#stickerBackWrapper", stickerDur, {x:-100, y:-100, ease:"power1.inOut"}, "stickerStart");    
