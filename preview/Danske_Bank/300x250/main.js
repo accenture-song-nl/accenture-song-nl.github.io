@@ -7,7 +7,7 @@ function init() {
 
     document.querySelector("#mainExit").addEventListener("mouseover", function(){
         if(masterTL.progress() == 1){
-            gsap.to(".cta", 0.3, {scale:1.1, ease: "back.out(1.7)"})
+            gsap.to(".cta", 0.3, {scale:1.1, transformOrigin:"195px 172px", ease: "back.out(1.7)"})
         }
     })
     
@@ -40,6 +40,7 @@ function getAnimation(){
     masterTL.add("start");
     masterTL.add("brandElementAnim", "start");
     
+    masterTL.set(".whiteForeground", { right:0, left:'auto', ease: 'none'})
     masterTL.to(".whiteForeground", brandElementSpeed / 3, { width: 0, ease: Power3.easeIn })
     masterTL.set(".whiteForeground", { left: 0, right:"auto", ease: 'none'})
     masterTL.to(".whiteForeground", brandElementSpeed/3, { width: "100%", ease: 'none'})
@@ -47,7 +48,7 @@ function getAnimation(){
     masterTL.to(".whiteForeground", brandElementSpeed / 3, { width: "46%", ease: Power3.easeOut })
     
     masterTL.add("brandElementMovement", "start");
-    masterTL.to(".squareBrandElement", brandElementSpeed, { x:-105, ease: Power2.easeInOut }, "brandElementMovement")
+    masterTL.to(".squareBrandElement", brandElementSpeed, { x:-103, ease: Power2.easeInOut }, "brandElementMovement")
     masterTL.to('.greyBackground', brandElementSpeed/1.5, { opacity: 0 }, "brandElementMovement");
     
     masterTL.add("bluePanelIn", "brandElementMovement");
