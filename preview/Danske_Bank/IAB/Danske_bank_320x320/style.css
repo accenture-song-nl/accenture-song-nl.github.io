@@ -1,0 +1,193 @@
+@font-face {
+    font-family: 'Danske';
+    src: url('Danske-Bold.woff2') format('woff2'),
+        url('Danske-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Danske';
+    src: url('Danske-Regular.woff') format('woff2'),
+        url('Danske-Regular.woff.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Danske';
+    src: url('Danske-Medium.woff') format('woff2'),
+        url('Danske-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+body{
+    margin: 0;
+}
+
+img, div, object{
+    position: absolute;
+}
+
+#banner{
+    width: 320px;
+    height: 320px;
+    overflow: hidden;
+    background-color: #c1133c;
+    color: #fff;
+    /* font-family: 'Belfius', sans-serif; */
+}
+
+#loaderWrapper{
+    width: 100%;
+    height: 100%;
+    background: #002346;
+    pointer-events: none;
+    top:0;
+}
+
+
+#loaderCenter{
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#loader{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    border: 3px solid #fff;
+    border-top: 3px solid #0069FA;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#border{
+    width: 100%;
+    height: 100%;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    top: 0;
+}
+
+#mainExit{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 999;
+    position: absolute;
+    top:0;
+}
+
+.bg{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: 0% 50%;
+}
+
+.bluePanel{
+    height: 100%;
+    right: 0;
+    position: absolute;
+    width: 164px;
+    background-color: #002346;
+}
+
+.mainCopy{
+    font-family: 'Danske';
+    font-weight: 300;
+    position: absolute;
+    top: 90px;
+    left: 17px;
+    font-size: 16px;
+}
+
+.ctaContainer{
+    position: absolute;
+    top: 189px;
+    left: 15px;
+    /* width: 100px; */
+    background: #0069FA;
+    /* height: 50px; */
+    border-radius: 35px;
+    font-size: 11px;
+    padding: 8px 15px;
+}
+
+.ctaText{
+    position: relative;
+    white-space: nowrap;
+    font-family: 'Danske';
+    font-weight: 500;
+    color: #fff;
+}
+
+.tagline{
+    white-space: nowrap;
+    font-size: 10px;
+    font-weight: 700;
+    font-family: 'Danske';
+    top: 262px;
+    left: 17px;
+}
+
+.logoContainer{
+    top: 292px;
+    left: 18px;
+    height: 10px;
+}
+
+.logo{
+    height: 100%;
+}
+
+.squareBrandElement{
+    top: 152px;
+    left:50%;
+    transform: translate(-50%, 0%);
+    background: red;
+    height: 15px;
+    width: 52px;
+}
+
+.blueBackground{
+    background-color: #002346;
+    width: 100%;
+    height: 100%;
+}
+
+.whiteForeground{
+    right: 0;
+    width: 46%;
+    height: 100%;
+    background-color: #FFFFFF;
+}
+
+.greyBackground{
+    background-color: #EBEAE6;
+    width: 100%;
+    height: 100%;
+}
+
+.guide{
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.6;
+}
