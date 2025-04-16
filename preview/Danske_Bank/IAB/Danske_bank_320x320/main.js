@@ -2,20 +2,18 @@ window.onload = function () {
     init();
 }
 
-
-
 function init() {
    
 
     document.querySelector("#mainExit").addEventListener("mouseover", function(){
         if(masterTL.progress() == 1){
-            gsap.to(".ctaContainer", 0.3, {scale:1.1, ease: "back.out(1.7)"})
+            gsap.to(".cta", 0.3, {scale:1.1, ease: "back.out(1.7)"})
         }
     })
     
     document.querySelector("#mainExit").addEventListener("mouseout", function(){
         if(masterTL.progress() == 1){
-            gsap.to(".ctaContainer", 0.3, {scale:1, ease: "power1.out"})
+            gsap.to(".cta", 0.3, {scale:1, ease: "power1.out"})
         }
     })
 
@@ -33,28 +31,29 @@ function getAnimation(){
     
     var brandElementSpeed = 2
 
-    masterTL = new TimelineLite();
+    masterTL = gsap.timeline({repeat:2});
 
     masterTL.to("#loaderWrapper", 0.2, {opacity:0, ease:Sine.easeInOut, onComplete:function(){
         gsap.set("#loaderWrapper", {display:"none"});
     }}, 0)
     masterTL.from(".squareBrandElement", brandElementSpeed/2, { opacity: 0, ease: Power3.easeOut })
-masterTL.add("start");
-masterTL.add("brandElementAnim", "start");
+    masterTL.add("start");
+    masterTL.add("brandElementAnim", "start");
     
     masterTL.to(".whiteForeground", brandElementSpeed / 3, { width: 0, ease: Power3.easeIn })
     masterTL.set(".whiteForeground", { left: 0, right:"auto", ease: 'none'})
     masterTL.to(".whiteForeground", brandElementSpeed/3, { width: "100%", ease: 'none'})
     masterTL.set(".whiteForeground", { right:0, left:'auto', ease: 'none'})
     masterTL.to(".whiteForeground", brandElementSpeed / 3, { width: "46%", ease: Power3.easeOut })
-
-masterTL.add("brandElementMovement", "start");
+    
+    masterTL.add("brandElementMovement", "start");
     masterTL.to(".squareBrandElement", brandElementSpeed, { x:-105, ease: Power2.easeInOut }, "brandElementMovement")
     masterTL.to('.greyBackground', brandElementSpeed/1.5, { opacity: 0 }, "brandElementMovement");
-
-masterTL.add("bluePanelIn", "brandElementMovement");
+    
+    masterTL.add("bluePanelIn", "brandElementMovement");
     masterTL.from(".bluePanel", brandElementSpeed/2, { opacity: 0, ease: Power3.easeInOut }, "brandElementAnim")
     masterTL.from([".bluePanel"], brandElementSpeed, { x:105, ease: Power3.easeInOut }, "brandElementAnim")
     masterTL.from(".bg", brandElementSpeed, { scale: 1.4, x: 0, ease: Power3.easeOut }, "brandElementAnim")
-    masterTL.from([splitMainCopy.lines, '.ctaContainer', '.tagline'], brandElementSpeed, { x:15, opacity:0, ease: Power3.easeOut, stagger:0.15 }, "brandElementAnim+="+brandElementSpeed/2)
+    masterTL.from([splitMainCopy.lines, '.cta', '.tagline'], brandElementSpeed, { x:15, opacity:0, ease: Power3.easeOut, stagger:0.15 }, "brandElementAnim+="+brandElementSpeed/2)
+    masterTL.to("#banner", 0.5, {}, 9.5);
 }

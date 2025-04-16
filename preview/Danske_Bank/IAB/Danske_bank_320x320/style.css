@@ -1,26 +1,7 @@
 @font-face {
     font-family: 'Danske';
-    src: url('Danske-Bold.woff2') format('woff2'),
-        url('Danske-Bold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Danske';
-    src: url('Danske-Regular.woff') format('woff2'),
-        url('Danske-Regular.woff.woff') format('woff');
+    src: url('Danske-Regular.woff2') format('woff2');
     font-weight: 300;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Danske';
-    src: url('Danske-Medium.woff') format('woff2'),
-        url('Danske-Medium.woff') format('woff');
-    font-weight: 500;
     font-style: normal;
     font-display: swap;
 }
@@ -39,7 +20,6 @@ img, div, object{
     overflow: hidden;
     background-color: #c1133c;
     color: #fff;
-    /* font-family: 'Belfius', sans-serif; */
 }
 
 #loaderWrapper{
@@ -117,33 +97,10 @@ img, div, object{
     font-size: 16px;
 }
 
-.ctaContainer{
-    position: absolute;
-    top: 189px;
-    left: 15px;
-    /* width: 100px; */
-    background: #0069FA;
-    /* height: 50px; */
-    border-radius: 35px;
-    font-size: 11px;
-    padding: 8px 15px;
-}
-
-.ctaText{
-    position: relative;
-    white-space: nowrap;
-    font-family: 'Danske';
-    font-weight: 500;
-    color: #fff;
-}
-
-.tagline{
-    white-space: nowrap;
-    font-size: 10px;
-    font-weight: 700;
-    font-family: 'Danske';
-    top: 262px;
-    left: 17px;
+.tagline,
+.cta{
+    height: 100%;
+    right: 0;
 }
 
 .logoContainer{
