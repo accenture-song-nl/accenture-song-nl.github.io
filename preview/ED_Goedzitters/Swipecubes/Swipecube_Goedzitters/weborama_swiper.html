@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- WEBORAMA SCREENAD META DATA (don't edit/remove) -->
+    <!-- SCRVERSION: screenad_interface_1.0.3 -->
+    <!-- SCRFORMAT: banner -->
+    <!-- SCRWIDTH: 300 -->
+    <!-- SCRHEIGHT: 250 -->
+    <!-- TEMPLATENAME: Weborama Swiper 300x250 -->
+    <!-- TEMPLATEDATE: 2018-02-19 -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="author" content="Weborama Template">
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <link rel="stylesheet" href="//media.adrcdn.com/ad-resources/swiper/weborama.swiper.1.0.12.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="//media.adrcdn.com/scripts/external/greensock/3.9.1/gsap.min.js"></script>
+    <script src="SplitText.min.js"></script>
+    <script type="text/javascript" src="//media.adrcdn.com/scripts/screenad_interface_1.0.3_scrambled.js"></script>
+    <script type="text/javascript" src="//media.adrcdn.com/ad-resources/swiper/weborama.swiper.1.0.12.min.js"></script>
+</head>
+
+<body>
+    <div class="webo-swipe-container"><div class="webo-swiper-icon"><div></div><div></div></div></div>
+
+    <div class="swiper-container">
+
+        <!-- Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- You can adjust the color of the paginationType in styles.css-->
+
+        <!-- Arrows -->
+        <div class="swiper-button-next swiper-button-white"></div>
+        <div class="swiper-button-prev swiper-button-white"></div>
+        <!-- You can adjust the color to black by changing "white" into "black"
+             Add the class swipe-up and swipe-down to the arrows if you make use of a vertical direction -->
+
+        <div class="swiper-wrapper">
+            <div data-report="slide001" class="swiper-slide" style="background-image:url(slide1.jpg)" onclick="screenad.click('default');">
+                <div id="text1">SCOOR SNEL<BR>EURO’S MET ONS<BR>BONUSPROGRAMMA<BR><span class="greenColor">GOEDZITTERS.</span></div>
+            </div>
+            <div data-report="slide002" class="swiper-slide" style="background-image:url(slide2.jpg)" onclick="screenad.click('extra1');">
+                <div id="text2">Cash alle<BR>bonussen met<BR>simpele acties.</div>
+            </div>
+            <div data-report="slide003" class="swiper-slide" style="background-image:url(slide3.jpg)" onclick="screenad.click('extra2');">
+                <div id="text3">Dan zit je direct<BR>nóg beter.</div>
+            </div>
+            <div data-report="slide004" class="swiper-slide" style="background-image:url(slide4.jpg)" onclick="screenad.click('extra3');">
+                <div id="text4">Voordeel<BR>regel je zelf.</div>
+                <img id="cta" src="cta.png">
+            </div>
+            <!-- You can easily add more slides to the swiper container, just copy-paste the above div and adjust the background image -->
+        </div>
+    </div>
+
+    <script>
+        var shadowsVisible = true; // Shadows do not work on Android versions 4.3 and below
+
+        var swiper = new Swiper('.swiper-container', {
+
+            effect: 'cube', // effects: 'cube', 'slide', 'fade', 'flip' and 'coverflow'
+            direction: 'horizontal', // else 'vertical' direction
+            pagination: '.swiper-pagination', // If you don't want navigation arrows comment out the div '.swiper-pagination'
+            paginationType: 'bullets', // type of pagination: 'bullets' or 'progress'
+            nextButton: '.swiper-button-next', // If you don't want navigation arrows remove the div '.swiper-button-next'
+            prevButton: '.swiper-button-prev', // If you don't want navigation arrows remove the div '.swiper-button-prev'
+            speed: 700, // speed of rotation
+            autoplay: 3500, // delay between transitions in milliseconds; false is no autoplay
+            loop: true, // loop slides; false is no loop
+            // weboSwipeIcon: true, // true, false or remove (remove will show in touch device, not in desktop)
+            /** if you make use of the 'cube' effect you can adjust the settings below */
+            cube: {
+                    shadow: shadowsVisible,
+                    slideShadows: shadowsVisible,
+                    shadowOffset: 10,
+                    shadowScale: 0.84
+            },
+
+            /** if you make use of the 'fade' effect you can adjust the settings below */
+            fade: {
+              crossFade: false
+            },
+
+            /** if you make use of the 'coverflow' effect you can adjust the settings below */
+            coverflow: {
+              rotate: 50,
+              stretch: 0,
+              depth: 300,
+              modifier: 1,
+              slideShadows : shadowsVisible
+            }
+        });
+
+
+        /*=========================
+          Callbacks
+        ===========================*/
+
+        var split1 = new SplitText("#text1", {type: "words"});
+        var split2 = new SplitText("#text2", {type: "words"});
+        var split3 = new SplitText("#text3", {type: "words"});
+        var split4 = new SplitText("#text4", {type: "words"});
+
+        gsap.fromTo(split1.words, 0.3, {opacity:0, x:-20}, {opacity:1, x:0, stagger:0.05, ease:Sine.easeInOut, delay:0.2});
+        gsap.to(split2.words, 0.00001, {opacity:0, x:-20, stagger:0.0000001});
+
+        /** Will be executed at the end of the animation to other slide. Also if autoplay is true.
+         *  You can check for swiper.userEngaged() this will return true or false */
+        swiper.on('onSlideChangeEnd', function () {
+            
+            if(swiper.slides[swiper.activeIndex].getAttribute('data-report') == "slide001"){
+                gsap.fromTo(split1.words, 0.3, {opacity:0, x:-20}, {opacity:1, x:0, stagger:0.05, ease:Sine.easeInOut});
+            }
+            else{ 
+                gsap.to(split1.words, 0.00001, {opacity:0, x:-20, stagger:0.0000001});
+            }
+            
+            if(swiper.slides[swiper.activeIndex].getAttribute('data-report') == "slide002"){
+                gsap.fromTo(split2.words, 0.3, {opacity:0, x:-20}, {opacity:1, x:0, stagger:0.05, ease:Sine.easeInOut});
+            }
+            else{ 
+                gsap.to(split2.words, 0.00001, {opacity:0, x:-20, stagger:0.0000001});
+            }
+
+            if(swiper.slides[swiper.activeIndex].getAttribute('data-report') == "slide003"){
+                gsap.fromTo(split3.words, 0.3, {opacity:0, x:-20}, {opacity:1, x:0, stagger:0.05, ease:Sine.easeInOut});
+            }
+            else{ 
+                gsap.to(split3.words, 0.00001, {opacity:0, x:-20, stagger:0.0000001});
+            }
+
+            if(swiper.slides[swiper.activeIndex].getAttribute('data-report') == "slide004"){
+
+                gsap.fromTo(split4.words, 0.3, {opacity:0, x:-20}, {opacity:1, x:0, stagger:0.05, ease:Sine.easeInOut});
+                gsap.fromTo("#cta", 0.5, {scale:0}, {scale:1, ease:Back.easeOut, transformOrigin:"50% 85%", delay:0.3});
+            }
+            else{ 
+                gsap.to(split4.words, 0.00001, {opacity:0, x:-20});
+                gsap.set("#cta", {scale:0});
+            }
+
+        });
+
+        /** Will be executed when user touch (swipe, click, tap) */
+        swiper.on('onTouchStart', function () {
+            // do stuff
+        });
+
+        /** Will be executed in the beginning of transition */
+        swiper.on('onTransitionStart', function () {
+            // do stuff
+        });
+
+        /** Will be executed after transition */
+        swiper.on('onTransitionEnd', function () {
+            // do stuff
+        });
+
+        /** Will be executed when when autoplay started */
+        swiper.on('onAutoplayStart', function () {
+            // do stuff
+        });
+
+        /** will be executed when when autoplay stopped */
+        swiper.on('onAutoplayStop', function () {
+            // do stuff
+        });
+
+    </script>
+</body>
+
+</html>
