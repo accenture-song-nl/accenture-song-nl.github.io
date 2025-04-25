@@ -70,12 +70,16 @@ img, div, object{
 width: 100%;
 }
 
+#text3GreenWrapper,
+#text2GreenWrapper,
 #text1GreenWrapper{
     width: 100%;
     height: 100%;
     overflow: hidden;
 }
 
+#text3Green,
+#text2Green,
 #text1Green{
     width: 300px;
 }
@@ -109,36 +113,42 @@ width: 100%;
 
 #coin1{
     width: 55px;
-    top: 50px;
-    left: 130px;
+    top: 114px;
+    left: 196px;
+    transform: scale(0);
 }
 
 #coin2{
     width: 55px;
-    top: 50px;
-    left: 180px;
+    top: 114px;
+    left: 196px;
+    transform: scale(0);
 }
 
 #coin3{
     width: 55px;
-    top: 50px;
-    left: 155px;
+    top: 114px;
+    left: 196px;
+    transform: scale(0);
 }
 
 #coin4{
     width: 55px;
-    top: 40px;
-    left: 80px;
+    top: 120px;
+    left: 175px;
+    transform: scale(0);
 }
 
 #coin5{
     width: 55px;
-    top: 50px;
-    left: 130px;
+    top: 120px;
+    left: 143px;
+    transform: scale(0);
 }
 
 #coin6{
     width: 55px;
-    top: 50px;
-    left: 105px;
+    top: 120px;
+    left: 120px;
+    transform: scale(0);
 }
