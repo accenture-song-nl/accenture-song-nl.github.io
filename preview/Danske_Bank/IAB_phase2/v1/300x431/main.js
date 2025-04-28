@@ -53,7 +53,7 @@ function getAnimation(){
     
     masterTL.add("bluePanelIn", "brandElementMovement");
     masterTL.from(".bluePanel", brandElementSpeed/2, { opacity: 0, ease: Power3.easeInOut }, "brandElementAnim")
-    masterTL.from([".bluePanel"], brandElementSpeed, { y:230, ease: Power3.easeInOut }, "brandElementAnim")
+    masterTL.from([".bluePanel", ".addressInfo"], brandElementSpeed, { y:230, ease: Power3.easeInOut }, "brandElementAnim")
     masterTL.from(".bg", brandElementSpeed, { scale: 1.4, y: 0, ease: Power3.easeOut }, "brandElementAnim")
     masterTL.from([splitMainCopy.lines, '.cta', '.tagline'], brandElementSpeed, { y:45, opacity:0, ease: Power3.easeOut, stagger:0.15 }, "brandElementAnim+="+brandElementSpeed/2)
     masterTL.to("#banner", 0.5, {}, 9.5);
