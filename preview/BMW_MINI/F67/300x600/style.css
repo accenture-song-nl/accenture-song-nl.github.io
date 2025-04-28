@@ -1,0 +1,118 @@
+body{
+    margin: 0;
+}
+
+img, div, object{
+    position: absolute;
+}
+
+#banner{
+    width: 300px;
+    height: 600px;
+    overflow: hidden;
+    color: #fff;
+    background: #000;
+}
+
+#loaderWrapper{
+    width: 100%;
+    height: 100%;
+    background: #000;
+    pointer-events: none;
+}
+
+#loaderCenter{
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#loader{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    border: 3px solid #fff;
+    border-top: 3px solid #c22e20;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#border{
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    box-sizing: border-box;
+    top: 0;
+}
+
+#mainExit{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+#logoMini{
+    width: 70px;
+    bottom: 19px;
+    right: 18px;
+}
+
+#text1A,
+#text1B,
+#text2A,
+#text2B,
+#text2C,
+#tagline,
+#bg1,
+#bg2,
+#cta,
+#ctaOver{
+    width: 100%;
+}
+
+#cta{
+    transform-origin: 82px 121px;
+}
+
+#ctaOver{
+    opacity: 0;
+}
+
+#borderT{
+    background: #b51919;
+    width: 161px;
+    height: 7px;
+    top: 20px;
+    left: 120px;
+}
+
+#borderR{
+    background: #b51919;
+    width: 7px;
+    height: 510px;
+    top: 20px;
+    left: 274px;
+}
+
+#borderB{
+    background: #b51919;
+    width: 262px;
+    height: 7px;
+    top: 523px;
+    right: 19px;
+}
+
+#borderL{
+    background: #b51919;
+    width: 7px;
+    height: 378px;
+    bottom: 70px;
+    left: 19px;
+}

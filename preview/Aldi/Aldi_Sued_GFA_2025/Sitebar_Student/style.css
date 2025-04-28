@@ -1,0 +1,176 @@
+body{
+    margin: 0;
+}
+
+img, div, object{
+    position: absolute;
+}
+
+#banner{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+#loaderWrapper{
+    width: 100%;
+    height: 100%;
+    background: #202B78;
+    pointer-events: none;
+}
+
+#loaderCenter{
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#loader{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    border: 3px solid #fff;
+    border-top: 3px solid #C51718;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+#mainExit{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+#scaler{
+    width: 1200px;
+    height: 1200px;
+    left: 0px;
+    overflow: hidden;
+    background: #202B78;
+    color: #fff;
+}
+
+#extraScaler{
+    width: 1200px;
+    height: 1200px;
+    pointer-events: none;
+    transform-origin: 0px 0px;
+}
+
+#ctaLeft,
+#ctaRight,
+#tagline,
+#person,
+#text3White,
+#text3,
+#text2,
+#text1a,
+#text1b,
+#text1c,
+#bg{
+    width: 100%;
+}
+
+#logo{
+    width: 120px;
+    top: 32px;
+    right: 32px;
+}
+
+#text1Wrapper{
+    width: 100%;
+    height: 100%;
+    top: 68px;
+}
+
+#text2Wrapper{
+    width: 100%;
+    height: 100%;
+    top: 30px;
+}
+
+#highlight3BlueWrapper,
+#highlight3Wrapper,
+#highlight2Wrapper,
+#highlight1aWrapper,
+#highlight1bWrapper,
+#highlight1cWrapper{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#highlight1bWrapper{
+    right: 0;
+}
+
+#highlight3Blue,
+#highlight3,
+#highlight2,
+#highlight1a,
+#highlight1b,
+#highlight1c{
+    width: 1200px;
+}
+
+#highlight1b{
+    right: 0;
+}
+
+#stickerWrapper{
+    width: 600px;
+    height: 600px;
+    top: 605px;
+    left: 245px;
+    transform: rotate(45deg);
+    overflow: hidden;
+}
+
+#stickerReset{
+    width: 100%;
+    height: 100%;
+    transform: rotate(-45deg);
+}
+
+#sticker{
+    width: 412px;
+    top: 170px;
+    left: 150px;
+}
+
+#stickerBackWrapper{
+    width: 600px;
+    height: 600px;
+    top: 1007px;
+    left: 683px;
+    transform: rotate(-45deg);
+    overflow: hidden;
+}
+
+#stickerBackReset{
+    width: 100%;
+    height: 100%;
+}
+
+#stickerBack{
+    width: 412px;
+    left: 50%;
+    top: 17%;
+    transform: translateX(-50%) rotate(-45deg) scaleY(-1);
+}
+
+#endScreen{
+    width: 100%;
+    height: 100%;
+    background: #202B78;
+}
+
