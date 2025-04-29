@@ -43,11 +43,11 @@ function getAnimation(){
     masterTL.from("#feet", 3, {rotation:10, transformOrigin:"50% 55%", ease:Sine.easeInOut}, "frame2+=0.5");
     masterTL.from("#text2GreenWrapper", 0.5, {width:0, ease:Sine.easeInOut}, "frame2+=1");
     masterTL.add("frame3", 7);
-    masterTL.to(["#text2", "#text2GreenWrapper"], 0.3, {opacity:0, ease:Sine.easeInOut}, "frame3+=0.3");
-    masterTL.from("#text3", 0.3, {opacity:0, ease:Sine.easeInOut}, "frame3+=0.5");
     masterTL.to("#top", 3, {rotation:-30, transformOrigin:"50% 55%", ease:Sine.easeInOut}, "frame3+=0.5");
-    masterTL.from("#text3GreenWrapper", 0.5, {width:0, ease:Sine.easeInOut}, "frame3+=1");
-    masterTL.add("frame4", 12);
+    masterTL.to(["#text2", "#text2GreenWrapper"], 0.3, {opacity:0, ease:Sine.easeInOut}, "frame3+=3.3");
+    masterTL.from("#text3", 0.3, {opacity:0, ease:Sine.easeInOut}, "frame3+=3.5");
+    masterTL.from("#text3GreenWrapper", 0.5, {width:0, ease:Sine.easeInOut}, "frame3+=4");
+    masterTL.add("frame4", 13);
     masterTL.from("#endScreen", .5, {opacity:0, ease:Sine.easeInOut}, "frame4");
     masterTL.from("#text4", 0.5, {x:-300, ease:Sine.easeOut}, "frame4+=0.5");
     masterTL.from("#cta", .5, {scale:0, ease:Back.easeOut}, "frame4+=1");
