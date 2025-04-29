@@ -18,8 +18,9 @@ function init() {
     })
 
     document.querySelector("#mainExit").addEventListener("click", function(){
-        window.open(clickTag, '_blank');
-        masterTL.progress(1).pause();
+        // window.open(clickTag, '_blank');
+        // masterTL.progress(1).pause();
+        masterTL.pause();
     })
 
     getAnimation();
@@ -34,7 +35,7 @@ function getAnimation(){
         gsap.set("#loaderWrapper", {display:"none"});
     }}, 0)
     masterTL.add("start");
-    masterTL.to("#bg1", 3, {x:-80, ease:Sine.easeInOut}, "start");
+    masterTL.to("#bg1", 5, {x:-205, ease:Sine.easeInOut}, "start");
     masterTL.from("#text1", 0.3, {opacity:0, ease:Sine.easeInOut}, "start+=0.5");
     masterTL.from("#text1Green", 0.1, {opacity:0}, "start+=1");
     masterTL.to("#text1Green", 0.1, {opacity:0.2}, "start+=1.1");
@@ -43,8 +44,8 @@ function getAnimation(){
     masterTL.to("#text1Green", 0.1, {opacity:1}, "start+=1.4");
     masterTL.to("#text1Green", 0.1, {opacity:0.8}, "start+=1.6");
     masterTL.to("#text1Green", 0.1, {opacity:1}, "start+=1.7");
-    masterTL.add("frame2", 3.5);
-    masterTL.to("#bg1", .5, {x:-380, ease:Sine.easeInOut}, "frame2");
+    masterTL.add("frame2", 5.5);
+    masterTL.to("#bg1", .5, {x:-505, ease:Sine.easeInOut}, "frame2");
     masterTL.from("#bg2", .5, {x:300, ease:Sine.easeInOut}, "frame2");
     masterTL.to("#bg2", 3, {scale:1.1, ease:Sine.easeInOut}, "frame2+=0.5");
     masterTL.from("#text2", 0.3, {opacity:0, ease:Sine.easeInOut}, "frame2+=0.5");
@@ -55,12 +56,12 @@ function getAnimation(){
     masterTL.to("#text2Green", 0.1, {opacity:1}, "frame2+=1.4");
     masterTL.to("#text2Green", 0.1, {opacity:0.8}, "frame2+=1.6");
     masterTL.to("#text2Green", 0.1, {opacity:1}, "frame2+=1.7");
-    masterTL.add("frame3", 7);
+    masterTL.add("frame3", 9);
     masterTL.to("#bg2", .5, {x:-300, ease:Sine.easeInOut}, "frame3");
     masterTL.from("#bg3", .5, {x:300, ease:Sine.easeInOut}, "frame3");
     masterTL.to("#bg3", 3, {scale:1.1, ease:Sine.easeInOut}, "frame3+=0.5");
     masterTL.from("#text3", 0.5, {x:-300, ease:Sine.easeOut}, "frame3+=0.5");
-    masterTL.add("frame4", 10.5);
+    masterTL.add("frame4", 12.5);
     masterTL.from("#endScreen", .5, {opacity:0, ease:Sine.easeInOut}, "frame4");
     masterTL.from("#cta", .5, {scale:0, ease:Back.easeOut}, "frame4+=0.5");
     masterTL.to("#banner", .5, {}, 14.5);    
