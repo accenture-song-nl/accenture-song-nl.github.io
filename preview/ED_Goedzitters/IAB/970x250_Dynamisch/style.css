@@ -7,8 +7,8 @@ img, div, object{
 }
 
 #banner{
-    width: 300px;
-    height: 600px;
+    width: 970px;
+    height: 250px;
     overflow: hidden;
     background-color: #5fb624;
     color: #fff;
@@ -81,7 +81,14 @@ width: 100%;
 #text3Green,
 #text2Green,
 #text1Green{
-    width: 300px;
+    width: 970px;
+}
+
+#bg3,
+#bg2,
+#bg1{
+    height: 100%;
+    left: 0;
 }
 
 #logo{
@@ -101,61 +108,5 @@ width: 100%;
 
 #cta{
     width: 100%;
-    transform-origin: 50% 390px;
-}
-
-#top,
-#front,
-#feet,
-#base{
-    height: 100%;
-}
-
-#coin1{
-    width: 55px;
-    top: 114px;
-    left: 196px;
-    transform: scale(0);
-}
-
-#coin2{
-    width: 55px;
-    top: 114px;
-    left: 196px;
-    transform: scale(0);
-}
-
-#coin7{
-    width: 55px;
-    top: 114px;
-    left: 196px;
-    transform: scale(0);
-}
-
-#coin3{
-    width: 55px;
-    top: 104px;
-    left: 101px;
-    transform: scale(0);
-}
-
-#coin4{
-    width: 55px;
-    top: 104px;
-    left: 101px;
-    transform: scale(0);
-}
-
-#coin5{
-    width: 55px;
-    top: 104px;
-    left: 101px;
-    transform: scale(0);
-}
-
-#coin6{
-    width: 55px;
-    top: 104px;
-    left: 101px;
-    transform: scale(0);
+    transform-origin: 700px 180px;
 }

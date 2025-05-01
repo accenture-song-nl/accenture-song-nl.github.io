@@ -40,7 +40,7 @@ function getAnimation(){
     masterTL.from("#text1GreenWrapper", 0.5, {width:0, ease:Sine.easeInOut}, "start+=1");
     masterTL.add("frame2", 3.5);
     masterTL.to(["#text1", "#text1GreenWrapper"], 0.3, {opacity:0, ease:Sine.easeInOut}, "frame2+=0.3");
-    masterTL.to("#top", 3.5, {rotation:-30, transformOrigin:"50% 55%", ease:Sine.easeInOut}, "frame2+=0.5");
+    masterTL.to("#top", 3.5, {rotation:-30, transformOrigin:"40% 60%", ease:Sine.easeInOut}, "frame2+=0.5");
     masterTL.from("#text2", 0.3, {opacity:0, ease:Sine.easeInOut}, "frame2+=0.5");
     masterTL.from("#text2GreenWrapper", 0.5, {width:0, ease:Sine.easeInOut}, "frame2+=1");
     masterTL.add("frame3", 5);
@@ -53,24 +53,24 @@ function getAnimation(){
     masterTL.from("#cta", .5, {scale:0, ease:Back.easeOut}, "frame4+=1");
     masterTL.to("#banner", .5, {}, 14.5);    
     
-    masterTL.to("#coin1", 1.5, {scale:0.5, x:30, y:-30, rotation:70, ease:Sine.easeIn}, "start+=1");
+    masterTL.to("#coin1", 1.5, {scale:0.5, x:15, y:-30, rotation:70, ease:Sine.easeIn}, "start+=1");
     masterTL.to("#coin1", 0.25, {opacity:0, ease:Sine.easeIn}, "start+=2.25");
     
     masterTL.to("#coin2", 1.5, {scale:0.5, x:-10, y:-30, rotation:-45, ease:Sine.easeIn}, "start+=3.5");
     masterTL.to("#coin2", 0.25, {opacity:0, ease:Sine.easeIn}, "start+=4.75");
 
-    masterTL.to("#coin7", 1.5, {scale:0.5, x:10, y:-30, rotation:45, ease:Sine.easeIn}, "start+=4");
+    masterTL.to("#coin7", 1.5, {scale:0.5, x:5, y:-30, rotation:45, ease:Sine.easeIn}, "start+=4");
     masterTL.to("#coin7", 0.25, {opacity:0, ease:Sine.easeIn}, "start+=5.25");
     
-    masterTL.to("#coin3", 1.5, {scale:1, x:20, y:-60, rotation:55, ease:Sine.easeIn}, "start+=7.5");
+    masterTL.to("#coin3", 1.5, {scale:1, x:10, y:-40, rotation:55, ease:Sine.easeIn}, "start+=7.5");
     masterTL.to("#coin3", 0.25, {opacity:0, ease:Sine.easeIn}, "start+=8.75");
 
-    masterTL.to("#coin4", 1.5, {scale:0.9, x:-20, y:-60, rotation:-40, ease:Sine.easeIn}, "start+=8");
+    masterTL.to("#coin4", 1.5, {scale:0.9, x:-10, y:-40, rotation:-40, ease:Sine.easeIn}, "start+=8");
     masterTL.to("#coin4", 0.25, {opacity:0, ease:Sine.easeIn}, "start+=9.25");
    
-    masterTL.to("#coin5", 1.5, {scale:0.8, x:10, y:-60, rotation:30, ease:Sine.easeIn}, "start+=8.5");
+    masterTL.to("#coin5", 1.5, {scale:0.8, x:5, y:-40, rotation:30, ease:Sine.easeIn}, "start+=8.5");
     masterTL.to("#coin5", 0.25, {opacity:0, ease:Sine.easeIn}, "start+=9.75");
     
-    masterTL.to("#coin6", 1.5, {scale:1, x:-20, y:-60, rotation:-60, ease:Sine.easeIn}, "start+=9");
+    masterTL.to("#coin6", 1.5, {scale:1, x:-10, y:-40, rotation:-60, ease:Sine.easeIn}, "start+=9");
     masterTL.to("#coin6", 0.25, {opacity:0, ease:Sine.easeIn}, "start+=10.25");
 }
