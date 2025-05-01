@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.stage-content {
+  position: absolute;
+  width: 100vw;
+  max-height: 100%;
+  cursor: pointer;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  background: #5fb624;
+}
+
+#banner {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 420px;
+    max-height: 747px;
+}
+
+.click-area {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: 200;
+  background-color: #fff;
+  background-color: rgba(255, 0, 0, 0);
+}
+
+#bg{
+  position: absolute;
+  height: 100%;
+}
+
+#graph,
+#bg2,
+#text2Green,
+#text2,
+#logoEnd,
+#dots,
+#cta,
+#logo{
+  position: absolute;
+  width: 100%;
+}
+
+#graphArrowWrapper{
+  width: 45vw;
+  height: 45vw;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#endScreen{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #5fb624;
+}
+
+#graphArrow{
+  position: absolute;
+  width: 5%;
+  height: 40%;
+  top: 5%;
+  left: 49.5%;
+  background: white;
+  transform-origin: 50% 112%;
+  transform: rotate(15deg);
+}

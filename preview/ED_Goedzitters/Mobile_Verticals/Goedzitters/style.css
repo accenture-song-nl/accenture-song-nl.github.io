@@ -1,0 +1,119 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.stage-content {
+  position: absolute;
+  width: 100vw;
+  max-height: 100%;
+  cursor: pointer;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  background: #5fb624;
+}
+
+#banner {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 420px;
+    max-height: 747px;
+}
+
+.click-area {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: 200;
+  background-color: #fff;
+  background-color: rgba(255, 0, 0, 0);
+}
+
+#feet{
+  position: absolute;
+  height: 100%;
+}
+
+#bg,
+#top,
+#front,
+#text2,
+#text1,
+#logoEnd,
+#dots,
+#cta,
+#logo,
+#bg{
+  position: absolute;
+  width: 100%;
+}
+
+#text2Green{
+  width: 100vw;
+}
+
+#endScreen{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #5fb624;
+}
+
+#text2GreenWrapper{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+#coin1{
+  position: absolute;
+  width: 10vw;
+  top: 22%;
+  left: 61%;
+  transform: scale(0);
+}
+
+#coin2{
+  position: absolute;
+  width: 10vw;
+  top: 22%;
+  left: 61%;
+  transform: scale(0);
+}
+
+#coin3{
+  position: absolute;
+  width: 10vw;
+  top: 22%;
+  left: 33%;
+  transform: scale(0);
+}
+
+#coin4{
+  position: absolute;
+  width: 10vw;
+  top: 22%;
+  left: 33%;
+  transform: scale(0);
+}
+
+#coin5{
+  position: absolute;
+  width: 10vw;
+  top: 22%;
+  left: 33%;
+  transform: scale(0);
+}
+
+#coin6{
+  position: absolute;
+  width: 10vw;
+  top: 22%;
+  left: 33%;
+  transform: scale(0);
+}
