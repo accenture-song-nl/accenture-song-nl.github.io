@@ -1,0 +1,157 @@
+@font-face {
+    font-family: "Danske_Medium";
+    src: url("./Danske-Medium.woff2");
+}
+
+@font-face {
+    font-family: "Danske_Regular";
+    src: url("./Danske-Regular.woff2");
+}
+
+body{
+    margin: 0;
+    font-family: "Danske_Regular", sans-serif;
+}
+
+img, div, object{
+    position: absolute;
+}
+
+#banner{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    color: #fff;
+    background: #002346;
+    z-index: 999;
+}
+
+#mainExit{
+    width: 10000%;
+    height: 10000%;
+    cursor: pointer;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#vScaler{
+    width: 2560px;
+    height: 780px;
+    /* background: yellow; */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#banner.portrait #vScaler{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1440px;
+    height: 2560px;
+}
+
+#hScaler{
+    width: 2560px;
+    height: 780px;
+    /* background: green; */
+    display: flex;
+    justify-content: space-around;
+    transform-origin: 50% 50%;
+}
+
+#banner.portrait #hScaler{
+    width: 1440px;
+    height: 2560px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#videoWrapper{
+    position: relative;
+    width: 1388px;
+    height: 780px;
+}
+
+#videoEl{
+    position: absolute;
+    height: 780px;
+}
+
+.controlsBtn{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 40px;
+    bottom: 30px;
+    cursor: pointer;
+}
+
+#muteBtn,
+#unmuteBtn{
+    left: auto;
+    right: 40px;
+}
+
+#playBtn,
+#unmuteBtn{
+    display: none;
+}
+
+#content2{
+    position: relative;
+    width: 836px;
+    height: 100%;
+    pointer-events: none;
+    /* background: orange; */
+}
+
+#banner.portrait #content2{
+    display: flex;
+    justify-content: center;
+    height: 30%;
+}
+
+#logo2{
+    width: 195px;
+    height: 46px;
+    background: #fff;
+    border: 1px solid #fff;
+    box-sizing: border-box;   
+}
+
+#banner.portrait #logo2{
+    top: -940px;
+}
+
+#logoColor1{
+    height: 100%;
+    background: #002346;
+    width: 119px;
+}
+
+#cta{
+    width: 341px;
+    height: 104px;
+    line-height: 104px;
+    text-align: center;
+    background: #0069FA;
+    border-radius: 300px;
+    bottom: 140px;
+    font-family: "Danske_Medium";
+    font-size: 40px;
+}
+
+.text{
+    font-size: 65px;
+    line-height: 78px;
+    top: 200px;
+}
+
+#logo{
+    position: absolute;
+    width: 393px;
+    bottom: 0px;
+}
