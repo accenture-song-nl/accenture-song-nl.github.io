@@ -48,7 +48,7 @@ function getAnimation(){
     masterTL.to(".whiteForeground", brandElementSpeed / 3, { width: "39%", ease: Power3.easeOut })
     
     masterTL.add("brandElementMovement", "start");
-    masterTL.to(".squareBrandElement", brandElementSpeed, { x:-116, ease: Power2.easeInOut }, "brandElementMovement")
+    masterTL.to(".squareBrandElement", brandElementSpeed, { x:-176, ease: Power2.easeInOut }, "brandElementMovement")
     masterTL.to('.greyBackground', brandElementSpeed/1.5, { opacity: 0 }, "brandElementMovement");
     
     masterTL.add("bluePanelIn", "brandElementMovement");
