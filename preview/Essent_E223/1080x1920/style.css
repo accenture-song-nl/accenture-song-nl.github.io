@@ -1,0 +1,121 @@
+body{
+    margin: 0;
+}
+
+@font-face {
+    font-family: 'Baton';
+    src: url('BatonBlack.woff2') format('woff2'),
+    url('BatonBlack.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'latoregular';
+    src: url('lato-regular-webfont.woff2') format('woff2'),
+         url('lato-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+img, div, object{
+    position: absolute;
+}
+
+#banner{
+    width: 1080px;
+    height: 1920px;
+    overflow: hidden;
+    background-color: #e60167;
+    color: #fff;
+    font-family: 'Baton';
+}
+
+#loaderWrapper{
+    width: 100%;
+    height: 100%;
+    background: #e60167;
+    pointer-events: none;
+    top:0;
+}
+
+#loaderCenter{
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(3);
+}
+
+#loader{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    border: 3px solid #fff;
+    border-top: 3px solid #004bf5;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#border{
+    width: 100%;
+    height: 100%;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    top: 0;
+}
+
+#mainExit{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 999;
+    position: absolute;
+    top:0;
+}
+
+#pinkBorder,
+#bg{
+    width: 100%;
+    transform-origin: 50% 840px;
+}
+
+
+#logo{
+    width: 100%;
+}
+
+#quote{
+    width: 100%;
+    transform-origin: 816px 533px;
+}
+
+#text1{
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 86px;
+    line-height: 78px;
+    top: 1270px;
+    text-transform: uppercase;
+}
+
+#text2{
+    font-family: 'latoregular';
+    width: 100%;
+    text-align: center;
+    font-size: 41px;
+    top: 1441px;
+}
+
+#price{
+    /* width: 132px; */
+    display: inline-block;
+    text-align: right;
+}
