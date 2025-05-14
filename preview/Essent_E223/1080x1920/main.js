@@ -39,18 +39,18 @@ function getAnimation(){
     masterTL.from("#quote", 0.5, {scale:0, x:-20, ease:Back.easeOut}, "start+=2");
 
     masterTL.from("#text1", 0.5, {opacity:0, ease:Sine.easeInOut}, "start+=2.5");
-    masterTL.to("#price", 2.5, { innerText:150, snap: {innerText:1}, onUpdate:function(){
-        if(Number(this._targets[0].innerText) < 10){
-            gsap.set("#price", {width:50});
-        }
-        else if (Number(this._targets[0].innerText) < 100){
-            gsap.set("#price", {width:100});
-        }
-        else{
-            gsap.set("#price", {width:132});
-        }
+    // masterTL.to("#price", 2.5, { innerText:150, snap: {innerText:1}, onUpdate:function(){
+    //     if(Number(this._targets[0].innerText) < 10){
+    //         gsap.set("#price", {width:50});
+    //     }
+    //     else if (Number(this._targets[0].innerText) < 100){
+    //         gsap.set("#price", {width:100});
+    //     }
+    //     else{
+    //         gsap.set("#price", {width:132});
+    //     }
         
-    }, ease:Circ.easeInOut}, "start+=3");
+    // }, ease:Circ.easeInOut}, "start+=3");
 
-    masterTL.from("#text2", 0.5, {opacity:0, y:50, ease:Sine.easeInOut}, "start+=6");
+    masterTL.from("#text2", 0.5, {opacity:0, y:50, ease:Sine.easeInOut}, "start+=3");
 }
