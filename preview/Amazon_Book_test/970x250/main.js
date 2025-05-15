@@ -38,10 +38,10 @@ function getAnimation(){
     masterTL.from("#gradient", 0.5, {opacity:0.5, ease:Sine.easeInOut}, "start+=0.5");
     masterTL.to("#gradient", 0.25, {opacity:0.7, ease:Sine.easeInOut}, "start+=1");
     masterTL.to("#gradient", 0.25, {opacity:1, ease:Sine.easeInOut}, "start+=1.25");
-    masterTL.from("#button", 2, {scale:0, ease:Sine.easeOut}, "start+=2");
-    masterTL.from("#button", 2, {y:-50, ease:Sine.easeInOut}, "start+=2");
-    masterTL.from("#hand", 1, {y:-120, x:-50, repeat:1, yoyo:true, ease:Sine.easeInOut}, "start+=2.8");
-    masterTL.to("#button", 1, {opacity:0, ease:Sine.easeInOut}, "start+=4");
+    // masterTL.from("#button", 2, {scale:0, ease:Sine.easeOut}, "start+=2");
+    // masterTL.from("#button", 2, {y:-50, ease:Sine.easeInOut}, "start+=2");
+    // masterTL.from("#hand", 1, {y:-120, x:-50, repeat:1, yoyo:true, ease:Sine.easeInOut}, "start+=2.8");
+    // masterTL.to("#button", 1, {opacity:0, ease:Sine.easeInOut}, "start+=4");
     
 
     masterTL.add("sprite", "0.7");
