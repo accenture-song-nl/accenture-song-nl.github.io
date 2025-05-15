@@ -86,14 +86,15 @@ img, div, object{
 }
 
 #text2{
-    top: 58px;
+    top: 56px;
     left: 13px;
     font-size: 18.5px;
-    line-height: 18.5px;
+    line-height: 20px;
+    letter-spacing: -0.3px;
 }
 
 #usp{
-    top: 126px;
+    top: 124px;
     left: 13px;
     font-size: 10px;
     line-height: 15px;
@@ -126,4 +127,8 @@ img, div, object{
 
 #badge{
     transform-origin: 182px 197px;
+}
+
+#guide{
+    width: 100%;
 }
