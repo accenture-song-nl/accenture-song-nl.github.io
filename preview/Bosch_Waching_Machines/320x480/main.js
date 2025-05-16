@@ -18,8 +18,6 @@ function init() {
         }
     }
 
-   
-
     document.querySelector("#mainExit").addEventListener("mouseover", function(){
         if(masterTL.progress() == 1){
             gsap.to("#cta", 0.5, {background:"#d5e3fc"});

@@ -55,8 +55,7 @@ function getAnimation(){
     masterTL.from(split1.lines, 0.5, {opacity:0, x:-20, stagger:0.5, ease:Sine.easeOut}, "start");
     masterTL.to(split1.lines, 0.5, {opacity:0, x:20, stagger:0.1, ease:Sine.easeIn}, "+=1");
     masterTL.from([split2.lines[0], split2.lines[1]], 0.5, {opacity:0, x:-20, ease:Sine.easeOut});
-    masterTL.from([split2.lines[2]], 0.5, {opacity:0, x:-20, ease:Sine.easeOut});
-    masterTL.from("#product", 1, {x:350, ease:Sine.easeOut}, "-=0.5");
+    masterTL.from("#product", 1, {x:970, ease:Sine.easeOut}, "-=0.5");
     masterTL.from("#usp", 0.5, {opacity:0, x:-20, ease:Sine.easeOut});
     masterTL.from("#cta", 0.5, {scale:0, ease:Back.easeOut});
     masterTL.from("#price", 0.5, {opacity:0, x:-20, ease:Sine.easeOut});

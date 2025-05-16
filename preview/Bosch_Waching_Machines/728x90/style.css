@@ -1,0 +1,137 @@
+body{
+    margin: 0;
+}
+
+@font-face {
+    font-family: 'BoschSans-Bold';
+    src: url('BoschSans-Bold-v5_003.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+}
+
+img, div, object{
+    position: absolute;
+}
+
+#banner{
+    width: 728px;
+    height: 90px;
+    overflow: hidden;
+    background-color: #3579bb;
+    color: #fff;
+    font-family: "BoschSans-Bold";
+}
+
+#loaderWrapper{
+    width: 100%;
+    height: 100%;
+    background: #3579bb;
+    pointer-events: none;
+    top:0;
+}
+
+#loaderCenter{
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#loader{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    border: 3px solid #fff;
+    border-top: 3px solid #000;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#border{
+    width: 100%;
+    height: 100%;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    top: 0;
+}
+
+#mainExit{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 999;
+    position: absolute;
+    top:0;
+}
+
+#badgeEnergy,
+#badge,
+#product,
+#logo,
+#bg{
+    width: 100%;
+}
+
+#text1{
+    top: 15px;
+    left: 143px;
+    font-size: 28px;
+    line-height: 32px;
+}
+
+#text2{
+    top: 6px;
+    left: 141px;
+    font-size: 19px;
+    line-height: 38px;
+    letter-spacing: -0.55px;
+    width: 100%;
+}
+
+#usp{
+    top: 44px;
+    left: 142px;
+    font-size: 12px;
+    line-height: 17px;
+}
+
+#cta{
+    width: 88px;
+    height: 29px;
+    line-height: 29px;
+    text-align: center;
+    font-size: 11px;
+    background: #fff;
+    color: #000;
+    left: 142px;
+    bottom: 14px;
+}
+
+#price{
+    font-size: 36px;
+    right: 101px;
+    bottom: 4px;
+    width: 325px;
+    text-align: center;
+}
+
+#priceSign{
+    font-size: 21px;
+    position: absolute;
+    top: 3px;
+    margin-left: 3px;
+}
+
+#badge{
+    transform-origin: 691px 40px;
+}
+
+#guide{
+    width: 100%;
+}

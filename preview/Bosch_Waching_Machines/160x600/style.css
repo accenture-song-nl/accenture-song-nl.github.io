@@ -1,0 +1,140 @@
+body{
+    margin: 0;
+}
+
+@font-face {
+    font-family: 'BoschSans-Bold';
+    src: url('BoschSans-Bold-v5_003.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+}
+
+img, div, object{
+    position: absolute;
+}
+
+#banner{
+    width: 160px;
+    height: 600px;
+    overflow: hidden;
+    background-color: #3579bb;
+    color: #fff;
+    font-family: "BoschSans-Bold";
+}
+
+#loaderWrapper{
+    width: 100%;
+    height: 100%;
+    background: #3579bb;
+    pointer-events: none;
+    top:0;
+}
+
+#loaderCenter{
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#loader{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    border: 3px solid #fff;
+    border-top: 3px solid #000;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#border{
+    width: 100%;
+    height: 100%;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    top: 0;
+}
+
+#mainExit{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 999;
+    position: absolute;
+    top:0;
+}
+
+#badgeEnergy,
+#badge,
+#product,
+#logo,
+#bg{
+    width: 100%;
+}
+
+#text1{
+    top: 87px;
+    left: 18px;
+    font-size: 27px;
+    line-height: 31px;
+}
+
+#text2{
+    top: 78px;
+    left: 16px;
+    font-size: 19px;
+    line-height: 21px;
+    letter-spacing: -0.1px;
+}
+
+#usp{
+    top: 173px;
+    left: 17px;
+    font-size: 11px;
+    line-height: 16px;
+}
+
+#cta{
+    width: 99px;
+    height: 33px;
+    line-height: 33px;
+    text-align: center;
+    font-size: 12px;
+    background: #fff;
+    color: #000;
+    left: 18px;
+    bottom: 317px;
+}
+
+#price{
+    font-size: 29px;
+    left: 0px;
+    bottom: 27px;
+    text-align: center;
+    width: 100%;
+}
+
+#priceSign{
+    font-size: 17px;
+    position: relative;
+    top: -10px;
+    margin-left: 1px;
+}
+
+#badge{
+    transform-origin: 53px 490px;
+}
+
+#guide{
+    width: 100%;
+}
+
+.indent{
+    margin-left: 9px;
+}
