@@ -94,10 +94,11 @@ img, div, object{
 }
 
 #usp{
-    top: 173px;
-    left: 17px;
+    top: 174px;
+    left: 16px;
     font-size: 11px;
     line-height: 16px;
+    letter-spacing: -0.2px;
 }
 
 #cta{
@@ -109,7 +110,7 @@ img, div, object{
     background: #fff;
     color: #000;
     left: 18px;
-    bottom: 317px;
+    bottom: 332px;
 }
 
 #price{
