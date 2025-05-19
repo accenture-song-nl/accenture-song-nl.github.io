@@ -52,10 +52,11 @@ function getAnimation(){
         gsap.set("#loaderWrapper", {display:"none"});
     }}, 0)
     masterTL.add("start");
-    masterTL.from(split1.lines, 0.5, {opacity:0, x:-20, stagger:0.5, ease:Sine.easeOut}, "start");
-    masterTL.to(split1.lines, 0.5, {opacity:0, x:20, stagger:0.1, ease:Sine.easeIn}, "+=1");
-    masterTL.from([split2.lines[0], split2.lines[1]], 0.5, {opacity:0, x:-20, ease:Sine.easeOut});
-    masterTL.from("#product", 1, {x:970, ease:Sine.easeOut}, "-=1");
+    // masterTL.from(split1.lines, 0.5, {opacity:0, x:-20, stagger:0.5, ease:Sine.easeOut}, "start");
+    masterTL.to(split1.lines, 0.5, {opacity:0, x:20, stagger:0.1, ease:Sine.easeIn}, "+=2");
+    masterTL.from([split2.lines[0]], 0.5, {opacity:0, x:-20, ease:Sine.easeOut});
+    masterTL.from("#product", 1, {x:500, ease:Sine.easeOut}, "-=0.5");
+    masterTL.from([split2.lines[1]], 0.5, {opacity:0, x:-20, ease:Sine.easeOut});
     masterTL.from("#badgeEnergy", 0.5, {y:20, opacity:0, ease:Sine.easeOut}, "-=0.1");
     masterTL.from("#usp", 0.5, {opacity:0, x:-20, ease:Sine.easeOut});
     masterTL.from("#cta", 0.5, {scale:0, ease:Back.easeOut});

@@ -43,7 +43,7 @@ function init() {
 function getAnimation(){
 
     var split1 = new SplitText("#text1", {type: "lines"});
-    var split2 = new SplitText("#text2", {type: "lines"});
+    var split2 = new SplitText("#text2", {type: "words"});
     // var split3 = new SplitText("#usp", {type: "lines"});
 
     masterTL = gsap.timeline({repeat:0});
@@ -52,10 +52,11 @@ function getAnimation(){
         gsap.set("#loaderWrapper", {display:"none"});
     }}, 0)
     masterTL.add("start");
-    masterTL.from(split1.lines, 0.5, {opacity:0, x:-20, stagger:0.5, ease:Sine.easeOut}, "start");
-    masterTL.to(split1.lines, 0.5, {opacity:0, x:20, stagger:0.1, ease:Sine.easeIn}, "+=1");
-    masterTL.from([split2.lines[0], split2.lines[1]], 0.5, {opacity:0, x:-20, ease:Sine.easeOut});
-    masterTL.from("#product", 1, {x:970, ease:Sine.easeOut}, "-=1");
+    // masterTL.from(split1.lines, 0.5, {opacity:0, x:-20, stagger:0.5, ease:Sine.easeOut}, "start");
+    masterTL.to(split1.lines, 0.5, {opacity:0, x:20, stagger:0.1, ease:Sine.easeIn}, "+=2");
+    masterTL.from([split2.words[0], split2.words[1], split2.words[2]], 0.5, {opacity:0, x:-20, ease:Sine.easeOut});
+    masterTL.from("#product", 1, {x:500, ease:Sine.easeOut}, "-=0.5");
+    masterTL.from([split2.words[3], split2.words[4]], 0.5, {opacity:0, x:-20, ease:Sine.easeOut});
     masterTL.from("#badgeEnergy", 0.5, {y:20, opacity:0, ease:Sine.easeOut}, "-=0.1");
     masterTL.from("#usp", 0.5, {opacity:0, x:-20, ease:Sine.easeOut});
     masterTL.to("#usp", 0.5, {opacity:0, x:20, ease:Sine.easeOut}, "+=2");
