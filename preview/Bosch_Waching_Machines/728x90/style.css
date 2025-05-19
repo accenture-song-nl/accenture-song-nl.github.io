@@ -14,8 +14,8 @@ img, div, object{
 }
 
 #banner{
-    width: 300px;
-    height: 250px;
+    width: 728px;
+    height: 90px;
     overflow: hidden;
     background-color: #3579bb;
     color: #fff;
@@ -79,54 +79,57 @@ img, div, object{
 }
 
 #text1{
-    top: 68px;
-    left: 44px;
+    top: 15px;
+    left: 143px;
     font-size: 28px;
     line-height: 32px;
 }
 
 #text2{
-    top: 56px;
-    left: 13px;
-    font-size: 18.5px;
-    line-height: 20px;
-    letter-spacing: -0.3px;
+    top: 6px;
+    left: 141px;
+    font-size: 19px;
+    line-height: 38px;
+    letter-spacing: -0.55px;
+    width: 100%;
 }
 
 #usp{
-    top: 124px;
-    left: 13px;
-    font-size: 10px;
-    line-height: 15px;
+    top: 44px;
+    left: 142px;
+    font-size: 12px;
+    line-height: 17px;
 }
 
 #cta{
-    width: 75px;
-    height: 25px;
-    line-height: 25px;
+    width: 88px;
+    height: 29px;
+    line-height: 29px;
     text-align: center;
-    font-size: 9px;
+    font-size: 11px;
     background: #fff;
     color: #000;
-    left: 13px;
-    bottom: 61px;
+    left: 142px;
+    bottom: 14px;
 }
 
 #price{
-    font-size: 27px;
-    left: 13px;
-    bottom: 20px;
+    font-size: 36px;
+    right: 101px;
+    bottom: 4px;
+    width: 325px;
+    text-align: center;
 }
 
 #priceSign{
-    font-size: 15px;
+    font-size: 21px;
     position: absolute;
     top: 3px;
     margin-left: 3px;
 }
 
 #badge{
-    transform-origin: 182px 197px;
+    transform-origin: 691px 40px;
 }
 
 #guide{

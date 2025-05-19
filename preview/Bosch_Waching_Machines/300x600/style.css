@@ -15,7 +15,7 @@ img, div, object{
 
 #banner{
     width: 300px;
-    height: 250px;
+    height: 600px;
     overflow: hidden;
     background-color: #3579bb;
     color: #fff;
@@ -79,54 +79,56 @@ img, div, object{
 }
 
 #text1{
-    top: 68px;
-    left: 44px;
-    font-size: 28px;
-    line-height: 32px;
+    top: 76px;
+    left: 20px;
+    font-size: 36px;
+    /* line-height: 36px; */
 }
 
 #text2{
-    top: 56px;
-    left: 13px;
-    font-size: 18.5px;
-    line-height: 20px;
+    top: 82px;
+    left: 20px;
+    font-size: 28px;
+    line-height: 31px;
     letter-spacing: -0.3px;
 }
 
 #usp{
-    top: 124px;
-    left: 13px;
-    font-size: 10px;
-    line-height: 15px;
+    top: 182px;
+    left: 20px;
+    font-size: 15px;
+    line-height: 21px;
 }
 
 #cta{
-    width: 75px;
-    height: 25px;
-    line-height: 25px;
+    width: 110px;
+    height: 35px;
+    line-height: 35px;
     text-align: center;
-    font-size: 9px;
+    font-size: 13px;
     background: #fff;
     color: #000;
-    left: 13px;
-    bottom: 61px;
+    left: 20px;
+    bottom: 327px;
 }
 
 #price{
-    font-size: 27px;
-    left: 13px;
-    bottom: 20px;
+    font-size: 40px;
+    left: 0px;
+    bottom: 14px;
+    text-align: center;
+    width: 100%;
 }
 
 #priceSign{
-    font-size: 15px;
-    position: absolute;
-    top: 3px;
-    margin-left: 3px;
+    font-size: 22px;
+    position: relative;
+    top: -13px;
+    margin-left: 4px;
 }
 
 #badge{
-    transform-origin: 182px 197px;
+    transform-origin: 75px 497px;
 }
 
 #guide{
