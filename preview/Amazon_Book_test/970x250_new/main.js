@@ -258,16 +258,18 @@ function getHorizonEndframeAnimation() {
 function getMouseOverAnimation() { 
     var tl = gsap.timeline({ paused: true});
     tl.add("sprite");
-    tl.to("#sprite", 0, { x: "+=132", ease: Sine.easeInOut }, "sprite+=0.2");
-    tl.to("#sprite", 0, { x: "-=132", ease: Sine.easeInOut }, "sprite+=0.6");
+    tl.to("#sprite", 0, { x: "+=132", ease: Sine.easeInOut }, "sprite");
+    tl.to("#sprite", 0, { x: "-=132", ease: Sine.easeInOut }, "sprite+=0.4");
     
-    tl.to('.rayContainerLeft', 0.3, { rotation: -63, ease: "power2.out", }, 'sprite+=0.2')
-    tl.to('.rayContainerRight', 0.3, { rotation: 63, ease: "power2.out", }, 'sprite+=0.2')
+    tl.to('.rayContainerLeft', 0.3, { rotation: -63, ease: "power2.out", }, 'sprite')
+    tl.to('.rayContainerRight', 0.3, { rotation: 63, ease: "power2.out", }, 'sprite')
     
-    tl.to("#spaceWrapper", 0.3, {clipPath:"polygon(4% -7%, 60% 0%, 33% 79%)", ease: "power2.out"}, 'sprite+=0.2');
+    tl.to("#spaceWrapper", 0.3, {clipPath:"polygon(4% -7%, 60% 0%, 33% 79%)", ease: "power2.out"}, 'sprite');
 
-    tl.to('.rayContainerLeft', 0.3, { rotation: -73, ease: "power2.out", }, 'sprite+=0.6')
-    tl.to('.rayContainerRight', 0.3, { rotation: 74, ease: "power2.out", }, 'sprite+=0.6')
-    tl.to("#spaceWrapper", 0.3, {clipPath:"polygon(-17% -7%, 81% 0%, 33% 79%)", ease: "power2.out"}, 'sprite+=0.6');
+    tl.to('.rayContainerLeft', 0.3, { rotation: -73, ease: "power2.out", }, 'sprite+=0.4')
+    tl.to('.rayContainerRight', 0.3, { rotation: 74, ease: "power2.out", }, 'sprite+=0.4')
+    tl.to("#spaceWrapper", 0.3, {clipPath:"polygon(-17% -7%, 81% 0%, 33% 79%)", ease: "power2.out"}, 'sprite+=0.4');
+    tl.from("#buttonPressGradient", 0.2, { opacity: 0, ease: Sine.easeIn, yoyo:true, repeat:1, repeatDelay:0.2 }, 'sprite');
+    
     return tl;
 }
