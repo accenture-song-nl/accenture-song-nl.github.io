@@ -4,10 +4,12 @@ window.onload = function () {
 
 function init() {
    
-
-    document.querySelector("#mainExit").addEventListener("mouseover", function(){
-        if(masterTL.progress() == 1){
+    var mouseoverTL = getMouseOverAnimation();
+    document.querySelector("#mainExit").addEventListener("mouseover", function () {
+        if (masterTL.progress() == 1) {
+            console.log('play');
             
+            mouseoverTL.play(0);
         }
     })
     
@@ -53,9 +55,15 @@ function populateStarryBackground() {
         star.style.backgroundColor = starColor;
         star.style.opacity = starOpacity;
         
-       
-        
-
+        gsap.to(star, {
+            duration: Math.random() * 2 + 1,
+            scale: Math.random() * 0.5 + 0.75,
+            opacity: Math.random() * 0.25 + 0.15,
+            repeat: -1,
+            yoyo: true,
+            ease: "power1.inOut",
+            delay: Math.random() * 2
+        });
 
         starryBackground.appendChild(star);
     }
@@ -68,7 +76,7 @@ function getAnimation(){
     var buttonPressTL = getButtonPressAnimation();
     var spriteTL = getSpriteAnimation();
     var rayEdgeTL = getRayEdgeAnimation();
-    var horizonEndframeTL = getHorizonEndframeAnimation();
+    // var horizonEndframeTL = getHorizonEndframeAnimation();
     masterTL = gsap.timeline({repeat:0, timeScale:0.5 });
 
     masterTL.to("#loaderWrapper", 0.2, {opacity:0, ease:Sine.easeInOut, onComplete:function(){
@@ -83,8 +91,9 @@ function getAnimation(){
     masterTL.from("#spaceWrapper", 1, {clipPath:"polygon(33% -7%, 33% 0%, 33% 79%)", ease:Sine.easeInOut}, "bookOpen");
     masterTL.add(musicIconTL, 'bookOpen+=0.5');
     masterTL.add(musicIconTL2, '-=1.5');
+    
     masterTL.add(buttonPressTL, '-=5');
-    masterTL.add(horizonEndframeTL, '-=2.5')
+    // masterTL.add(horizonEndframeTL, '-=2.5')
     masterTL.from("#gradient", 0.5, { opacity: 0.3, ease: Sine.easeIn }, "bookOpen+=0.5");
     masterTL.from("#darkGradient", 1.5, { opacity: 0, ease: Sine.easeIn }, "bookOpen+=0.7");
 
@@ -106,12 +115,29 @@ function getSpriteAnimation() {
 function getButtonPressAnimation() { 
     var tl = gsap.timeline({ paused: false, repeat: 0 });
     tl.from('.handButtonContainer', 3, { scale: 0, y: -120, ease: Sine.easeIn }, "start+=1.7");
-    tl.from("#hand", 1, { y: -80, x: -10, repeat: 1, yoyo: true, ease: Sine.easeInOut }, "start+=3.7");
+    tl.from("#hand", 1, { y: -80, x: -10, repeat: 1, repeatDelay:0.1, yoyo: true, ease: Sine.easeInOut }, "start+=3.7");
     tl.from(document.querySelectorAll('.buttonBottomLine'), 0.8, { width: 0, ease: Sine.easeOut, stagger: 0.25 }, "start+=4.7");
     tl.to(document.querySelectorAll('.buttonBottomLine'), 0.7, {y: 50, opacity:0, ease: Sine.easeOut, stagger:0.25 }, "start+=4.7");
     tl.to('.handButtonContainer', 3.5, { scale: 2.7, y: 50, ease: Sine.easeOut }, "start+=4.6");
     tl.to('.buttonBottomLinesContainer', 1.5,{scale: 2.7, y:50, ease: Sine.easeOut }, "start+=4.6");
-    tl.to('.handButtonContainer', 0.3, { opacity:0, ease: Sine.easeOut }, "start+=5.3");
+    tl.to('.handButtonContainer', 0.3, { opacity: 0, ease: Sine.easeOut }, "start+=5.3");
+    
+    tl.to('.ray01', 0.2, { repeat:0, yoyo:true, backgroundColor: "rgb(202, 195, 208);", boxShadow: "1px 1px 26px 8px rgba(214,177,247,0.32)", ease: "power2.out", }, "start+=4.5")
+    tl.to('.ray02', 0.2, { repeat:0, yoyo:true, boxShadow: "1px 1px 10px 8px rgb(184, 161, 204)", ease: "power2.out", }, "start+=4.5")
+    tl.to('.ray03', 0.2, { repeat:0, yoyo:true, boxShadow: "1px 1px 16px 8px rgba(153, 150, 156, 0.27)", ease: "power2.out", }, "start+=4.5")
+    tl.to('.ray04', 0.2, { repeat:0, yoyo:true, boxShadow: "1px 1px 18px 8px rgba(255, 255, 255, 0.42)", ease: "power2.out", }, "start+=4.5")
+    tl.to('.ray05', 0.2, { repeat: 0, yoyo: true, boxShadow: "1px 1px 38px 8px rgba(220, 216, 224, 0.82)", ease: "power2.out", }, "start+=4.5")
+    
+
+    tl.to('.ray01', 0.2, { repeat:0, yoyo:true, backgroundColor: "rgb(202, 195, 208);", boxShadow: "1px 1px 13px 2px rgba(214,177,247,0.32)", ease: "power2.out", }, "start+=4.7")
+    tl.to('.ray02', 0.2, { repeat:0, yoyo:true, boxShadow: "1px 1px 5px 2px rgb(184, 161, 204)", ease: "power2.out", }, "start+=4.7")
+    tl.to('.ray03', 0.2, { repeat:0, yoyo:true, boxShadow: "1px 1px 8px 2px rgba(153, 150, 156, 0.27)", ease: "power2.out", }, "start+=4.7")
+    tl.to('.ray04', 0.2, { repeat:0, yoyo:true, boxShadow: "1px 1px 9px 2px rgba(255, 255, 255, 0.42)", ease: "power2.out", }, "start+=4.7")
+    tl.to('.ray05', 0.2, { repeat: 0, yoyo: true, boxShadow: "1px 1px 19px 2px rgba(220, 216, 224, 0.82)", ease: "power2.out", }, "start+=4.7")
+
+    tl.from("#buttonPressGradient", 0.2, { opacity: 0, ease: Sine.easeIn, yoyo:true, repeat:1 }, "start+=4.5");
+
+    tl.to('#button', 0.2, {filter:"brightness(1.75)"}, "start+=4.5");
     return tl;
 }
 
@@ -211,11 +237,11 @@ function getRayEdgeAnimation() {
     tl.to('.rayContainerLeft', 0.95, { rotation: -73, ease: "power2.out", }, 'start+=0.1')
     tl.to('.rayContainerRight', 0.95, {rotation: 74, ease: "power2.out",}, 'start+=0.1')
     
-    tl.to('.ray01', 5, { repeat:-1, yoyo:true, backgroundColor: "rgb(202, 195, 208);", boxShadow: "1px 1px 13px 2px rgba(214,177,247,0.32)", ease: "power2.out", }, 'start+=0.1')
-    tl.to('.ray02', 5, { repeat:-1, yoyo:true, boxShadow: "1px 1px 5px 2px rgb(184, 161, 204)", ease: "power2.out", }, 'start+=0.1')
-    tl.to('.ray03', 5, { repeat:-1, yoyo:true, boxShadow: "1px 1px 8px 2px rgba(153, 150, 156, 0.27)", ease: "power2.out", }, 'start+=0.1')
-    tl.to('.ray04', 5, { repeat:-1, yoyo:true, boxShadow: "1px 1px 9px 2px rgba(255, 255, 255, 0.42)", ease: "power2.out", }, 'start+=0.1')
-    tl.to('.ray05', 5, { repeat:-1, yoyo:true, boxShadow: "1px 1px 19px 2px rgba(220, 216, 224, 0.82)", ease: "power2.out", }, 'start+=0.1')
+    tl.to('.ray01', 3, { repeat:0, yoyo:true, backgroundColor: "rgb(202, 195, 208);", boxShadow: "1px 1px 13px 2px rgba(214,177,247,0.32)", ease: "power2.out", }, 'start+=0.1')
+    tl.to('.ray02', 3, { repeat:0, yoyo:true, boxShadow: "1px 1px 5px 2px rgb(184, 161, 204)", ease: "power2.out", }, 'start+=0.1')
+    tl.to('.ray03', 3, { repeat:0, yoyo:true, boxShadow: "1px 1px 8px 2px rgba(153, 150, 156, 0.27)", ease: "power2.out", }, 'start+=0.1')
+    tl.to('.ray04', 3, { repeat:0, yoyo:true, boxShadow: "1px 1px 9px 2px rgba(255, 255, 255, 0.42)", ease: "power2.out", }, 'start+=0.1')
+    tl.to('.ray05', 3, { repeat:0, yoyo:true, boxShadow: "1px 1px 19px 2px rgba(220, 216, 224, 0.82)", ease: "power2.out", }, 'start+=0.1')
 
     return tl;
 
@@ -226,5 +252,22 @@ function getHorizonEndframeAnimation() {
     tl.add('start')
     tl.from('.endFrameHorizon', 0.5, { opacity: 0, ease: "power2.out", }, 'start')
 
+    return tl;
+}
+
+function getMouseOverAnimation() { 
+    var tl = gsap.timeline({ paused: true});
+    tl.add("sprite");
+    tl.to("#sprite", 0, { x: "+=132", ease: Sine.easeInOut }, "sprite+=0.2");
+    tl.to("#sprite", 0, { x: "-=132", ease: Sine.easeInOut }, "sprite+=0.6");
+    
+    tl.to('.rayContainerLeft', 0.3, { rotation: -63, ease: "power2.out", }, 'sprite+=0.2')
+    tl.to('.rayContainerRight', 0.3, { rotation: 63, ease: "power2.out", }, 'sprite+=0.2')
+    
+    tl.to("#spaceWrapper", 0.3, {clipPath:"polygon(4% -7%, 60% 0%, 33% 79%)", ease: "power2.out"}, 'sprite+=0.2');
+
+    tl.to('.rayContainerLeft', 0.3, { rotation: -73, ease: "power2.out", }, 'sprite+=0.6')
+    tl.to('.rayContainerRight', 0.3, { rotation: 74, ease: "power2.out", }, 'sprite+=0.6')
+    tl.to("#spaceWrapper", 0.3, {clipPath:"polygon(-17% -7%, 81% 0%, 33% 79%)", ease: "power2.out"}, 'sprite+=0.6');
     return tl;
 }

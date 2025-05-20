@@ -89,6 +89,13 @@ img, div, object{
     background: radial-gradient(circle, rgba(255, 244, 253, 1) 0%, rgba(191, 126, 188, 1) 20%, rgba(60, 37, 91, 1) 50%, rgba(28, 17, 31, 1) 100%);
 }
 
+#buttonPressGradient{
+    width: 100%;
+    height: 155%;
+    /* background: #FFF4FD; */
+    background: radial-gradient(circle, rgba(255, 244, 253, 1) 0%, rgba(191, 126, 188, 1) 20%, rgba(60, 37, 91, 1) 50%, rgba(28, 17, 31, 1) 100%);
+}
+
 #darkGradient{
     width: 100%;
     height: 155%;
@@ -106,7 +113,7 @@ img, div, object{
     height: 140px;
     overflow: hidden;
     bottom: 0px;
-    left: 405px;
+    left: 407px;
 }
 
 #sprite{
@@ -124,7 +131,7 @@ img, div, object{
 
 #hand{
     width: 359px;
-    top: -185px;
+    top: -182px;
     left: -250px;
     /* left: 170px; */
 }
@@ -132,6 +139,7 @@ img, div, object{
 #button{
     width: 92px;
     top: 66px;
+    filter: brightness(1);
     /* top: 117px; */
     /* left: 420px; */
 }
@@ -284,6 +292,7 @@ img, div, object{
     background-color: #3c1a2a;
     width: 100%;
     height: 100%;
+    display: none;
 }
 
 .horizonLine{
