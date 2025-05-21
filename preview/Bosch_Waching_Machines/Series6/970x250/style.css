@@ -1,0 +1,134 @@
+body{
+    margin: 0;
+}
+
+@font-face {
+    font-family: 'BoschSans-Bold';
+    src: url('BoschSans-Bold-v5_003.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+}
+
+img, div, object{
+    position: absolute;
+}
+
+#banner{
+    width: 970px;
+    height: 250px;
+    overflow: hidden;
+    background-color: #3579bb;
+    color: #fff;
+    font-family: "BoschSans-Bold";
+}
+
+#loaderWrapper{
+    width: 100%;
+    height: 100%;
+    background: #3579bb;
+    pointer-events: none;
+    top:0;
+}
+
+#loaderCenter{
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#loader{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    border: 3px solid #fff;
+    border-top: 3px solid #000;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#border{
+    width: 100%;
+    height: 100%;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    top: 0;
+}
+
+#mainExit{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 999;
+    position: absolute;
+    top:0;
+}
+
+#badgeEnergy,
+#badge,
+#product,
+#logo,
+#bg{
+    width: 100%;
+}
+
+#text1{
+    top: 88px;
+    left: 71px;
+    font-size: 43.5px;
+    line-height: 50px;
+}
+
+#text2{
+    top: 66px;
+    left: 23px;
+    font-size: 35px;
+    line-height: 38px;
+    letter-spacing: -0.5px;
+}
+
+#usp{
+    top: 153px;
+    left: 26px;
+    font-size: 16.55px;
+    line-height: 15px;
+}
+
+#cta{
+    width: 126px;
+    height: 42px;
+    line-height: 42px;
+    text-align: center;
+    font-size: 15px;
+    background: #fff;
+    color: #000;
+    left: 26px;
+    bottom: 20px;
+}
+
+#price{
+    font-size: 44px;
+    right: 37px;
+    bottom: 71px;
+}
+
+#priceSign{
+    font-size: 25px;
+    position: absolute;
+    top: 3px;
+    margin-left: 2px;
+}
+
+#badge{
+    transform-origin: 551px 70px;
+}
+
+#guide{
+    width: 100%;
+}

@@ -1,0 +1,136 @@
+body{
+    margin: 0;
+}
+
+@font-face {
+    font-family: 'BoschSans-Bold';
+    src: url('BoschSans-Bold-v5_003.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+}
+
+img, div, object{
+    position: absolute;
+}
+
+#banner{
+    width: 300px;
+    height: 600px;
+    overflow: hidden;
+    background-color: #3579bb;
+    color: #fff;
+    font-family: "BoschSans-Bold";
+}
+
+#loaderWrapper{
+    width: 100%;
+    height: 100%;
+    background: #3579bb;
+    pointer-events: none;
+    top:0;
+}
+
+#loaderCenter{
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#loader{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    border: 3px solid #fff;
+    border-top: 3px solid #000;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#border{
+    width: 100%;
+    height: 100%;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    top: 0;
+}
+
+#mainExit{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 999;
+    position: absolute;
+    top:0;
+}
+
+#badgeEnergy,
+#badge,
+#product,
+#logo,
+#bg{
+    width: 100%;
+}
+
+#text1{
+    top: 76px;
+    left: 20px;
+    font-size: 36px;
+    /* line-height: 36px; */
+}
+
+#text2{
+    top: 82px;
+    left: 20px;
+    font-size: 28px;
+    line-height: 31px;
+    letter-spacing: -0.3px;
+}
+
+#usp{
+    top: 155px;
+    left: 20px;
+    font-size: 15px;
+    line-height: 21px;
+}
+
+#cta{
+    width: 110px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    font-size: 13px;
+    background: #fff;
+    color: #000;
+    left: 20px;
+    bottom: 350px;
+}
+
+#price{
+    font-size: 40px;
+    left: 0px;
+    bottom: 14px;
+    text-align: center;
+    width: 100%;
+}
+
+#priceSign{
+    font-size: 22px;
+    position: relative;
+    top: -13px;
+    margin-left: 4px;
+}
+
+#badge{
+    transform-origin: 75px 497px;
+}
+
+#guide{
+    width: 100%;
+}
