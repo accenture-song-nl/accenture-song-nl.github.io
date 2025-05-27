@@ -1,0 +1,110 @@
+body{
+    margin: 0;
+}
+
+img, div, object{
+    position: absolute;
+}
+
+img{
+    width: 100%;
+    height: 100%; 
+}
+
+
+#banner{
+    width: 300px;
+    height: 250px;
+    overflow: hidden;
+    color: #fff;
+    background: #202b77;
+}
+
+#loaderWrapper{
+    width: 100%;
+    height: 100%;
+    background: #202b77;
+    pointer-events: none;
+}
+
+#loaderCenter{
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#loader{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    border: 3px solid #fff;
+    border-top: 3px solid #00b6ed;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#border{
+    width: 100%;
+    height: 100%;
+    border: solid 1px #00b6ed;
+    box-sizing: border-box;
+}
+
+#preisfuhrer_sticker_wrapper, #date_wrapper{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#OAP_sticker{
+    transform-origin: 30px 130px;
+}
+
+#OAP_sticker_endframe{
+        transform-origin: 230px 130px;
+}
+
+#cta_bg, #cta_text{
+            transform-origin: 130px 230px;
+}
+
+#product01{
+    transform-origin: 80px 140px;
+}
+
+#product02{
+    transform-origin: 80px 140px;
+}
+
+#mainExit{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+#wText{
+    bottom: -1px;
+    right: 2px;
+    font-family: Arial;
+    font-size: 14px;
+}
+
+#bg{
+    width: 100%;
+}
+
+
+
+#logo{
+    width: 51px;
+    left: 10px;
+    top: 10px;
+}
