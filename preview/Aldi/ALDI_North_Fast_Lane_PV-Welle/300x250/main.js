@@ -68,7 +68,7 @@ function getAnimation(){
     masterTL.from('#cta_bg', 0.5, { opacity: 0 }, "endframeIn+=1.5")
     masterTL.from('#cta_text', 0.5, { opacity: 0 }, "endframeIn+=1.6")
                 
-
+    masterTL.to(['#cta_bg', '#cta_text'], 0.3, { scale:1.2, yoyo:true, repeat:3, ease: "power1.in" }, "endframeIn+=2.3")
 
  
     masterTL.play();
