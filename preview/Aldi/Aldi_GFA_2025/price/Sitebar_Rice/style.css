@@ -7,17 +7,16 @@ img, div, object{
 }
 
 #banner{
-    width: 300px;
-    height: 250px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
     overflow: hidden;
-    color: #fff;
-    background: #99E2F8;
 }
 
 #loaderWrapper{
     width: 100%;
     height: 100%;
-    background: #99E2F8;
+    background: #B0D784;
     pointer-events: none;
 }
 
@@ -44,13 +43,6 @@ img, div, object{
     100% { transform: rotate(360deg); }
 }
 
-#border{
-    width: 100%;
-    height: 100%;
-    border: solid 1px #000;
-    box-sizing: border-box;
-}
-
 
 #mainExit{
     width: 100%;
@@ -58,31 +50,40 @@ img, div, object{
     cursor: pointer;
 }
 
-#wText{
-    bottom: -1px;
-    left: 2px;
-    font-family: Arial;
-    font-size: 14px;
+#scaler{
+    width: 1200px;
+    height: 1200px;
+    left: 0px;
+    overflow: hidden;
+    background: #B0D784;
+}
+
+#extraScaler{
+    width: 1200px;
+    height: 1200px;
+    pointer-events: none;
+    transform-origin: 0px 0px;
 }
 
 #cta,
 #endText,
 #logoEnd,
 #tagline,
-#endText,
-#product2Info,
-#product2Price,
 #product1Info,
+#product1PriceTopText,
+#product1PriceTop,
+#product1PriceBg,
 #product1Price,
-#product2,
 #product1,
-#text1A,
-#text1B,
 #mainText3,
 #mainText2,
 #mainText1,
-#logo{
-    width: 100%;
+#mainText,
+#text1A,
+#text1B{
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 #highlight1Wrapper{
@@ -92,42 +93,49 @@ img, div, object{
 }
 
 #highlight1{
-    width: 300px;
+    height: 1200px;
+    left: 300px;
+    
 }
 
 #panelLeft{
-    width: 150px;
-    height: 238px;
-    left: 0;
-    top: 0;
-    background: #00B6ED;
-    border-radius: 0px 0px 10px 0px;
-}
-
-#panelRight2,
-#panelRight{
-    width: 288px;
-    height: 238px;
+    width: 868px;
+    height: 600px;
     right: 0;
-    top: 0;
-    background: #00B6ED;
-    border-radius: 0px 0px 10px 0px;
+    bottom: 0;
+    background: #7CBC32;
+    border-radius: 40px 0px 0px 0px;
 }
 
-#panelRight2{
-    background-color: #99E2F8;
-}
-
-#product2,
 #product1{
     transform-origin: 0px 0px;
 }
 
-#product2Price,
+#product1PriceTop,
+#product1PriceTopText,
+#product1PriceBg,
 #product1Price{
-    transform-origin: 80% 75%;
+    height: 1200px;
+    transform-origin: 50% 75%;
 }
 
 #cta{
-    transform-origin: 50% 95%;
+    transform-origin: 50% 85%;
+}
+
+#logo{
+    height: 100%;
+    right: 0;
+}
+
+#priceTopWrapper{
+    width: 100%;
+    height: 518px;
+    bottom: 0;
+    overflow: hidden;
+}
+
+#product1PriceTopText,
+#product1PriceTop{
+    top: -682px;
 }

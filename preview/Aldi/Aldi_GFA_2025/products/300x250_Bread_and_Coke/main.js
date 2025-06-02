@@ -77,36 +77,37 @@ function getAnimation(){
     masterTL.to("#product2", 0.5, {x:300, ease:Sine.easeIn}, "frame5+=0.5")
     masterTL.to("#panelRight2", 0.5, {x:300, ease:Sine.easeIn}, "frame5+=0.7")
     masterTL.to("#banner", 0.5, {background:"#99E2F8", ease:Sine.easeIn}, "frame5+=1")
-    masterTL.set("#product1", {scale:0.55333333333, x:-300, y:63});
-    masterTL.set("#product2", {scale:0.54333333333, x:300, y:67});
-    masterTL.to("#panelLeft", 0.5, {x:0, ease:Power2.easeOut}, "frame5+=1.5")
-    masterTL.to("#product1", 0.5, {x:-3, ease:Sine.easeOut}, "frame5+=1.7")
-    masterTL.to("#text1A", 0.5, {x:0, ease:Sine.easeOut}, "frame5+=1.8")
-    masterTL.to("#product2", 0.5, {x:186, ease:Sine.easeOut}, "frame5+=3")
-    masterTL.to("#text1B", 0.5, {x:0, ease:Sine.easeOut}, "frame5+=3.1")
+    // masterTL.set("#product1", {scale:0.55333333333, x:-300, y:63});
+    // masterTL.set("#product2", {scale:0.54333333333, x:300, y:67});
+    // masterTL.to("#panelLeft", 0.5, {x:0, ease:Power2.easeOut}, "frame5+=1.5")
+    // masterTL.to("#product1", 0.5, {x:-3, ease:Sine.easeOut}, "frame5+=1.7")
+    // masterTL.to("#text1A", 0.5, {x:0, ease:Sine.easeOut}, "frame5+=1.8")
+    // masterTL.to("#product2", 0.5, {x:186, ease:Sine.easeOut}, "frame5+=3")
+    // masterTL.to("#text1B", 0.5, {x:0, ease:Sine.easeOut}, "frame5+=3.1")
 
-    masterTL.add("frame6", "+=1");
-    masterTL.to("#mainText1", 0.5, {x:0, opacity:1, ease:Sine.easeOut}, "frame6")
-    masterTL.to("#mainText2", 0.5, {x:0, opacity:1, ease:Sine.easeOut}, "frame6+=0.4")
-    masterTL.to("#mainText3", 0.5, {x:0, opacity:1, ease:Sine.easeOut}, "frame6+=0.8")
+    // masterTL.add("frame6", "+=1");
+    // masterTL.to("#mainText1", 0.5, {x:0, opacity:1, ease:Sine.easeOut}, "frame6")
+    // masterTL.to("#mainText2", 0.5, {x:0, opacity:1, ease:Sine.easeOut}, "frame6+=0.4")
+    // masterTL.to("#mainText3", 0.5, {x:0, opacity:1, ease:Sine.easeOut}, "frame6+=0.8")
 
-    masterTL.add("frame7", "+=1");
-    masterTL.to("#logo", 0.5, {x:100, ease:Sine.easeIn}, "frame7")
-    masterTL.to("#mainText1", 0.5, {x:-20, opacity:0, ease:Sine.easeIn}, "frame7")
-    masterTL.to("#mainText2", 0.5, {x:20, opacity:0, ease:Sine.easeIn}, "frame7")
-    masterTL.to("#mainText3", 0.5, {x:-20, opacity:0, ease:Sine.easeIn}, "frame7")
-    masterTL.to("#text1A", 0.5, {x:-300, ease:Sine.easeIn}, "frame7")
-    masterTL.to("#text1B", 0.5, {x:300, ease:Sine.easeIn}, "frame7")
-    masterTL.to("#product2", 0.5, {x:300, ease:Sine.easeIn}, "frame7")
-    masterTL.to("#product1", 0.5, {x:-300, ease:Sine.easeIn}, "frame7")
-    masterTL.to("#panelLeft", 0.5, {x:-200, ease:Power2.easeIn}, "frame7")
+    // masterTL.add("frame7", "+=1");
+    // masterTL.to("#logo", 0.5, {x:100, ease:Sine.easeIn}, "frame7")
+    // masterTL.to("#mainText1", 0.5, {x:-20, opacity:0, ease:Sine.easeIn}, "frame7")
+    // masterTL.to("#mainText2", 0.5, {x:20, opacity:0, ease:Sine.easeIn}, "frame7")
+    // masterTL.to("#mainText3", 0.5, {x:-20, opacity:0, ease:Sine.easeIn}, "frame7")
+    // masterTL.to("#text1A", 0.5, {x:-300, ease:Sine.easeIn}, "frame7")
+    // masterTL.to("#text1B", 0.5, {x:300, ease:Sine.easeIn}, "frame7")
+    // masterTL.to("#product2", 0.5, {x:300, ease:Sine.easeIn}, "frame7")
+    // masterTL.to("#product1", 0.5, {x:-300, ease:Sine.easeIn}, "frame7")
+    // masterTL.to("#panelLeft", 0.5, {x:-200, ease:Power2.easeIn}, "frame7")
     
     masterTL.add("endScreen");
-    masterTL.from("#logoEnd", 0.5, {y:-50, opacity:0, ease:Sine.easeOut}, "endScreen")
-    masterTL.from("#tagline", 0.5, {y:-30, opacity:0, ease:Sine.easeOut}, "endScreen+=0.2")
-    masterTL.from("#endText", 0.5, {x:-300, ease:Sine.easeOut}, "endScreen+=0.4")
-    masterTL.from("#highlight1Wrapper", 1, {width:0, ease:Sine.easeOut}, "endScreen+=1")
-    masterTL.from("#cta", 1, {scale:0, ease:Back.easeOut}, "endScreen+=1.5")
+    masterTL.to("#logo", 0.5, {x:100, ease:Sine.easeIn}, "endScreen")
+    masterTL.from("#logoEnd", 0.5, {y:-50, opacity:0, ease:Sine.easeOut}, "endScreen+=0.3")
+    masterTL.from("#tagline", 0.5, {y:-30, opacity:0, ease:Sine.easeOut}, "endScreen+=0.5")
+    masterTL.from("#endText", 0.5, {x:-300, ease:Sine.easeOut}, "endScreen+=0.7")
+    masterTL.from("#highlight1Wrapper", 1, {width:0, ease:Sine.easeOut}, "endScreen+=1.3")
+    masterTL.from("#cta", 1, {scale:0, ease:Back.easeOut}, "endScreen+=1.8")
     
     
     masterTL.play();
