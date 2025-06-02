@@ -38,8 +38,8 @@ function getAnimation(){
     masterTL.from("#panelLeft", 0.5, {x:-500, ease:Power2.easeOut}, "start")
     masterTL.from("#product1", 0.5, {x:-600, ease:Sine.easeOut}, "start+=0.2")
     masterTL.from("#text1A", 0.5, {x:-300, ease:Sine.easeOut}, "start+=0.3")
-    masterTL.from("#product2", 0.5, {x:900, ease:Sine.easeOut}, "start+=1.5")
-    masterTL.from("#text1B", 0.5, {x:900, ease:Sine.easeOut}, "start+=1.6")
+    masterTL.from("#product2", 0.5, {x:900, ease:Sine.easeOut}, "start+=0.7")
+    masterTL.from("#text1B", 0.5, {x:900, ease:Sine.easeOut}, "start+=0.9")
     
     masterTL.add("frame2", "+=1");
     masterTL.from("#mainText1", 0.5, {x:-40, opacity:0, ease:Sine.easeOut}, "frame2")
@@ -83,7 +83,7 @@ function getAnimation(){
     masterTL.set("#product2", {scale:0.89, x:900, y:29}); 
     masterTL.to("#panelLeft", 0.5, {x:0, ease:Power2.easeOut}, "frame5+=1.5")
     masterTL.to("#product1", 0.5, {x:-178, ease:Sine.easeOut}, "frame5+=1.7")
-    masterTL.to("#product2", 0.5, {x:401, ease:Sine.easeOut}, "frame5+=3")
+    masterTL.to("#product2", 0.5, {x:401, ease:Sine.easeOut}, "frame5+=2.2")
 
     masterTL.add("frame6", "+=0");
     masterTL.from("#mainTextEnd1", 0.5, {x:-40, opacity:0, ease:Sine.easeOut}, "frame6")
