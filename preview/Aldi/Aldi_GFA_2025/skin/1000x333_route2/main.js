@@ -63,6 +63,8 @@ function getAnimation(){
     masterTL.to("#product1", 0.5, {x:-600, ease:Sine.easeIn}, "frame2")
     masterTL.to("#panelLeft", 0.5, {x:-500, ease:Power2.easeIn}, "frame2")
     masterTL.to("#banner", 0.5, {background:"#fdd5a5", ease:Sine.easeInOut}, "frame2")
+    masterTL.to("#tagline1", 0.5, {opacity:0, ease:Sine.easeInOut}, "frame2")
+    masterTL.from("#tagline2", 0.5, {opacity:0, ease:Sine.easeInOut}, "frame2")
 
     masterTL.add("frame3");
     masterTL.from("#panelLeft2", 0.5, {x:-500, ease:Power2.easeOut}, "frame3")
