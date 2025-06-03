@@ -50,8 +50,8 @@ function onResize(){
 
 function getAnimation(){
 
-    gsap.set("#product1", {scale:0.73, x:70, y:26});
-    gsap.set("#product2", {scale:0.55, x:47, y:379});
+    gsap.set("#product1", {scale:0.64, x:150, y:97});
+    gsap.set("#product2", {scale:0.63, x:39, y:419});
 
     masterTL = gsap.timeline({paused:true, repeat:0});
     masterTL.to("#loaderWrapper", 0.2, {opacity:0, ease:Sine.easeInOut, onComplete:function(){

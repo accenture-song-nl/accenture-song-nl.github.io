@@ -50,8 +50,8 @@ function onResize(){
 
 function getAnimation(){
 
-    gsap.set("#product1", {scale:0.73, x:70, y:26});
-    gsap.set("#product2", {scale:0.55, x:47, y:379});
+    gsap.set("#product1", {scale:0.78, x:92, y:68});
+    gsap.set("#product2", {scale:0.63, x:39, y:415});
 
     masterTL = gsap.timeline({paused:true, repeat:0});
     masterTL.to("#loaderWrapper", 0.2, {opacity:0, ease:Sine.easeInOut, onComplete:function(){
@@ -77,7 +77,7 @@ function getAnimation(){
     masterTL.to("#product1", 0.5, {x:-900, ease:Sine.easeIn}, "frame3")
     masterTL.to("#highlight1Wrapper", 0.5, {width:0, ease:Sine.easeIn}, "frame3")
     masterTL.to("#panelLeft", 0.5, {x:900, ease:Power2.easeIn}, "frame3")
-    masterTL.to("#scaler", 0.5, {background:"#00B6ED", ease:Sine.easeIn}, "frame3")
+    masterTL.to("#scaler", 0.5, {background:"#7CBC32", ease:Sine.easeIn}, "frame3")
     masterTL.from("#panelRight", 0.5, {x:1200, ease:Sine.easeOut}, "frame3+=0.5")
     masterTL.set("#product1", {scale:1, x:900, y:0}, "frame3+=0.5")
     masterTL.to("#product1", 0.5, {x:0, ease:Sine.easeOut}, "frame3+=0.7")
@@ -89,7 +89,7 @@ function getAnimation(){
     masterTL.to("#product1Price", 0.5, {scale:0, ease:Power4.easeIn}, "frame4")
     masterTL.to("#product1", 0.5, {x:900, ease:Sine.easeIn}, "frame4+=0.5")
     masterTL.to("#panelRight", 0.5, {x:900, ease:Sine.easeIn}, "frame4+=0.7")
-    masterTL.to("#scaler", 0.5, {background:"#99E2F8", ease:Sine.easeIn}, "frame4+=1")
+    masterTL.to("#scaler", 0.5, {background:"#B0D784", ease:Sine.easeIn}, "frame4+=1")
     masterTL.from("#panelRight2", 0.5, {x:1200, ease:Sine.easeOut}, "frame4+=1.3")
     masterTL.set("#product2", {scale:1, x:900, y:0}, "frame4+=1.3")
     masterTL.to("#product2", 0.5, {x:0, ease:Sine.easeOut}, "frame4+=1.5")
