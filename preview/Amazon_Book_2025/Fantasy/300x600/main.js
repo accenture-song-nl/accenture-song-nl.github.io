@@ -1,0 +1,96 @@
+window.onload = function () {
+    init();
+}
+
+function init() {
+
+    document.querySelector("#mainExit").addEventListener("mouseover", function () {
+        if (masterTL.progress() == 1) {
+            
+        }
+    })
+    
+    document.querySelector("#mainExit").addEventListener("mouseout", function(){
+        if(masterTL.progress() == 1){
+            
+        }
+    })
+
+    document.querySelector("#mainExit").addEventListener("click", function(){
+        window.open(clickTag, '_blank');
+        masterTL.progress(1).pause();
+    })
+
+    getAnimation();
+}
+
+
+function getAnimation(){
+
+    var druidTL = animateDruid();
+    var wizardTL = animateWizard();
+    var creatureTL = animateCreature();
+
+
+    masterTL = gsap.timeline({repeat:3});
+
+    masterTL.to("#loaderWrapper", 0.2, {opacity:0, ease:Sine.easeInOut, onComplete:function(){
+        gsap.set("#loaderWrapper", {display:"none"});
+    }}, 0)
+    masterTL.add("start");
+    masterTL.from("#copy", 0.75, {scale:0, opacity:0, ease:Sine.easeOut}, "start");
+    masterTL.from("#logo", 0.5, {y:10, opacity:0, ease:Sine.easeOut}, "start+=0.5");
+    masterTL.from("#spaceWrapper", 2, {clipPath:"polygon(31% -7%, 31% 0%, 31% 79%)", ease:Sine.easeInOut}, "start+=1");
+    
+    masterTL.add(druidTL, "start+=1");
+    masterTL.add(wizardTL, "start+=2");
+    masterTL.add(creatureTL, "start+=4");
+    masterTL.from("#lightning", 0.2, {opacity:0, repeat:4, yoyo:true, ease:Power4.easeOut}, "start+=3");
+    masterTL.to("#lightning", 2, {opacity:0, ease:Power4.easeOut}, "start+=4");
+
+    console.log(masterTL.duration());
+    
+
+}
+
+function animateDruid() {
+    var tl = gsap.timeline({});
+
+    tl.add('start');
+    tl.to("#druid", 3.5, {x:-230, y:50, ease:Sine.easeIn}, "start");
+    tl.to("#druid", .5, {marginTop:5, repeat:6, yoyo:true, ease:Sine.easeInOut}, "start");
+
+    return tl;
+}
+
+function animateCreature() {
+    var tl = gsap.timeline({});
+
+    tl.add('start');
+    tl.from("#creatureWrapper", 3, {x:-200, ease:Sine.easeOut}, "start");
+    tl.to("#creatureWingL", 0.75, {rotationY: 30, rotationX: 50, ease:Power1.easeInOut, repeat:6, yoyo:true}, "start");
+    tl.to("#creatureWingR", 0.75, {rotationY: -30, rotationX: 50, ease:Sine.easeInOut, repeat:6, yoyo:true}, "start");
+    tl.to("#creatureWrapper", 0.75, {y:-20, ease:Sine.easeInOut, repeat:6, yoyo:true}, "start");
+    tl.to("#creatureTail", 1.3125, {rotation:25, ease:Sine.easeInOut, repeat:3, yoyo:true}, "start");
+
+    return tl;
+}
+
+function animateWizard() {
+    var tl = gsap.timeline({});
+
+    tl.add('start');
+    tl.from("#wizardWrapper", 1.8, {x:160, y:50, ease:Sine.easeOut}, "start");
+    tl.fromTo("#wizardArmWrapper", 1.5, {rotation:-30}, {rotation:20, ease:Sine.easeOut}, "start");
+    tl.fromTo("#wizardHand", 1.5, {rotation:30}, {rotation:-20, ease:Sine.easeOut}, "start");
+    tl.to("#wizardArmWrapper", 1, {rotation:0, ease:Sine.easeInOut}, "start+=1.5");
+    tl.to("#wizardHand", 1, {rotation:0, ease:Sine.easeInOut}, "start+=1.5");
+    tl.fromTo("#gradient1", 0.5, {scale:0, opacity:0.5, y:-20, x:10}, {scale:1.5, opacity:1, y:0, x:0, ease:Sine.easeInOut}, "-=1.75");
+    tl.fromTo("#gradient2", 0.5, {scale:0, opacity:0, y:-20, x:10}, {scale:1.5, opacity:0.7, y:0, x:0, ease:Sine.easeInOut}, "-=1.75");
+    tl.to("#gradient1", 0.5, {scale:1, ease:Sine.easeInOut}, "-=1.25");
+    tl.to("#gradient2", 0.5, {scale:1, ease:Sine.easeInOut}, "-=1.25");
+    tl.to("#gradient1", 0.5, {scale:0, ease:Sine.easeInOut}, "-=0.75");
+    tl.to("#gradient2", 0.5, {scale:0, opacity:0.3, ease:Sine.easeInOut}, "-=0.75");
+
+    return tl;
+}
