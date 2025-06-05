@@ -1,0 +1,153 @@
+@font-face {
+    font-family: 'Belfius';
+    src: url('./Belfius21-Medium.woff2');
+}
+
+body{
+    margin: 0;
+}
+
+img, div, object{
+    position: absolute;
+}
+
+#banner{
+    width: 840px;
+    height: 150px;
+    overflow: hidden;
+    background-color: #c1133c;
+    color: #fff;
+    font-family: 'Belfius', sans-serif;
+}
+
+#loaderWrapper{
+    width: 100%;
+    height: 100%;
+    background: #C31F48;
+    pointer-events: none;
+    top:0;
+}
+
+
+#loaderCenter{
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#loader{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    border: 3px solid #fff;
+    border-top: 3px solid #f33a68;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#border{
+    width: 100%;
+    height: 100%;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    top: 0;
+}
+
+#mainExit{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 999;
+    position: absolute;
+    top:0;
+}
+
+#logo{
+    width: 73px;
+    top: 13px;
+    right: 12px;
+}
+
+#doubleLine{
+    position: absolute;
+    top: 25px;
+    left: 27px;
+    transform: scale(1.1);
+}
+
+.guide{
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+#belfiusLogo{
+    position: absolute;
+    bottom: 21px;
+    right: 41px;
+    transform: scale(1.5);
+}
+
+#headline{
+    position: absolute;
+    margin-top: 23px;
+    max-width: 297px;
+    left: 70px;
+    font-size: 35px;
+    line-height: 1;
+    letter-spacing: -1.04px;
+}
+
+#textAndCtaContainer{
+    position: absolute;
+    bottom: 27px;
+    left: 378px;
+}
+
+#subtext{
+    position: relative;
+    /* top: 53px; */
+    max-width: 180px;
+    left: 2px;
+    font-size: 15px;
+    line-height: 1.1;
+}
+
+#cta{
+    position: relative;
+    /* top: 0px; */
+    left: 0px;
+    font-size: 12px;
+    color: #C31F48;
+    display: inline-block;
+    background: #fff;
+    padding: 4px 14px;
+    border-radius: 25px;
+    text-align: center;
+    line-height: 1.1;
+    margin-top: 15px;
+    padding: 4px 14px 4px 14px;
+}
+
+#ctaText{
+    position: relative;
+}
+
+#disclaimer{
+    top: 19px;
+    right: 21px;
+    text-transform: uppercase;
+    font-size: 11px;
+    line-height: 1.1;
+    text-align: right;
+    letter-spacing: -0.44px;
+}

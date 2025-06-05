@@ -1,0 +1,11 @@
+{
+    "version": "1.0", 
+    "title": "Tesa_300x250",   
+    "width" : "300", 
+    "height": "250", 
+    "clicktags": {
+        "clickTAG": "http://www.example.com"
+    },
+
+    "source": "index.html"
+}

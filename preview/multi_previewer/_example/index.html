@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Iframes</title>
+    <style>
+        body {
+            display: flex;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            background-color: #f0f2f5;
+        }
+        #sidebar {
+            min-width: 150px; /* Increased width */
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            border-right: 1px solid #ddd;
+        }
+        #sidebar h3 {
+            margin-top: 0;
+            font-size: 1.2em;
+            color: #333;
+        }
+        #filter-list, #language-list, #variant-list {
+            margin-top: 10px;
+        }
+        #filter-list label, #language-list label, #variant-list label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 0.9em;
+            color: #555;
+        }
+        #content {
+            flex-grow: 1;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            overflow-y: auto;
+        }
+        .iframe-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            height: auto; /* Adjust height to fit content */
+        }
+        iframe {
+            border: none;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .folder-name {
+            text-align: center;
+            font-weight: bold;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            width: 100%;
+            justify-content: space-between;
+        }
+        .reload-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 2px 5px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+        .reload-button:hover {
+            background-color: #0056b3;
+        }
+        .save-button, .reset-button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9em;
+            margin-top: 20px;
+        }
+        .save-button:hover, .reset-button:hover {
+            background-color: #218838;
+        }
+        .reset-button {
+            background-color: #dc3545;
+        }
+        .reset-button:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <div id="sidebar">
+        <h3>Filter by Size</h3>
+        <div id="filter-list"></div>
+        <h3>Filter by Language</h3>
+        <div id="language-list"></div>
+        <h3>Filter by Variant</h3>
+        <div id="variant-list"></div>
+        <button class="save-button" onclick="saveFilters()">Save Filters</button>
+        <button class="reset-button" onclick="resetFilters()">Reset Filters</button>
+    </div>
+    <div id="content"></div>
+    <script>
+        const hardcodedPaths = [
+            "300x250_NL_Netwerk",
+            "300x600_NL_Netwerk",
+            "320x100_NL_Netwerk",
+            "728x90_NL_Netwerk",
+            "160x600_NL_Netwerk",
+            "970x250_NL_Netwerk",
+            "468x60_NL_Netwerk",
+            "120x600_NL_Netwerk",
+            "300x250_NL_OMS",
+            "300x600_NL_OMS",
+            "320x100_NL_OMS",
+            "840x150_NL_OMS",
+            "300x250_NL_Nieuwe_Formule",
+            "300x600_NL_Nieuwe_Formule",
+            "728x90_NL_Nieuwe_Formule",
+            "300x250_NL_Scherp_Tarief",
+            "300x600_NL_Scherp_Tarief",
+            "300x250_FR_OMS",
+            "300x600_FR_OMS",
+            "320x100_FR_OMS",
+            "840x150_FR_OMS",
+            "300x250_FR_Nieuwe_Formule",
+            "300x600_FR_Nieuwe_Formule",
+            "728x90_FR_Nieuwe_Formule",
+            "300x250_FR_Netwerk",
+            "300x600_FR_Netwerk",
+            "320x100_FR_Netwerk",
+            "300x250_FR_Scherp_Tarief",
+            "300x600_FR_Scherp_Tarief"
+            // Add more hardcoded paths as needed
+        ];
+
+        const useHardcodedPaths = false; // Set to true to use hardcoded paths, false to fetch from PHP
+
+        function getUrlParams() {
+            const params = new URLSearchParams(window.location.search);
+            const sizes = params.getAll('size'); // Options: "300x250", "300x600", "320x100", "728x90", "160x600", "970x250", "468x60", "120x600", "840x150"
+            const languages = params.getAll('language'); // Options: "NL", "FR"
+            const variants = params.getAll('variant'); // Options: "Netwerk", "OMS", "Nieuwe_Formule", "Scherp_Tarief"
+            return { sizes, languages, variants };
+        }
+
+        function resizeIframe(iframe) {
+            const doc = iframe.contentWindow.document.documentElement;
+            iframe.style.height = doc.scrollHeight + 'px';
+            iframe.style.width = doc.scrollWidth + 'px';
+        }
+
+        function saveCheckboxState() {
+            const checkboxes = document.querySelectorAll('#filter-list input, #language-list input, #variant-list input');
+            const checkboxState = {};
+            checkboxes.forEach(checkbox => {
+                checkboxState[checkbox.value] = checkbox.checked;
+            });
+            localStorage.setItem('checkboxState', JSON.stringify(checkboxState));
+        }
+
+        function loadCheckboxState() {
+            const checkboxState = JSON.parse(localStorage.getItem('checkboxState'));
+            if (checkboxState) {
+                const checkboxes = document.querySelectorAll('#filter-list input, #language-list input, #variant-list input');
+                checkboxes.forEach(checkbox => {
+                    checkbox.checked = checkboxState[checkbox.value] !== undefined ? checkboxState[checkbox.value] : true;
+                });
+            }
+        }
+
+        function loadIframes() {
+            const { sizes: urlSizes, languages: urlLanguages, variants: urlVariants } = getUrlParams();
+            if (useHardcodedPaths) {
+                // Populate filter lists with hardcoded paths
+                const sizes = [...new Set(hardcodedPaths.map(path => path.split('_')[0]))];
+                const languages = [...new Set(hardcodedPaths.map(path => path.split('_')[1]))];
+                const variants = [...new Set(hardcodedPaths.map(path => path.split('_')[2]))];
+
+                // Populate filter list
+                const filterList = document.getElementById('filter-list');
+                filterList.innerHTML = ''; // Clear existing filters
+                sizes.forEach(size => {
+                    if (urlSizes.length === 0 || urlSizes.includes(size)) {
+                        const label = document.createElement('label');
+                        label.innerHTML = `<input type="checkbox" value="${size}" checked> ${size}`;
+                        filterList.appendChild(label);
+                    }
+                });
+
+                // Populate language list
+                const languageList = document.getElementById('language-list');
+                languageList.innerHTML = ''; // Clear existing filters
+                languages.forEach(language => {
+                    if (urlLanguages.length === 0 || urlLanguages.includes(language)) {
+                        const label = document.createElement('label');
+                        label.innerHTML = `<input type="checkbox" value="${language}" checked> ${language}`;
+                        languageList.appendChild(label);
+                    }
+                });
+
+                // Populate variant list
+                const variantList = document.getElementById('variant-list');
+                variantList.innerHTML = ''; // Clear existing filters
+                variants.forEach(variant => {
+                    if (urlVariants.length === 0 || urlVariants.includes(variant)) {
+                        const label = document.createElement('label');
+                        label.innerHTML = `<input type="checkbox" value="${variant}" checked> ${variant}`;
+                        variantList.appendChild(label);
+                    }
+                });
+
+                // Load checkbox state from localStorage
+                loadCheckboxState();
+
+                // Add event listeners to checkboxes
+                document.querySelectorAll('#filter-list input, #language-list input, #variant-list input').forEach(input => {
+                    input.addEventListener('change', () => {
+                        saveCheckboxState();
+                        updateIframes(hardcodedPaths);
+                    });
+                });
+
+                // Initial iframe load
+                updateIframes(hardcodedPaths);
+            } else {
+                fetch('list_subfolders.php')
+                    .then(response => response.json())
+                    .then(data => {
+                        const { folders, sizes, languages, variants } = data;
+                        console.log('Response:', data); // Log the response for debugging
+
+                        // Populate filter list
+                        const filterList = document.getElementById('filter-list');
+                        filterList.innerHTML = ''; // Clear existing filters
+                        sizes.forEach(size => {
+                            if (urlSizes.length === 0 || urlSizes.includes(size)) {
+                                const label = document.createElement('label');
+                                label.innerHTML = `<input type="checkbox" value="${size}" checked> ${size}`;
+                                filterList.appendChild(label);
+                            }
+                        });
+
+                        // Populate language list
+                        const languageList = document.getElementById('language-list');
+                        languageList.innerHTML = ''; // Clear existing filters
+                        languages.forEach(language => {
+                            if (urlLanguages.length === 0 || urlLanguages.includes(language)) {
+                                const label = document.createElement('label');
+                                label.innerHTML = `<input type="checkbox" value="${language}" checked> ${language}`;
+                                languageList.appendChild(label);
+                            }
+                        });
+
+                        // Populate variant list
+                        const variantList = document.getElementById('variant-list');
+                        variantList.innerHTML = ''; // Clear existing filters
+                        variants.forEach(variant => {
+                            if (urlVariants.length === 0 || urlVariants.includes(variant)) {
+                                const label = document.createElement('label');
+                                label.innerHTML = `<input type="checkbox" value="${variant}" checked> ${variant}`;
+                                variantList.appendChild(label);
+                            }
+                        });
+
+                        // Load checkbox state from localStorage
+                        loadCheckboxState();
+
+                        // Add event listeners to checkboxes
+                        document.querySelectorAll('#filter-list input, #language-list input, #variant-list input').forEach(input => {
+                            input.addEventListener('change', () => {
+                                saveCheckboxState();
+                                updateIframes(folders);
+                            });
+                        });
+
+                        // Initial iframe load
+                        updateIframes(folders);
+                    })
+                    .catch(error => console.error('Error fetching subfolders:', error));
+            }
+        }
+
+        function updateIframes(folders) {
+            const content = document.getElementById('content');
+            content.innerHTML = ''; // Clear existing iframes
+            const checkedSizes = Array.from(document.querySelectorAll('#filter-list input:checked')).map(input => input.value);
+            const checkedLanguages = Array.from(document.querySelectorAll('#language-list input:checked')).map(input => input.value);
+            const checkedVariants = Array.from(document.querySelectorAll('#variant-list input:checked')).map(input => input.value);
+            folders.forEach(folder => {
+                const [size, language, variant] = folder.split('_'); // Assuming size, language, and variant are parts of the folder name
+                if (checkedSizes.includes(size) && checkedLanguages.includes(language) && checkedVariants.includes(variant)) {
+                    const iframeContainer = document.createElement('div');
+                    iframeContainer.className = 'iframe-container';
+
+                    const iframe = document.createElement('iframe');
+                    iframe.src = `_build/${folder}/index.html`;
+                    iframe.onload = () => resizeIframe(iframe);
+                    iframeContainer.appendChild(iframe);
+
+                    const folderName = document.createElement('div');
+                    folderName.className = 'folder-name';
+
+                    const reloadButton = document.createElement('button');
+                    reloadButton.className = 'reload-button';
+                    reloadButton.innerHTML = `
+                        <svg fill="#ffffff" height="10px" width="10px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 489.645 489.645" xml:space="preserve" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M460.656,132.911c-58.7-122.1-212.2-166.5-331.8-104.1c-9.4,5.2-13.5,16.6-8.3,27c5.2,9.4,16.6,13.5,27,8.3 c99.9-52,227.4-14.9,276.7,86.3c65.4,134.3-19,236.7-87.4,274.6c-93.1,51.7-211.2,17.4-267.6-70.7l69.3,14.5 c10.4,2.1,21.8-4.2,23.9-15.6c2.1-10.4-4.2-21.8-15.6-23.9l-122.8-25c-20.6-2-25,16.6-23.9,22.9l15.6,123.8 c1,10.4,9.4,17.7,19.8,17.7c12.8,0,20.8-12.5,19.8-23.9l-6-50.5c57.4,70.8,170.3,131.2,307.4,68.2 C414.856,432.511,548.256,314.811,460.656,132.911z"></path> </g> </g></svg>
+                    `;
+                    reloadButton.onclick = () => iframe.contentWindow.location.reload();
+
+                    folderName.appendChild(reloadButton);
+                    folderName.appendChild(document.createTextNode(folder));
+                    iframeContainer.appendChild(folderName);
+
+                    content.appendChild(iframeContainer);
+                }
+            });
+        }
+
+        function saveFilters() {
+            const checkedSizes = Array.from(document.querySelectorAll('#filter-list input:checked')).map(input => input.value);
+            const checkedLanguages = Array.from(document.querySelectorAll('#language-list input:checked')).map(input => input.value);
+            const checkedVariants = Array.from(document.querySelectorAll('#variant-list input:checked')).map(input => input.value);
+
+            const params = new URLSearchParams();
+            checkedSizes.forEach(size => params.append('size', size));
+            checkedLanguages.forEach(language => params.append('language', language));
+            checkedVariants.forEach(variant => params.append('variant', variant));
+
+            const url = `${window.location.origin}${window.location.pathname}?${params.toString()}`;
+            navigator.clipboard.writeText(url).then(() => {
+                alert('URL copied to clipboard!');
+            }).catch(err => {
+                console.error('Failed to copy URL: ', err);
+            });
+        }
+
+        function resetFilters() {
+            const checkboxes = document.querySelectorAll('#filter-list input, #language-list input, #variant-list input');
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = true;
+            });
+            saveCheckboxState();
+            loadIframes();
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }
+
+        // Initial load
+        loadIframes();
+    </script>
+</body>
+</html>
