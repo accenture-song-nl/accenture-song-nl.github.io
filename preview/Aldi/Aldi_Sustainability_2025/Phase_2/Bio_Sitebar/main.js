@@ -54,7 +54,8 @@ function getAnimation(){
     masterTL.add("start");
     masterTL.from("#bgBorder", 0.5, {scale:3, y:200, ease:Sine.easeOut}, "start")
     masterTL.from("#text1", 0.5, {y:500, ease:Sine.easeOut}, "start+=0.5")
-    masterTL.from("#text1HighlightWrapper", 0.7, {width:0, ease:Sine.easeInOut}, "start+=1.2")
+    masterTL.from("#text1B", 0.5, {y:500, ease:Sine.easeOut}, "start+=1.2")
+    masterTL.from("#text1HighlightWrapper", 0.7, {width:0, ease:Sine.easeInOut}, "start+=1.9")
 
     masterTL.add("showFrame2", 3)
     masterTL.from("#text2", 0.5, {y:1000, ease:Sine.easeOut}, "showFrame2+=1.5")
@@ -64,7 +65,7 @@ function getAnimation(){
     masterTL.from("#sticker", 0.5, {y:1000, ease:Sine.easeOut}, "showStickerFrame")
     // masterTL.from("#sticker2", 0.5, {y:1000, ease:Sine.easeOut}, "showStickerFrame+=0.2")
     // masterTL.to(["#text1", "#text1HighlightWrapper", "#sticker", "#sticker2"], 0.5, {opacity:0, ease:Sine.easeInOut}, "showStickerFrame+=3.5")
-    masterTL.to(["#text1", "#text1HighlightWrapper", "#sticker"], 0.5, {opacity:0, ease:Sine.easeInOut}, "showStickerFrame+=3.5")
+    masterTL.to(["#text1", "#text1B", "#text1HighlightWrapper", "#sticker"], 0.5, {opacity:0, ease:Sine.easeInOut}, "showStickerFrame+=3.5")
 
     masterTL.add("showFrame3")
 
