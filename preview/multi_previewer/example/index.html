@@ -309,7 +309,7 @@
                     iframeContainer.className = 'iframe-container';
 
                     const iframe = document.createElement('iframe');
-                    iframe.src = `_build/${folder}/index.html`;
+                    iframe.src = `build/${folder}/index.html`;
                     iframe.onload = () => resizeIframe(iframe);
                     iframeContainer.appendChild(iframe);
 
