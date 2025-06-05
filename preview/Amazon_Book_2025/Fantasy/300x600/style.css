@@ -110,8 +110,10 @@ img, div, object{
 }
 
 #druid{
-    top: 10px;
-    left: 120px;
+    /* top: 10px;
+    left: 120px; */
+    top: 14px;
+    left: 2px;
 }
 
 #wizardArmWrapper{

@@ -6,18 +6,22 @@ function init() {
 
     document.querySelector("#mainExit").addEventListener("mouseover", function () {
         if (masterTL.progress() == 1) {
-            
+            rolloverTL.play(0);
         }
     })
     
     document.querySelector("#mainExit").addEventListener("mouseout", function(){
         if(masterTL.progress() == 1){
-            
+            // gsap.to("#gradient1", 0.2, {scale:0, x:0, y:0, ease:Sine.easeInOut});
+            // gsap.to("#gradient2", 0.2, {scale:0, x:0, y:0, ease:Sine.easeInOut});
+            // gsap.to("#lightning", 0.2, {opacity:0, ease:Power4.easeOut});
+            // gsap.to("#wizardArmWrapper", 0.2, {rotation:0, ease:Sine.easeInOut});
+            // gsap.to("#wizardHand", 0.2, {rotation:0, ease:Sine.easeInOut});
         }
     })
 
     document.querySelector("#mainExit").addEventListener("click", function(){
-        window.open(clickTag, '_blank');
+        // window.open(clickTag, '_blank');
         masterTL.progress(1).pause();
     })
 
@@ -31,22 +35,35 @@ function getAnimation(){
     var wizardTL = animateWizard();
     var creatureTL = animateCreature();
 
+    rolloverTL = gsap.timeline({paused:true});
+    rolloverTL.add("start");
+    rolloverTL.to("#gradient1", 0.8, {scale:1, x:10, y:-10, repeat:1, yoyo:true, ease:Sine.easeInOut}, "start");
+    rolloverTL.to("#gradient2", 1, {scale:1, x:10, y:-10, repeat:1, yoyo:true, ease:Sine.easeInOut}, "start");
+    rolloverTL.to("#lightning", 0.4, {opacity:1, repeat:1, yoyo:true, ease:Power4.easeOut}, "start");
+    rolloverTL.to("#wizardArmWrapper", 1, {rotation:10, repeat:1, yoyo:true, ease:Sine.easeInOut}, "start");
+    rolloverTL.to("#wizardHand", 1, {rotation:-5, repeat:1, yoyo:true, ease:Sine.easeInOut}, "start");
+    
+    rolloverTL.to("#creatureWingL", 0.5, {rotationY: 0, rotationX: 0, ease:Power1.easeInOut, repeat:3, yoyo:true}, "start");
+    rolloverTL.to("#creatureWingR", 0.5, {rotationY: 0, rotationX: 0, ease:Sine.easeInOut, repeat:3, yoyo:true}, "start");
+    rolloverTL.to("#creatureWrapper", 0.5, {y:-10, ease:Sine.easeInOut, repeat:3, yoyo:true}, "start");
+    rolloverTL.to("#creatureTail", 1, {rotation:25, ease:Sine.easeInOut, repeat:1, yoyo:true}, "start");
+    
+    rolloverTL.to("#spaceWrapper", 0.5, {clipPath:"polygon(-93% -7%, 151% 0%, 31% 79%)", repeat:1, yoyo:true, ease:Sine.easeInOut}, "start");
 
-    masterTL = gsap.timeline({repeat:3});
+    masterTL = gsap.timeline({repeat:2});
 
     masterTL.to("#loaderWrapper", 0.2, {opacity:0, ease:Sine.easeInOut, onComplete:function(){
         gsap.set("#loaderWrapper", {display:"none"});
     }}, 0)
     masterTL.add("start");
-    masterTL.from("#copy", 0.75, {scale:0, opacity:0, ease:Sine.easeOut}, "start");
-    masterTL.from("#logo", 0.5, {y:10, opacity:0, ease:Sine.easeOut}, "start+=0.5");
-    masterTL.from("#spaceWrapper", 2, {clipPath:"polygon(31% -7%, 31% 0%, 31% 79%)", ease:Sine.easeInOut}, "start+=1");
+    masterTL.from("#spaceWrapper", 2, {clipPath:"polygon(31% -7%, 31% 0%, 31% 79%)", ease:Sine.easeInOut}, "start+=0.5");
     
-    masterTL.add(druidTL, "start+=1");
-    masterTL.add(wizardTL, "start+=2");
-    masterTL.add(creatureTL, "start+=4");
-    masterTL.from("#lightning", 0.2, {opacity:0, repeat:4, yoyo:true, ease:Power4.easeOut}, "start+=3");
-    masterTL.to("#lightning", 2, {opacity:0, ease:Power4.easeOut}, "start+=4");
+    masterTL.add(druidTL, "start+=2");
+    masterTL.add(wizardTL, "start+=1.5");
+    masterTL.from("#lightning", 0.2, {opacity:0, repeat:4, yoyo:true, ease:Power4.easeOut}, "start+=2.5");
+    masterTL.add(creatureTL, "start+=3.5");
+    masterTL.to("#lightning", 2, {opacity:0, ease:Power4.easeOut}, "start+=3.5");
+    masterTL.to("#banner", 0.5, {}, "start+=9.3");
 
     console.log(masterTL.duration());
     
@@ -91,6 +108,8 @@ function animateWizard() {
     tl.to("#gradient2", 0.5, {scale:1, ease:Sine.easeInOut}, "-=1.25");
     tl.to("#gradient1", 0.5, {scale:0, ease:Sine.easeInOut}, "-=0.75");
     tl.to("#gradient2", 0.5, {scale:0, opacity:0.3, ease:Sine.easeInOut}, "-=0.75");
-
+    tl.to("#wizardArmWrapper", 2.5, {rotation:-10, repeat:1, yoyo:true, ease:Sine.easeInOut});
+    tl.to("#wizardHand", 2.5, {rotation:15, repeat:1, yoyo:true, ease:Sine.easeInOut}, "-=5");
+    
     return tl;
 }
