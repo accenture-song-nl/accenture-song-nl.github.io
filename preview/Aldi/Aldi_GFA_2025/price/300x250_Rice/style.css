@@ -1,0 +1,131 @@
+body{
+    margin: 0;
+}
+
+img, div, object{
+    position: absolute;
+}
+
+#banner{
+    width: 300px;
+    height: 250px;
+    overflow: hidden;
+    color: #fff;
+    background: #B0D784;
+}
+
+#loaderWrapper{
+    width: 100%;
+    height: 100%;
+    background: #B0D784;
+    pointer-events: none;
+}
+
+#loaderCenter{
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#loader{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    border: 3px solid #fff;
+    border-top: 3px solid #C51718;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#border{
+    width: 100%;
+    height: 100%;
+    border: solid 1px #000;
+    box-sizing: border-box;
+}
+
+
+#mainExit{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+#wText{
+    bottom: -1px;
+    left: 2px;
+    font-family: Arial;
+    font-size: 14px;
+}
+
+#cta,
+#endText,
+#logoEnd,
+#tagline,
+#endText,
+#product1Info,
+#product1PriceTopText,
+#product1PriceTop,
+#product1PriceBg,
+#product1Price,
+#product1,
+#text1A,
+#text1B,
+#mainText3,
+#mainText2,
+#mainText1,
+#logo{
+    width: 100%;
+}
+
+#highlight1Wrapper{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#highlight1{
+    width: 300px;
+}
+
+#panelLeft{
+    width: 150px;
+    height: 238px;
+    left: 0;
+    top: 0;
+    background: #7CBC32;
+    border-radius: 0px 0px 10px 0px;
+}
+
+#product1{
+    transform-origin: 0px 0px;
+}
+
+#product1PriceTopText,
+#product1PriceBg,
+#product1Price{
+    transform-origin: 75% 60%;
+}
+
+#cta{
+    transform-origin: 50% 95%;
+}
+
+#priceTopWrapper{
+    width: 100%;
+    height: 173px;
+    bottom: 0;
+    overflow: hidden;
+}
+
+#product1PriceTopText,
+#product1PriceTop{
+    top: -77px;
+}

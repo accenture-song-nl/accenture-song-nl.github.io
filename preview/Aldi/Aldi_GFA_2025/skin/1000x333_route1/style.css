@@ -1,0 +1,150 @@
+body{
+    margin: 0;
+}
+
+img, div, object{
+    position: absolute;
+}
+
+#banner{
+    width: 1000px;
+    height: 333px;
+    overflow: hidden;
+    color: #fff;
+    background: #66b9c0;
+}
+
+#loaderWrapper{
+    width: 100%;
+    height: 100%;
+    background: #66b9c0;
+    pointer-events: none;
+}
+
+#loaderCenter{
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#loader{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    border: 3px solid #fff;
+    border-top: 3px solid #C51718;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#border{
+    width: 100%;
+    height: 100%;
+    border: solid 1px #000;
+    box-sizing: border-box;
+}
+
+
+#mainExit{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+#wText{
+    bottom: -1px;
+    left: 2px;
+    font-family: Arial;
+    font-size: 14px;
+}
+
+#cta,
+#endText,
+#endText,
+#product4Info,
+#product4Price,
+#product3Info,
+#product3Price,
+#product2Info,
+#product2Price,
+#product1Info,
+#product1Price,
+#product4,
+#product3,
+#product2,
+#product1,
+#text2A,
+#text2B,
+#text1A,
+#text1B,
+#mainTextEnd3,
+#mainTextEnd2,
+#mainTextEnd1,
+#mainText3,
+#mainText2,
+#mainText1,
+#logo{
+    width: 100%;
+}
+
+#panelLeft2,
+#panelLeft{
+    width: 500px;
+    height: 309px;
+    left: 0;
+    top: 0;
+    background: #008a96;
+    border-radius: 0px 0px 20px 0px;
+}
+
+#panelLeft2{
+    background: #7cbc32;
+}
+
+#panelRight4,
+#panelRight3,
+#panelRight2,
+#panelRight{
+    width: 976px;
+    height: 309px;
+    right: 0;
+    top: 0;
+    background: #008a96;
+    border-radius: 0px 0px 0px 20px;
+}
+
+#panelRight2{
+    background-color: #66b9c0;
+}
+
+#panelRight3{
+    background-color: #7cbc32;
+}
+
+#panelRight4{
+    background-color: #b0d784;
+}
+
+#product2,
+#product1{
+    transform-origin: 0px 0px;
+}
+
+#product4Price,
+#product3Price,
+#product2Price,
+#product1Price{
+    transform-origin: 60% 70%;
+}
+
+#cta{
+    transform-origin: 50% 80%;
+}

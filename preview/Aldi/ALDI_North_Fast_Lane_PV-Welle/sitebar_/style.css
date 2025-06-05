@@ -81,7 +81,7 @@ img, div, object{
 }
 
 #OAP_sticker_endframe{
-    transform-origin: 710px 850px;
+    transform-origin: 50% 50%;
 }
 
 #cta_bg, #cta_text{

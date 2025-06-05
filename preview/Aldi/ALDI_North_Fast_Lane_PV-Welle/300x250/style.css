@@ -69,11 +69,11 @@ img{
 }
 
 #OAP_sticker_endframe{
-        transform-origin: 230px 130px;
+        transform-origin: 69px 165px;
 }
 
 #cta_bg, #cta_text{
-            transform-origin: 130px 230px;
+    transform-origin: 130px 230px;
 }
 
 #product01{
