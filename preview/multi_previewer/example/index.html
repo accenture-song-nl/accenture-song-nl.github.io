@@ -149,7 +149,7 @@
             // Add more hardcoded paths as needed
         ];
 
-        const useHardcodedPaths = false; // Set to true to use hardcoded paths, false to fetch from PHP
+        const useHardcodedPaths = true; // Set to true to use hardcoded paths, false to fetch from PHP
 
         function getUrlParams() {
             const params = new URLSearchParams(window.location.search);
@@ -309,7 +309,7 @@
                     iframeContainer.className = 'iframe-container';
 
                     const iframe = document.createElement('iframe');
-                    iframe.src = `_build/${folder}/index.html`;
+                    iframe.src = `build/${folder}/index.html`;
                     iframe.onload = () => resizeIframe(iframe);
                     iframeContainer.appendChild(iframe);
 
