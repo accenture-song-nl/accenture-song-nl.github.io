@@ -44,6 +44,17 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            /* background-color: #fff; */
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            height: auto; /* Adjust height to fit content */
+        }
+
+        .iframe-container-background{
+                        display: flex;
+            flex-direction: column;
+            align-items: center;
             background-color: #fff;
             padding: 10px;
             border-radius: 8px;
@@ -51,6 +62,7 @@
             height: auto; /* Adjust height to fit content */
         }
         iframe {
+            height: 0;
             border: none;
             margin-bottom: 10px;
             border-radius: 4px;
@@ -119,38 +131,12 @@
         const hardcodedPaths = [
             "300x250_NL_Netwerk",
             "300x600_NL_Netwerk",
-            "320x100_NL_Netwerk",
-            "728x90_NL_Netwerk",
-            "160x600_NL_Netwerk",
-            "970x250_NL_Netwerk",
-            "468x60_NL_Netwerk",
-            "120x600_NL_Netwerk",
-            "300x250_NL_OMS",
-            "300x600_NL_OMS",
-            "320x100_NL_OMS",
-            "840x150_NL_OMS",
-            "300x250_NL_Nieuwe_Formule",
-            "300x600_NL_Nieuwe_Formule",
-            "728x90_NL_Nieuwe_Formule",
-            "300x250_NL_Scherp_Tarief",
-            "300x600_NL_Scherp_Tarief",
-            "300x250_FR_OMS",
-            "300x600_FR_OMS",
-            "320x100_FR_OMS",
-            "840x150_FR_OMS",
-            "300x250_FR_Nieuwe_Formule",
-            "300x600_FR_Nieuwe_Formule",
-            "728x90_FR_Nieuwe_Formule",
-            "300x250_FR_Netwerk",
-            "300x600_FR_Netwerk",
-            "320x100_FR_Netwerk",
-            "300x250_FR_Scherp_Tarief",
-            "300x600_FR_Scherp_Tarief"
+            "320x100_NL_Netwerk"
             // Add more hardcoded paths as needed
         ];
 
         const useHardcodedPaths = true; // Set to true to use hardcoded paths, false to fetch from PHP
-
+        
         function getUrlParams() {
             const params = new URLSearchParams(window.location.search);
             const sizes = params.getAll('size'); // Options: "300x250", "300x600", "320x100", "728x90", "160x600", "970x250", "468x60", "120x600", "840x150"
@@ -161,6 +147,7 @@
 
         function resizeIframe(iframe) {
             const doc = iframe.contentWindow.document.documentElement;
+            
             iframe.style.height = doc.scrollHeight + 'px';
             iframe.style.width = doc.scrollWidth + 'px';
         }
@@ -191,6 +178,9 @@
                 const sizes = [...new Set(hardcodedPaths.map(path => path.split('_')[0]))];
                 const languages = [...new Set(hardcodedPaths.map(path => path.split('_')[1]))];
                 const variants = [...new Set(hardcodedPaths.map(path => path.split('_')[2]))];
+            
+console.log(languages);
+
 
                 // Populate filter list
                 const filterList = document.getElementById('filter-list');
@@ -202,7 +192,10 @@
                         filterList.appendChild(label);
                     }
                 });
-
+                if(languages.length === 0) {
+                     return
+                }
+                
                 // Populate language list
                 const languageList = document.getElementById('language-list');
                 languageList.innerHTML = ''; // Clear existing filters
@@ -308,10 +301,16 @@
                     const iframeContainer = document.createElement('div');
                     iframeContainer.className = 'iframe-container';
 
+                    const iframeContainerBackground = document.createElement('div');
+                    iframeContainerBackground.className = 'iframe-container-background';
+
                     const iframe = document.createElement('iframe');
-                    iframe.src = `build/${folder}/index.html`;
+                    iframe.src = `${folder}/index.html`;
                     iframe.onload = () => resizeIframe(iframe);
-                    iframeContainer.appendChild(iframe);
+                    
+                    iframeContainerBackground.appendChild(iframe);
+                    iframeContainer.appendChild(iframeContainerBackground);
+                    iframeContainerBackground.appendChild(iframe);
 
                     const folderName = document.createElement('div');
                     folderName.className = 'folder-name';
@@ -325,7 +324,7 @@
 
                     folderName.appendChild(reloadButton);
                     folderName.appendChild(document.createTextNode(folder));
-                    iframeContainer.appendChild(folderName);
+                    iframeContainerBackground.appendChild(folderName);
 
                     content.appendChild(iframeContainer);
                 }
