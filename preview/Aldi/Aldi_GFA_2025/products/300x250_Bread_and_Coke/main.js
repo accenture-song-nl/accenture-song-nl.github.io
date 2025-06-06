@@ -36,8 +36,8 @@ function getAnimation(){
     masterTL.from("#panelLeft", 0.5, {x:-200, ease:Power2.easeOut}, "start")
     masterTL.from("#product1", 0.5, {x:-300, ease:Sine.easeOut}, "start+=0.2")
     masterTL.from("#text1A", 0.5, {x:-300, ease:Sine.easeOut}, "start+=0.3")
-    masterTL.from("#product2", 0.5, {x:300, ease:Sine.easeOut}, "start+=1.5")
-    masterTL.from("#text1B", 0.5, {x:300, ease:Sine.easeOut}, "start+=1.6")
+    masterTL.from("#product2", 0.5, {x:300, ease:Sine.easeOut}, "start+=.5")
+    masterTL.from("#text1B", 0.5, {x:300, ease:Sine.easeOut}, "start+=.6")
     
     masterTL.add("frame2", "+=1");
     masterTL.from("#mainText1", 0.5, {x:-20, opacity:0, ease:Sine.easeOut}, "frame2")
@@ -55,27 +55,27 @@ function getAnimation(){
     masterTL.to("#panelLeft", 0.5, {x:-200, ease:Power2.easeIn}, "frame3")
     masterTL.from("#panelRight", 0.5, {x:300, ease:Sine.easeOut}, "frame3+=0.5")
     masterTL.set("#product1", {scale:1, x:300, y:0}, "frame3+=0.5")
-    masterTL.to("#product1", 0.5, {x:0, ease:Sine.easeOut}, "frame3+=0.7")
-    masterTL.from("#product1Info", 0.5, {x:300, ease:Sine.easeOut}, "frame3+=1.4")
-    masterTL.from("#product1Price", 0.5, {scale:0, ease:Power4.easeOut}, "frame3+=2.1")
+    masterTL.to("#product1", 0.5, {x:0, ease:Sine.easeOut}, "frame3+=0.5")
+    masterTL.from("#product1Info", 0.5, {x:300, ease:Sine.easeOut}, "frame3+=0.5")
+    masterTL.from("#product1Price", 0.5, {scale:0, ease:Power4.easeOut}, "frame3+=1")
     
     masterTL.add("frame4", "+=1");
-    masterTL.to("#product1Info", 0.5, {x:300, ease:Sine.easeIn}, "frame4")
     masterTL.to("#product1Price", 0.5, {scale:0, ease:Power4.easeIn}, "frame4")
+    masterTL.to("#product1Info", 0.5, {x:300, ease:Sine.easeIn}, "frame4+=0.5")
     masterTL.to("#product1", 0.5, {x:300, ease:Sine.easeIn}, "frame4+=0.5")
-    masterTL.to("#panelRight", 0.5, {x:300, ease:Sine.easeIn}, "frame4+=0.7")
+    masterTL.to("#panelRight", 0.5, {x:300, ease:Sine.easeIn}, "frame4+=0.5")
     masterTL.to("#banner", 0.5, {background:"#00B6ED", ease:Sine.easeIn}, "frame4+=1")
     masterTL.from("#panelRight2", 0.5, {x:300, ease:Sine.easeOut}, "frame4+=1.3")
     masterTL.set("#product2", {scale:1, x:300, y:0}, "frame4+=1.3")
-    masterTL.to("#product2", 0.5, {x:0, ease:Sine.easeOut}, "frame4+=1.5")
-    masterTL.from("#product2Info", 0.5, {x:300, ease:Sine.easeOut}, "frame4+=2.2")
-    masterTL.from("#product2Price", 0.5, {scale:0, ease:Power4.easeOut}, "frame4+=2.9")
+    masterTL.to("#product2", 0.5, {x:0, ease:Sine.easeOut}, "frame4+=1.3")
+    masterTL.from("#product2Info", 0.5, {x:300, ease:Sine.easeOut}, "frame4+=1.3")
+    masterTL.from("#product2Price", 0.5, {scale:0, ease:Power4.easeOut}, "frame4+=1.8")
 
     masterTL.add("frame5", "+=1");
-    masterTL.to("#product2Info", 0.5, {x:300, ease:Sine.easeIn}, "frame5")
     masterTL.to("#product2Price", 0.5, {scale:0, ease:Power4.easeIn}, "frame5")
+    masterTL.to("#product2Info", 0.5, {x:300, ease:Sine.easeIn}, "frame5+=0.5")
     masterTL.to("#product2", 0.5, {x:300, ease:Sine.easeIn}, "frame5+=0.5")
-    masterTL.to("#panelRight2", 0.5, {x:300, ease:Sine.easeIn}, "frame5+=0.7")
+    masterTL.to("#panelRight2", 0.5, {x:300, ease:Sine.easeIn}, "frame5+=0.5")
     masterTL.to("#banner", 0.5, {background:"#99E2F8", ease:Sine.easeIn}, "frame5+=1")
     // masterTL.set("#product1", {scale:0.55333333333, x:-300, y:63});
     // masterTL.set("#product2", {scale:0.54333333333, x:300, y:67});
