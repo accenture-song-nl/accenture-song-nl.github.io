@@ -124,3 +124,28 @@ img, div, object{
 #flame2{
     transform-origin: 247px 247px;
 }
+
+#birdWrapper{
+    width: 100%;
+    height: 100%;
+}
+
+#flowers1,
+#flowers2,
+#flowers3,
+#flowers4,
+#bird{
+    width: 100%;
+}
+
+#birdWingR{
+    width: 100%;
+    transform-origin: 127px 49px;
+}
+
+#birdWingL{
+    width: 100%;
+    transform-origin: 127px 49px;
+    top: 4px;
+    left: -6px;
+}
