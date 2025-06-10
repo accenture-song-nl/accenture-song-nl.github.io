@@ -31,7 +31,7 @@ function getAnimation(){
 
     rolloverTL = gsap.timeline({paused:true});
     rolloverTL.add("start");
-    rolloverTL.to("#spaceWrapper", 0.5, {clipPath:"polygon(-93% -7%, 151% 0%, 31% 76%)", repeat:1, yoyo:true, ease:Sine.easeInOut}, "start");
+    rolloverTL.to("#spaceWrapper", 0.5, {clipPath:"polygon(-68% 0%, 173% 0%, 31% 75%)", repeat:1, yoyo:true, ease:Sine.easeInOut}, "start");
     rolloverTL.to("#birdWingR", 0.5, {rotation:-30, rotationX:-10, repeat:3, yoyo:true, ease:Power1.easeInOut}, "start");
     rolloverTL.to("#birdWingL", 0.5, {rotation:-40, rotationX:-10, repeat:3, yoyo:true, ease:Power1.easeInOut}, "start+=0.1");
     rolloverTL.to("#couple", 0.5, {y:-10, repeat:1, yoyo:true, ease:Sine.easeInOut}, "start");
@@ -43,7 +43,7 @@ function getAnimation(){
         gsap.set("#loaderWrapper", {display:"none"});
     }}, 0)
     masterTL.add("start");
-    masterTL.from("#spaceWrapper", 2, {clipPath:"polygon(31% -7%, 31% 0%, 31% 76%)", ease:Sine.easeInOut}, "start+=0.5");
+    masterTL.from("#spaceWrapper", 2, {clipPath:"polygon(30% 0%, 30% 0%, 31% 75%)", ease:Sine.easeInOut}, "start+=0.5");
     masterTL.to(["#bg"], 2, {opacity:0.5, ease:Sine.easeInOut}, "start+=0.5");
     masterTL.from(["#couple", "#bootWoman"], 3, {y:100, ease:Sine.easeOut}, "start+=0.5");
     masterTL.from("#scarfWrapper3", 1.5, {width:0, ease:Sine.easeInOut}, "start+=1.4");
