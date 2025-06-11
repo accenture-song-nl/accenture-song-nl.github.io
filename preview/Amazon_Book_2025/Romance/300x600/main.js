@@ -43,6 +43,7 @@ function getAnimation(){
         gsap.set("#loaderWrapper", {display:"none"});
     }}, 0)
     masterTL.add("start");
+    masterTL.from("#copy", 0.5, {opacity:0, ease:Sine.easeOut}, "start");
     masterTL.from("#spaceWrapper", 2, {clipPath:"polygon(30% 0%, 30% 0%, 31% 75%)", ease:Sine.easeInOut}, "start+=0.5");
     masterTL.to(["#bg"], 2, {opacity:0.5, ease:Sine.easeInOut}, "start+=0.5");
     masterTL.from(["#couple", "#bootWoman"], 3, {y:100, ease:Sine.easeOut}, "start+=0.5");
