@@ -31,7 +31,9 @@ function getAnimation(){
 
     rolloverTL = gsap.timeline({paused:true});
     rolloverTL.add("start");
-    rolloverTL.to("#spaceWrapper", 0.5, {clipPath:"polygon(-93% -7%, 151% 0%, 31% 79%)", repeat:1, yoyo:true, ease:Sine.easeInOut}, "start");
+    rolloverTL.to("#spaceWrapper", 0.5, {clipPath:"polygon(-90% 0%, 149% 0%, 34% 76%)", repeat:1, yoyo:true, ease:Sine.easeInOut}, "start");
+    rolloverTL.to("#alien", 1, {y:30, x:-5, repeat:1, yoyo:true, ease:Sine.easeInOut}, "start");
+    rolloverTL.to("#portalPerson", 0.5, {x:5, scale:0.975, repeat:1, yoyo:true, ease:Sine.easeInOut}, "start");
 
     masterTL = gsap.timeline({repeat:2});
 
@@ -40,7 +42,7 @@ function getAnimation(){
     }}, 0)
     masterTL.add("start");
     masterTL.from("#copy", 0.5, {opacity:0, ease:Sine.easeOut}, "start");
-    masterTL.from("#spaceWrapper", 2, {clipPath:"polygon(31% -7%, 31% 0%, 31% 79%)", ease:Sine.easeInOut}, "start+=0.5");
+    masterTL.from("#spaceWrapper", 2, {clipPath:"polygon(30% 0%, 30% 0%, 34% 76%)", ease:Sine.easeInOut}, "start+=0.5");
     masterTL.from("#portalWrapper", 0.5, {opacity:0, ease:Sine.easeOut}, "start+=1.5");
     masterTL.to("#portalWrapper", 1, {height:"100%", ease:Power1.easeIn}, "start+=2");
     masterTL.from("#portalPerson", 1.5, {opacity:0, x:30, scale:0.75, ease:Power1.easeOut}, "start+=2.5");
