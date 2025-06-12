@@ -1,0 +1,124 @@
+body{
+    margin: 0;
+}
+
+img, div, object{
+    position: absolute;
+}
+
+#banner{
+    width: 300px;
+    height: 600px;
+    overflow: hidden;
+    background-color: #000000;
+    color: #fff;
+}
+
+#loaderWrapper{
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    pointer-events: none;
+    top:0;
+}
+
+#loaderCenter{
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#loader{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    border: 3px solid #222d3f;
+    border-top: 3px solid #ff9900;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#border{
+    width: 100%;
+    height: 100%;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    top: 0;
+}
+
+#mainExit{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 999;
+    position: absolute;
+    top:0;
+}
+
+#portal,
+#portalPerson,
+#cat,
+#mountain,
+#logo,
+#bg,
+#copy{
+    width: 100%;
+}
+
+#spaceWrapper{
+    background: #000;
+    top: 0px;
+    width: 150%;
+    height: 100%;
+    clip-path: polygon(-113% -7%, 171% 0%, 31% 79%);
+}
+
+#reset{
+    width: 300px;
+    height: 600px;
+    left: 0;
+    top: 0;
+}
+
+#copy{
+    transform-origin: 50% 80%;
+}
+
+#bookBg{
+    width: 100%;
+    top: 0;
+}
+
+#alienWrapper{
+    width: 100%;
+    height: 288px;
+    overflow: hidden;
+}
+
+#alien{
+    width: 100%;
+    transform-origin: 80px 178px;
+}
+
+#portalWrapper{
+    width: 100%;
+    height: 47%;
+    bottom: 0;
+    overflow: hidden;
+}
+
+#portalWrapper img{
+    width: 100%;
+        bottom: 148px;
+}
+
+#portalPerson{
+    transform-origin:  280px 316px;
+}
