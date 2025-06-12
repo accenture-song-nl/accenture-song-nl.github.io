@@ -77,18 +77,9 @@ img, div, object{
     width: 100%;
 }
 
-#copyWrapper{
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
 #copy{
     width: 300px;
-    left: 50%;
-    transform: translateX(-50%);
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
 }
 
 #spaceWrapper{
