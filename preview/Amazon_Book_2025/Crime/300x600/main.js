@@ -44,18 +44,18 @@ function getAnimation(){
     masterTL.add("start");
     masterTL.from("#copy", 0.5, {opacity:0, ease:Sine.easeOut}, "start");
     masterTL.from("#spaceWrapper", 2, {clipPath:"polygon(30% 0%, 30% 0%, 31% 75%)", ease:Sine.easeInOut}, "start+=0.5");
-    masterTL.from("#detective", 0.5, {opacity:0, ease:Sine.easeOut}, "start+=1");
-    masterTL.from("#detective", 1.5, {scale:0.5, x:-60, ease:Sine.easeOut}, "start+=1");
+    // masterTL.from("#detective", 0.5, {opacity:0, ease:Sine.easeOut}, "start+=1");
+    // masterTL.from("#detective", 1.5, {scale:0.5, x:-60, ease:Sine.easeOut}, "start+=1");
     
     masterTL.add("heli", "-=1.3");
-    masterTL.from("#heliRotor", 0.5, {rotation:380, repeat:7, ease:Power0.easeNone}, "heli");
+    masterTL.from("#heliRotor", 0.5, {rotation:380, repeat:13, ease:Power0.easeNone}, "heli");
     masterTL.from("#heliWrapper", 0.5, {opacity:0, ease:Sine.easeOut}, "heli");
-    masterTL.from("#heliWrapper", 4, {scale:0, x:-60, ease:Sine.easeOut}, "heli");
-    masterTL.from("#heliWrapper", 4, {y:-100, ease:Back.easeOut}, "heli");
-    masterTL.fromTo("#heliLight", 2, {rotation:100}, {rotation:-20, ease:Sine.easeInOut}, "heli");
-    masterTL.to("#heliLight", 1.5, {rotation:70, ease:Sine.easeInOut}, "heli+=2");
+    masterTL.from("#heliWrapper", 7, {scale:0, x:-60, ease:Sine.easeOut}, "heli");
+    masterTL.from("#heliWrapper", 7, {y:-100, ease:Back.easeOut}, "heli");
+    masterTL.fromTo("#heliLight", 3, {rotation:100}, {rotation:-20, ease:Sine.easeInOut}, "heli");
+    masterTL.to("#heliLight", 2, {rotation:70, ease:Sine.easeInOut}, "heli+=3");
     masterTL.from("#runners", 2, {opacity:0, x:30, ease:Sine.easeInOut}, "heli+=3");
-    masterTL.to("#heliLight", 1.5, {rotation:0, ease:Power2.easeInOut}, "heli+=3.5");
+    masterTL.to("#heliLight", 2.6, {rotation:0, ease:Power2.easeInOut}, "heli+=5");
     
     masterTL.add("leftCorner", "-=3");
     masterTL.from("#leftCorner", 1, {opacity:0, x:-30, ease:Sine.easeInOut}, "leftCorner");
