@@ -28,7 +28,7 @@ function init() {
 
 function getAnimation(){
 
-    //   var skeletonTL = animateSkeleton();
+      var skeletonTL = animateSkeleton();
       var monsterTL = animateMonster();
 
     rolloverTL = gsap.timeline({paused:true});
@@ -60,7 +60,7 @@ function getAnimation(){
     // masterTL.to("#gremlin", 0.16666666666, {y:-1, repeat:11, yoyo:true, ease:Sine.easeInOut}, "start+=2.75");
     masterTL.to("#gremlin", 2, {x:0, y:0, ease:"back.inOut(1.4)"}, "start+=7.75");
     // masterTL.to("#gremlin", 0.16666666666, {y:-1, repeat:5, yoyo:true, ease:Sine.easeInOut}, "start+=4.75");
-    // masterTL.add(skeletonTL, "start+=2");
+    masterTL.add(skeletonTL, "start+=2");
     
     masterTL.add(monsterTL, "start+=2.5");
     
@@ -70,11 +70,11 @@ function getAnimation(){
 }
 
 function animateSkeleton() {
-    var tl = gsap.timeline({repeat:1});
+    var tl = gsap.timeline({repeat:0});
 
     tl.add('start');
-    tl.to("#skeleton", 1.9, {rotation:-10, ease:Power1.easeInOut}, "start");
-    tl.to("#skeleton", 1.9, {rotation:0, ease:Power1.easeInOut}, "start+=1.9");
+    tl.to("#skeleton", 4, {rotation:-30, y:5, ease:Power1.easeInOut}, "start");
+    tl.to("#skeleton", 4, {rotation:0, y:0, ease:Power1.easeInOut}, "start+=4");
 
     return tl;
 }

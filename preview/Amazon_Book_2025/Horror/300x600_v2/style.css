@@ -119,9 +119,9 @@ img, div, object{
 }
 
 #skeleton{
-    width: 331px;
+    width: 300px;
     right: 0;
-    transform-origin: 130px 230px;
+    transform-origin: 40px 307px;
 }
 
 #monsterWrapper{
