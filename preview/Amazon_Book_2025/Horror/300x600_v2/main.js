@@ -37,9 +37,8 @@ function getAnimation(){
     rolloverTL.to("#monsterWrapper", 1, {y:3, x:10, repeat:1, yoyo:true, ease:Power1.easeInOut}, "start");
     rolloverTL.to("#arm1", 1, {rotation:-20, yoyo:true, repeat:1, ease:Power2.easeInOut}, "start");
     rolloverTL.to("#arm2", 1, {rotation:40, yoyo:true, repeat:1, ease:Sine.easeInOut}, "start");
-    // rolloverTL.to("#skeleton", 0.75, {rotation:-5, yoyo:true, repeat:1, ease:Power1.easeInOut}, "start");
+    rolloverTL.to("#skeleton", 0.75, {rotation:-15, yoyo:true, repeat:1, ease:Power1.easeInOut}, "start");
     rolloverTL.to("#gremlin", 0.9, {x:-5, yoyo:true, repeat:1, ease:"bac1.inOut(1.4)"}, "start");
-    // rolloverTL.to("#gremlin", 0.18, {y:-2, repeat:9, yoyo:true, ease:Sine.easeInOut}, "start");
 
 
     masterTL = gsap.timeline({repeat:2});
@@ -55,11 +54,8 @@ function getAnimation(){
     }}, "start+=1");
     masterTL.from("#gremlin", 0.75, {y:100, ease:"back.out(1.4)"}, "start+=1");
     masterTL.to("#gremlin", 2, {x:10, ease:"bac1.inOut(1.4)"}, "start+=1.75");
-    // masterTL.to("#gremlin", 0.16666666666, {y:-2, repeat:5, yoyo:true, ease:Sine.easeInOut}, "start+=1.75");
     masterTL.to("#gremlin", 4, {x:-10, y:5, ease:"back.inOut(1.4)"}, "start+=3.75");
-    // masterTL.to("#gremlin", 0.16666666666, {y:-1, repeat:11, yoyo:true, ease:Sine.easeInOut}, "start+=2.75");
     masterTL.to("#gremlin", 2, {x:0, y:0, ease:"back.inOut(1.4)"}, "start+=7.75");
-    // masterTL.to("#gremlin", 0.16666666666, {y:-1, repeat:5, yoyo:true, ease:Sine.easeInOut}, "start+=4.75");
     masterTL.add(skeletonTL, "start+=2");
     
     masterTL.add(monsterTL, "start+=2.5");
