@@ -53,7 +53,10 @@ function getAnimation(){
     }}, 0)
     masterTL.add("start");
     masterTL.from("#spaceWrapper", 2, {clipPath:"polygon(31% -7%, 31% 0%, 31% 79%)", ease:Sine.easeInOut}, "start+=0.5");
-    masterTL.from("#copy", 1, {clipPath:"polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%)", ease:Sine.easeInOut}, "start+=1");
+    masterTL.from("#copy", 1, {clipPath:"polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%)", ease:Sine.easeInOut, onComplete:function(){
+        gsap.set("#copy", {opacity:0});
+        gsap.set("#copy2", {opacity:1});
+    }}, "start+=1");
     
     masterTL.add(druidTL, "start+=2");
     masterTL.add(wizardTL, "start+=1.5");
