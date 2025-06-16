@@ -65,6 +65,7 @@ img, div, object{
     transform-origin: 0px 0px;
 }
 
+#product1Disclaimer,
 #cta,
 #endText,
 #logoEnd,
@@ -130,12 +131,12 @@ img, div, object{
 
 #priceTopWrapper{
     width: 100%;
-    height: 518px;
+    height: 544px;
     bottom: 0;
     overflow: hidden;
 }
 
 #product1PriceTopText,
 #product1PriceTop{
-    top: -682px;
+    top: -656px;
 }

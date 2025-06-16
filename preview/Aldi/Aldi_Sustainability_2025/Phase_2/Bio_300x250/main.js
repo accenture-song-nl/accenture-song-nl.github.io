@@ -43,7 +43,7 @@ function getAnimation(){
     masterTL.from("#sticker", 0.5, {y:150, ease:Sine.easeOut}, "showStickerFrame")
     // masterTL.from("#sticker2", 0.5, {y:150, ease:Sine.easeOut}, "showStickerFrame+=0.2")
     // masterTL.to(["#text1", "#text1HighlightWrapper", "#sticker", "#sticker2"], 0.5, {opacity:0, ease:Sine.easeInOut}, "showStickerFrame+=3.5")
-    masterTL.to(["#text1", "#text1HighlightWrapper", "#sticker"], 0.5, {opacity:0, ease:Sine.easeInOut}, "showStickerFrame+=3.5")
+    masterTL.to(["#text1", "#text1B", "#text1HighlightWrapper", "#sticker"], 0.5, {opacity:0, ease:Sine.easeInOut}, "showStickerFrame+=3.5")
 
     masterTL.add("showFrame3")
 

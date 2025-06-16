@@ -60,25 +60,26 @@ function getAnimation(){
     masterTL.from("#product1", 0.5, {x:-900, ease:Sine.easeOut}, "start+=0.2")
     masterTL.from("#text1A", 0.5, {x:-900, ease:Sine.easeOut}, "start+=0.3")
     masterTL.from("#product1Info", 0.5, {x:900, ease:Sine.easeOut}, "start+=0.4")
-    masterTL.from(["#product1PriceBg", "#product1PriceTopText"], 0.5, {scale:0, ease:Back.easeOut}, "start+=1.5")
-    masterTL.from("#product1PriceTop", 1, {y:-150, ease:Power2.easeOut}, "start+=2")
-    masterTL.from("#product1Price", 0.5, {scale:0, ease:Back.easeOut}, "start+=2.8")
-    masterTL.from("#text1B", 0.5, {x:900, ease:Sine.easeOut}, "start+=3")
+    masterTL.from(["#product1PriceBg", "#product1PriceTopText"], 0.5, {scale:0, ease:Back.easeOut}, "start+=.5")
+    masterTL.from("#product1PriceTop", 1, {y:-150, ease:Power2.easeOut}, "start+=1")
+    masterTL.from("#product1Disclaimer", 0.5, {opacity:0, y:-20, ease:Back.easeOut}, "start+=1.5")
+    masterTL.from("#product1Price", 0.5, {scale:0, ease:Back.easeOut}, "start+=1.8")
+    masterTL.from("#text1B", 0.5, {x:900, ease:Sine.easeOut}, "start+=2")
     
     masterTL.add("frame2", "+=0");
-    masterTL.from("#mainText", 0.5, {x:-900, ease:Sine.easeOut}, "frame2")
-    masterTL.from("#highlight1Wrapper", 1, {width:0, ease:Sine.easeOut}, "frame2+=1")
+    masterTL.from(["#mainText", "#highlight1Wrapper"], 0.5, {x:-900, ease:Sine.easeOut}, "frame2")
+    // masterTL.from("#highlight1Wrapper", 1, {width:0, ease:Sine.easeOut}, "frame2+=1")
 
     masterTL.add("frame7", "+=1");
     masterTL.to("#logo", 0.5, {opacity:0, ease:Sine.easeIn}, "frame7")
-    masterTL.to("#mainText", 0.5, {x:-900, opacity:0, ease:Sine.easeIn}, "frame7")
+    masterTL.to(["#mainText", "#highlight1Wrapper"], 0.5, {x:-900, opacity:0, ease:Sine.easeIn}, "frame7")
     masterTL.to("#text1A", 0.5, {x:-900, ease:Sine.easeIn}, "frame7")
     masterTL.to("#text1B", 0.5, {x:900, ease:Sine.easeIn}, "frame7")
     masterTL.to("#product1Info", 0.5, {x:-900, ease:Sine.easeIn}, "frame7")
-    masterTL.to(["#product1Price", "#product1PriceBg", "#product1PriceTop", "#product1PriceTopText"], 0.5, {x:900, ease:Sine.easeIn}, "frame7")
+    masterTL.to(["#product1Price", "#product1PriceBg", "#product1PriceTop", "#product1PriceTopText", "#product1Disclaimer"], 0.5, {x:900, ease:Sine.easeIn}, "frame7")
     masterTL.to("#product1", 0.5, {x:-900, ease:Sine.easeIn}, "frame7")
     masterTL.to("#panelLeft", 0.5, {x:900, ease:Power2.easeIn}, "frame7")
-    masterTL.to("#highlight1Wrapper", 0.5, {width:0, ease:Sine.easeIn}, "frame7")
+    // masterTL.to("#highlight1Wrapper", 0.5, {width:0, ease:Sine.easeIn}, "frame7")
     
     masterTL.add("endScreen");
     masterTL.from("#logoEnd", 0.5, {y:-50, opacity:0, ease:Sine.easeOut}, "endScreen")

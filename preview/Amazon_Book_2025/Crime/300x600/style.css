@@ -1,0 +1,141 @@
+body{
+    margin: 0;
+}
+
+img, div, object{
+    position: absolute;
+}
+
+#banner{
+    width: 300px;
+    height: 600px;
+    overflow: hidden;
+    background-color: #000000;
+    color: #fff;
+}
+
+#loaderWrapper{
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    pointer-events: none;
+    top:0;
+}
+
+#loaderCenter{
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#loader{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    border: 3px solid #222d3f;
+    border-top: 3px solid #ff9900;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#border{
+    width: 100%;
+    height: 100%;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    top: 0;
+}
+
+#mainExit{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 999;
+    position: absolute;
+    top:0;
+}
+
+#vault,
+#money1,
+#money2,
+#leftCorner,
+#runners,
+#heli,
+#heliFlare,
+#heliLight,
+#detective,
+#detective2,
+#logo,
+#bg,
+#copy{
+    width: 100%;
+}
+
+#spaceWrapper{
+    background: #000;
+    top: 0px;
+    width: 150%;
+    height: 100%;
+    clip-path: polygon(-88% 0%, 193% 0%, 31% 75%);
+}
+
+#reset{
+    width: 300px;
+    height: 600px;
+    left: 0;
+    top: 0;
+}
+
+#copy{
+    transform-origin: 50% 80%;
+}
+
+#bookBg{
+    width: 100%;
+    top: 0;
+}
+
+#heliRotorWrapper,
+#heliRotor,
+#heli{
+    top: -151px;
+    left: 0px;
+    width: 426px;
+}
+
+#heliRotorWrapper{
+    top: -60px;
+    transform: rotateX(46deg);
+    transform-origin: 245px 170px;
+}
+
+#heliRotor{
+    transform-origin: 245px 170px;
+}
+
+#heliWrapper{
+    width: 100%;
+    height: 100%;
+    transform-origin: 30% 20%;
+}
+
+#heliLight{
+    transform-origin: 200px 90px;
+}
+
+#money1,
+#money2{
+    transform-origin: 173px 250px;
+}
+
+#vault{
+    top: 150px;
+    transform-origin: 0% 50%;
+}

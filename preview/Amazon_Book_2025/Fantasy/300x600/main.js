@@ -12,16 +12,12 @@ function init() {
     
     document.querySelector("#mainExit").addEventListener("mouseout", function(){
         if(masterTL.progress() == 1){
-            // gsap.to("#gradient1", 0.2, {scale:0, x:0, y:0, ease:Sine.easeInOut});
-            // gsap.to("#gradient2", 0.2, {scale:0, x:0, y:0, ease:Sine.easeInOut});
-            // gsap.to("#lightning", 0.2, {opacity:0, ease:Power4.easeOut});
-            // gsap.to("#wizardArmWrapper", 0.2, {rotation:0, ease:Sine.easeInOut});
-            // gsap.to("#wizardHand", 0.2, {rotation:0, ease:Sine.easeInOut});
+
         }
     })
 
     document.querySelector("#mainExit").addEventListener("click", function(){
-        // window.open(clickTag, '_blank');
+        window.open(clickTag, '_blank');
         masterTL.progress(1).pause();
     })
 
@@ -56,6 +52,7 @@ function getAnimation(){
         gsap.set("#loaderWrapper", {display:"none"});
     }}, 0)
     masterTL.add("start");
+    masterTL.from("#copy", 0.5, {opacity:0, ease:Sine.easeOut}, "start");
     masterTL.from("#spaceWrapper", 2, {clipPath:"polygon(31% -7%, 31% 0%, 31% 79%)", ease:Sine.easeInOut}, "start+=0.5");
     
     masterTL.add(druidTL, "start+=2");
