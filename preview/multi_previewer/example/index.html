@@ -39,6 +39,8 @@
             flex-wrap: wrap;
             gap: 20px;
             overflow-y: auto;
+            flex-direction: row;
+            align-items: start;
         }
         .iframe-container {
             display: flex;
@@ -48,7 +50,8 @@
             padding: 10px;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            height: auto; /* Adjust height to fit content */
+            height: fit-content;
+            width: fit-content;
         }
 
         .iframe-container-background{
@@ -131,7 +134,12 @@
         const hardcodedPaths = [
             "300x250_NL_Netwerk",
             "300x600_NL_Netwerk",
+            "320x100_NL_Netwerk",
+            "300x250_NL_Netwerk",
+            "840x150_NL_Netwerk",
+            "300x600_NL_Netwerk",
             "320x100_NL_Netwerk"
+
             // Add more hardcoded paths as needed
         ];
 
