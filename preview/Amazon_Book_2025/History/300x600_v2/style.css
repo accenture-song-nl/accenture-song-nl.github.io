@@ -63,10 +63,15 @@ img, div, object{
 }
 
 #copy2,
-#portal,
-#portalPerson,
-#cat,
-#mountain,
+#vikingFire,
+#spears,
+#shield,
+#viking,
+#castleFire5,
+#castleFire4,
+#castleFire3,
+#castleFire2,
+#castleFire1,
 #logo,
 #bg,
 #copy{
@@ -78,7 +83,7 @@ img, div, object{
     top: 0px;
     width: 150%;
     height: 100%;
-    clip-path: polygon(-110% 0%, 169% 0%, 34% 76%);
+    clip-path: polygon(-109% 0%, 180% 0%, 33% 75%);
 }
 
 #reset{
@@ -102,29 +107,38 @@ img, div, object{
     top: 0;
 }
 
-#alienWrapper{
+#vikingWrapper{
     width: 100%;
-    height: 288px;
-    overflow: hidden;
+    height: 100%;
+    top: 0;
+    left: 0;
 }
 
-#alien{
-    width: 100%;
-    transform-origin: 80px 178px;
+#shield{
+    left: 50px;
+    top: 20px;
 }
 
-#portalWrapper{
-    width: 100%;
-    height: 30%;
-    bottom: 0;
-    overflow: hidden;
+#vikingFire{
+    transform-origin: 148px 97px;
 }
 
-#portalWrapper img{
-    width: 100%;
-        bottom: 148px;
+#castleFire1{
+    transform-origin: 40px 202px;
 }
 
-#portalPerson{
-    transform-origin:  280px 316px;
+#castleFire2{
+    transform-origin: 92px 153px;
+}
+
+#castleFire3{
+    transform-origin: 131px 189px;
+}
+
+#castleFire4{
+    transform-origin: 168px 159px;
+}
+
+#castleFire5{
+    transform-origin: 198px 217px;
 }

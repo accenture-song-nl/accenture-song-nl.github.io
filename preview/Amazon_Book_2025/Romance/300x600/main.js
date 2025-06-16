@@ -43,10 +43,13 @@ function getAnimation(){
         gsap.set("#loaderWrapper", {display:"none"});
     }}, 0)
     masterTL.add("start");
-    masterTL.from("#copy", 0.5, {opacity:0, ease:Sine.easeOut}, "start");
     masterTL.from("#spaceWrapper", 2, {clipPath:"polygon(30% 0%, 30% 0%, 31% 75%)", ease:Sine.easeInOut}, "start+=0.5");
     masterTL.to(["#bg"], 2, {opacity:0.5, ease:Sine.easeInOut}, "start+=0.5");
     masterTL.from(["#couple", "#bootWoman"], 3, {y:100, ease:Sine.easeOut}, "start+=0.5");
+        masterTL.from("#copy", 1, {clipPath:"polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%)", ease:Sine.easeInOut, onComplete:function(){
+        gsap.set("#copy", {opacity:0});
+        gsap.set("#copy2", {opacity:1});
+    }}, "start+=1");
     masterTL.from("#scarfWrapper3", 1.5, {width:0, ease:Sine.easeInOut}, "start+=1.4");
     masterTL.from("#scarfWrapper2", 1, {width:0, ease:Sine.easeInOut}, "start+=2.8");
     masterTL.from("#scarfWrapper1", 1.2, {width:0, ease:Sine.easeInOut}, "start+=3.7");

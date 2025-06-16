@@ -62,6 +62,7 @@ img, div, object{
     top:0;
 }
 
+#copy2,
 #flame2,
 #flame1,
 #bootWoman,
@@ -88,7 +89,12 @@ img, div, object{
 }
 
 #copy{
-    transform-origin: 50% 80%;
+    width: 300px;
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+}
+
+#copy2{
+    opacity: 0;
 }
 
 #bookBg{
