@@ -51,8 +51,12 @@ function getAnimation(){
         gsap.set("#loaderWrapper", {display:"none"});
     }}, 0)
     masterTL.add("start");
-    masterTL.from("#copy", 0.5, {opacity:0, ease:Sine.easeOut}, "start");
     masterTL.from("#spaceWrapper", 2, {clipPath:"polygon(33% -5%, 33% 0%, 33% 80%)", ease:Sine.easeInOut}, "start+=0.5");
+
+    masterTL.from("#copy", 1, {clipPath:"polygon(17% 0%, 17% 0%, 17% 100%, 17% 100%)", ease:Sine.easeInOut, onComplete:function(){
+        gsap.set("#copy", {opacity:0});
+        gsap.set("#copy2", {opacity:1});
+    }}, "start+=1");
     
     masterTL.add(druidTL, "start+=2");
     masterTL.add(wizardTL, "start+=1.5");

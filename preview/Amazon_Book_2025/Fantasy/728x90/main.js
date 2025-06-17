@@ -12,7 +12,6 @@ function init() {
     
     document.querySelector("#mainExit").addEventListener("mouseout", function(){
         if(masterTL.progress() == 1){
-
         }
     })
 
@@ -44,7 +43,7 @@ function getAnimation(){
     rolloverTL.to("#creatureWrapper", 0.5, {y:-10, ease:Sine.easeInOut, repeat:3, yoyo:true}, "start");
     rolloverTL.to("#creatureTail", 1, {rotation:25, ease:Sine.easeInOut, repeat:1, yoyo:true}, "start");
     
-    rolloverTL.to("#spaceWrapper", 0.5, {clipPath:"polygon(-93% -7%, 151% 0%, 31% 79%)", repeat:1, yoyo:true, ease:Sine.easeInOut}, "start");
+    // rolloverTL.to("#spaceWrapper", 0.5, {clipPath:"polygon(-21% -5%, 86% 0%, 33% 80%)", repeat:1, yoyo:true, ease:Sine.easeInOut}, "start");
 
     masterTL = gsap.timeline({repeat:2});
 
@@ -52,13 +51,14 @@ function getAnimation(){
         gsap.set("#loaderWrapper", {display:"none"});
     }}, 0)
     masterTL.add("start");
-    masterTL.from("#spaceWrapper", 2, {clipPath:"polygon(31% -7%, 31% 0%, 31% 79%)", ease:Sine.easeInOut}, "start+=0.5");
-    masterTL.from("#copy", 1, {clipPath:"polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%)", ease:Sine.easeInOut, onComplete:function(){
+    // masterTL.from("#spaceWrapper", 2, {clipPath:"polygon(33% -5%, 33% 0%, 33% 80%)", ease:Sine.easeInOut}, "start+=0.5");
+    masterTL.add(druidTL, "start");
+
+    masterTL.from("#copy", 1, {clipPath:"polygon(85% 0px, 85% 0%, 85% 100%, 85% 100%)", ease:Sine.easeInOut, onComplete:function(){
         gsap.set("#copy", {opacity:0});
         gsap.set("#copy2", {opacity:1});
     }}, "start+=1");
     
-    masterTL.add(druidTL, "start+=2");
     masterTL.add(wizardTL, "start+=1.5");
     masterTL.from("#lightning", 0.2, {opacity:0, repeat:4, yoyo:true, ease:Power4.easeOut}, "start+=2.5");
     masterTL.add(creatureTL, "start+=3.5");
@@ -74,8 +74,8 @@ function animateDruid() {
     var tl = gsap.timeline({});
 
     tl.add('start');
-    tl.to("#druid", 3.5, {x:-230, y:50, ease:Sine.easeIn}, "start");
-    tl.to("#druid", .5, {marginTop:5, repeat:6, yoyo:true, ease:Sine.easeInOut}, "start");
+    tl.fromTo("#druid", 3.5, {x:70}, {x:-230, y:10, ease:Sine.easeIn}, "start");
+    tl.to("#druid", .5, {marginTop:3, repeat:6, yoyo:true, ease:Sine.easeInOut}, "start");
 
     return tl;
 }
@@ -84,10 +84,10 @@ function animateCreature() {
     var tl = gsap.timeline({});
 
     tl.add('start');
-    tl.from("#creatureWrapper", 3, {x:-200, ease:Sine.easeOut}, "start");
+    tl.from("#creatureWrapper", 3, {x:-250, ease:Sine.easeOut}, "start");
     tl.to("#creatureWingL", 0.75, {rotationY: 30, rotationX: 50, ease:Power1.easeInOut, repeat:6, yoyo:true}, "start");
     tl.to("#creatureWingR", 0.75, {rotationY: -30, rotationX: 50, ease:Sine.easeInOut, repeat:6, yoyo:true}, "start");
-    tl.to("#creatureWrapper", 0.75, {y:-20, ease:Sine.easeInOut, repeat:6, yoyo:true}, "start");
+    tl.to("#creatureWrapper", 0.75, {y:-7, ease:Sine.easeInOut, repeat:6, yoyo:true}, "start");
     tl.to("#creatureTail", 1.3125, {rotation:25, ease:Sine.easeInOut, repeat:3, yoyo:true}, "start");
 
     return tl;
@@ -97,13 +97,13 @@ function animateWizard() {
     var tl = gsap.timeline({});
 
     tl.add('start');
-    tl.from("#wizardWrapper", 1.8, {x:160, y:50, ease:Sine.easeOut}, "start");
+    tl.from("#wizardWrapper", 1.8, {x:10, y:80, ease:Sine.easeOut}, "start");
     tl.fromTo("#wizardArmWrapper", 1.5, {rotation:-30}, {rotation:20, ease:Sine.easeOut}, "start");
     tl.fromTo("#wizardHand", 1.5, {rotation:30}, {rotation:-20, ease:Sine.easeOut}, "start");
     tl.to("#wizardArmWrapper", 1, {rotation:0, ease:Sine.easeInOut}, "start+=1.5");
     tl.to("#wizardHand", 1, {rotation:0, ease:Sine.easeInOut}, "start+=1.5");
-    tl.fromTo("#gradient1", 0.5, {scale:0, opacity:0.5, y:-20, x:10}, {scale:1.5, opacity:1, y:0, x:0, ease:Sine.easeInOut}, "-=1.75");
-    tl.fromTo("#gradient2", 0.5, {scale:0, opacity:0, y:-20, x:10}, {scale:1.5, opacity:0.7, y:0, x:0, ease:Sine.easeInOut}, "-=1.75");
+    tl.fromTo("#gradient1", 0.5, {scale:0, opacity:0.5, y:-10, x:0}, {scale:1.2, opacity:1, y:0, x:0, ease:Sine.easeInOut}, "-=1.75");
+    tl.fromTo("#gradient2", 0.5, {scale:0, opacity:0, y:-10, x:0}, {scale:1.3, opacity:0.7, y:0, x:0, ease:Sine.easeInOut}, "-=1.75");
     tl.to("#gradient1", 0.5, {scale:1, ease:Sine.easeInOut}, "-=1.25");
     tl.to("#gradient2", 0.5, {scale:1, ease:Sine.easeInOut}, "-=1.25");
     tl.to("#gradient1", 0.5, {scale:0, ease:Sine.easeInOut}, "-=0.75");

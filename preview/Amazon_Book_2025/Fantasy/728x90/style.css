@@ -7,8 +7,8 @@ img, div, object{
 }
 
 #banner{
-    width: 300px;
-    height: 600px;
+    width: 728px;
+    height: 90px;
     overflow: hidden;
     background-color: #000000;
     color: #fff;
@@ -62,6 +62,7 @@ img, div, object{
     top:0;
 }
 
+#copy,
 #copy2,
 #creatureTail
 #creatureWingR,
@@ -72,38 +73,33 @@ img, div, object{
 #wizardHand,
 #wizard,
 #druid,
-#treeRight,
+#treeLeft,
 #logo,
 #bg{
     width: 100%;
 }
 
+/* #spaceWrapper{
+    background: #000;
+    width: 150%;
+    height: 100%;
+    clip-path: polygon(-31% -5%, 96% 0%, 33% 80%);
+}
+
+#reset{
+    width: 970px;
+    height: 250px;
+    left: 0;
+    top: 0;
+} */
+
+
 #copy{
-    width: 300px;
-    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+    clip-path: polygon(70% 0px, 100% 0%, 100% 100%, 70% 100%);
 }
 
 #copy2{
     opacity: 0;
-}
-
-#spaceWrapper{
-    background: #000;
-    top: -15px;
-    width: 150%;
-    height: 100%;
-    clip-path: polygon(-113% -7%, 171% 0%, 31% 79%);
-}
-
-#reset{
-    width: 300px;
-    height: 600px;
-    left: 0;
-    top: 0;
-}
-
-#copy{
-    transform-origin: 50% 80%;
 }
 
 #bookBg{
@@ -112,49 +108,50 @@ img, div, object{
 }
 
 #wizardArmWrapper,
-#creatureWrapper,
 #wizardWrapper{
-    width: 100%;
-    height: 100%;
+    width: 970px;
+    height: 198px;
 }
 
-#druid{
-    /* top: 10px;
-    left: 120px; */
-    top: 14px;
-    left: 2px;
+#wizardWrapper{
+    transform: scale(0.55);
+    top: -45px;
+    left: -136px;
 }
 
 #wizardArmWrapper{
-    transform-origin: 232px 210px;
+    transform-origin: 644px 88px;
 }
 
 #wizardHand{
-    transform-origin: 194px 203px;
+    transform-origin: 614px 86px;
 }
 
 #gradient1{
-    width: 80px;
-    height: 80px;
-    left: 118px;
-    top: 67px;
+    width: 60px;
+    height: 60px;
+    left: 555px;
+    top: -15px;
     background: #EC17F4;
     background: radial-gradient(circle, rgba(236, 23, 244, 1) 20%, rgba(236, 23, 244, 0) 70%);
 }
 
 #gradient2{
-    width: 150px;
-    height: 150px;
-    left: 84px;
-    top: 35px;
+    width: 112px;
+    height: 112px;
+    left: 530px;
+    top: -45px;
     background: #EC17F4;
     background: radial-gradient(circle, rgba(236, 23, 244, 0) 40%, rgba(236, 23, 244, 1) 55%, rgba(236, 23, 244, 0) 70%);
     opacity: 0.7;
 }
 
 #creatureWrapper{
-    top: 100px;
-    left: -8px;
+    width: 300px;
+    height: 600px;
+    top: -118px;
+    left: 210px;
+    transform: scale(0.8);
 }
 
 #creatureWingL{
