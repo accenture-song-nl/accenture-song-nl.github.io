@@ -63,10 +63,6 @@ img, div, object{
 }
 
 #copy2,
-#creatureTail
-#creatureWingR,
-#creatureWingL,
-#creature,
 #lightning,
 #wizardArm,
 #wizardHand,
@@ -77,12 +73,19 @@ img, div, object{
     width: 100%;
 }
 
+#creatureTail,
+#creatureWingR,
+#creatureWingL,
+#creature{
+    width: 300px;
+}
+
 #wizard{
     height: 100%;
 }
 
 #copy{
-    width: 300px;
+    width: 320px;
     clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
 }
 
