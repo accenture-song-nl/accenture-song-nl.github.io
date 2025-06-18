@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Iframes</title>
+    <title>Accenture Song Previews</title>
     <style>
-        body {
+       body {
             display: flex;
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -39,7 +39,7 @@
             flex-wrap: wrap;
             gap: 20px;
             overflow-y: auto;
-            flex-direction: row;
+            flex-direction: column;
             align-items: start;
         }
         .iframe-container {
@@ -50,8 +50,6 @@
             padding: 10px;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            height: fit-content;
-            width: fit-content;
         }
 
         .iframe-container-background{
@@ -65,6 +63,7 @@
             height: auto; /* Adjust height to fit content */
         }
         iframe {
+            width: 0;
             height: 0;
             border: none;
             margin-bottom: 10px;
@@ -122,16 +121,12 @@
     <div id="sidebar">
         <h3>Filter by Size</h3>
         <div id="filter-list"></div>
-        <h3>Filter by Language</h3>
-        <div id="language-list"></div>
-        <h3>Filter by Variant</h3>
-        <div id="variant-list"></div>
         <button class="save-button" onclick="saveFilters()">Save Filters</button>
         <button class="reset-button" onclick="resetFilters()">Reset Filters</button>
     </div>
     <div id="content"></div>
     <script>
-       const hardcodedPaths = [
+          const hardcodedPaths = [
               "160x600",
               "300x600",
               "300x50",
@@ -145,18 +140,17 @@
         ];
 
         const useHardcodedPaths = true; // Set to true to use hardcoded paths, false to fetch from PHP
-        
+
         function getUrlParams() {
             const params = new URLSearchParams(window.location.search);
             const sizes = params.getAll('size'); // Options: "300x250", "300x600", "320x100", "728x90", "160x600", "970x250", "468x60", "120x600", "840x150"
-            const languages = params.getAll('language'); // Options: "NL", "FR"
-            const variants = params.getAll('variant'); // Options: "Netwerk", "OMS", "Nieuwe_Formule", "Scherp_Tarief"
-            return { sizes, languages, variants };
+            // const languages = params.getAll('language'); // Options: "NL", "FR"
+            // const variants = params.getAll('variant'); // Options: "Netwerk", "OMS", "Nieuwe_Formule", "Scherp_Tarief"
+            return { sizes };
         }
 
         function resizeIframe(iframe) {
             const doc = iframe.contentWindow.document.documentElement;
-            
             iframe.style.height = doc.scrollHeight + 'px';
             iframe.style.width = doc.scrollWidth + 'px';
         }
@@ -181,19 +175,18 @@
         }
 
         function loadIframes() {
-            const { sizes: urlSizes, languages: urlLanguages, variants: urlVariants } = getUrlParams();
+            const { sizes: urlSizes } = getUrlParams();
             if (useHardcodedPaths) {
                 // Populate filter lists with hardcoded paths
                 const sizes = [...new Set(hardcodedPaths.map(path => path.split('_')[0]))];
-                const languages = [...new Set(hardcodedPaths.map(path => path.split('_')[1]))];
-                const variants = [...new Set(hardcodedPaths.map(path => path.split('_')[2]))];
-            
-console.log(languages);
-
+                // const languages = [...new Set(hardcodedPaths.map(path => path.split('_')[1]))];
+                // const variants = [...new Set(hardcodedPaths.map(path => path.split('_')[2]))];
 
                 // Populate filter list
                 const filterList = document.getElementById('filter-list');
                 filterList.innerHTML = ''; // Clear existing filters
+                console.log(sizes);
+                
                 sizes.forEach(size => {
                     if (urlSizes.length === 0 || urlSizes.includes(size)) {
                         const label = document.createElement('label');
@@ -201,31 +194,28 @@ console.log(languages);
                         filterList.appendChild(label);
                     }
                 });
-                if(languages.length === 0) {
-                     return
-                }
-                
+
                 // Populate language list
-                const languageList = document.getElementById('language-list');
-                languageList.innerHTML = ''; // Clear existing filters
-                languages.forEach(language => {
-                    if (urlLanguages.length === 0 || urlLanguages.includes(language)) {
-                        const label = document.createElement('label');
-                        label.innerHTML = `<input type="checkbox" value="${language}" checked> ${language}`;
-                        languageList.appendChild(label);
-                    }
-                });
+                // const languageList = document.getElementById('language-list');
+                // languageList.innerHTML = ''; // Clear existing filters
+                // languages.forEach(language => {
+                //     if (urlLanguages.length === 0 || urlLanguages.includes(language)) {
+                //         const label = document.createElement('label');
+                //         label.innerHTML = `<input type="checkbox" value="${language}" checked> ${language}`;
+                //         languageList.appendChild(label);
+                //     }
+                // });
 
                 // Populate variant list
-                const variantList = document.getElementById('variant-list');
-                variantList.innerHTML = ''; // Clear existing filters
-                variants.forEach(variant => {
-                    if (urlVariants.length === 0 || urlVariants.includes(variant)) {
-                        const label = document.createElement('label');
-                        label.innerHTML = `<input type="checkbox" value="${variant}" checked> ${variant}`;
-                        variantList.appendChild(label);
-                    }
-                });
+                // const variantList = document.getElementById('variant-list');
+                // variantList.innerHTML = ''; // Clear existing filters
+                // variants.forEach(variant => {
+                //     if (urlVariants.length === 0 || urlVariants.includes(variant)) {
+                //         const label = document.createElement('label');
+                //         label.innerHTML = `<input type="checkbox" value="${variant}" checked> ${variant}`;
+                //         variantList.appendChild(label);
+                //     }
+                // });
 
                 // Load checkbox state from localStorage
                 loadCheckboxState();
@@ -244,7 +234,7 @@ console.log(languages);
                 fetch('list_subfolders.php')
                     .then(response => response.json())
                     .then(data => {
-                        const { folders, sizes, languages, variants } = data;
+                        const { folders, sizes } = data;
                         console.log('Response:', data); // Log the response for debugging
 
                         // Populate filter list
@@ -259,26 +249,26 @@ console.log(languages);
                         });
 
                         // Populate language list
-                        const languageList = document.getElementById('language-list');
-                        languageList.innerHTML = ''; // Clear existing filters
-                        languages.forEach(language => {
-                            if (urlLanguages.length === 0 || urlLanguages.includes(language)) {
-                                const label = document.createElement('label');
-                                label.innerHTML = `<input type="checkbox" value="${language}" checked> ${language}`;
-                                languageList.appendChild(label);
-                            }
-                        });
+                        // const languageList = document.getElementById('language-list');
+                        // languageList.innerHTML = ''; // Clear existing filters
+                        // languages.forEach(language => {
+                        //     if (urlLanguages.length === 0 || urlLanguages.includes(language)) {
+                        //         const label = document.createElement('label');
+                        //         label.innerHTML = `<input type="checkbox" value="${language}" checked> ${language}`;
+                        //         languageList.appendChild(label);
+                        //     }
+                        // });
 
                         // Populate variant list
-                        const variantList = document.getElementById('variant-list');
-                        variantList.innerHTML = ''; // Clear existing filters
-                        variants.forEach(variant => {
-                            if (urlVariants.length === 0 || urlVariants.includes(variant)) {
-                                const label = document.createElement('label');
-                                label.innerHTML = `<input type="checkbox" value="${variant}" checked> ${variant}`;
-                                variantList.appendChild(label);
-                            }
-                        });
+                        // const variantList = document.getElementById('variant-list');
+                        // variantList.innerHTML = ''; // Clear existing filters
+                        // variants.forEach(variant => {
+                        //     if (urlVariants.length === 0 || urlVariants.includes(variant)) {
+                        //         const label = document.createElement('label');
+                        //         label.innerHTML = `<input type="checkbox" value="${variant}" checked> ${variant}`;
+                        //         variantList.appendChild(label);
+                        //     }
+                        // });
 
                         // Load checkbox state from localStorage
                         loadCheckboxState();
@@ -302,24 +292,18 @@ console.log(languages);
             const content = document.getElementById('content');
             content.innerHTML = ''; // Clear existing iframes
             const checkedSizes = Array.from(document.querySelectorAll('#filter-list input:checked')).map(input => input.value);
-            const checkedLanguages = Array.from(document.querySelectorAll('#language-list input:checked')).map(input => input.value);
-            const checkedVariants = Array.from(document.querySelectorAll('#variant-list input:checked')).map(input => input.value);
+            // const checkedLanguages = Array.from(document.querySelectorAll('#language-list input:checked')).map(input => input.value);
+            // const checkedVariants = Array.from(document.querySelectorAll('#variant-list input:checked')).map(input => input.value);
             folders.forEach(folder => {
-                const [size, language, variant] = folder.split('_'); // Assuming size, language, and variant are parts of the folder name
-                if (checkedSizes.includes(size) && checkedLanguages.includes(language) && checkedVariants.includes(variant)) {
+                const [size] = folder.split('_'); // Assuming size, language, and variant are parts of the folder name
+                if (checkedSizes.includes(size)) {
                     const iframeContainer = document.createElement('div');
                     iframeContainer.className = 'iframe-container';
-
-                    const iframeContainerBackground = document.createElement('div');
-                    iframeContainerBackground.className = 'iframe-container-background';
 
                     const iframe = document.createElement('iframe');
                     iframe.src = `${folder}/index.html`;
                     iframe.onload = () => resizeIframe(iframe);
-                    
-                    iframeContainerBackground.appendChild(iframe);
-                    iframeContainer.appendChild(iframeContainerBackground);
-                    iframeContainerBackground.appendChild(iframe);
+                    iframeContainer.appendChild(iframe);
 
                     const folderName = document.createElement('div');
                     folderName.className = 'folder-name';
@@ -333,7 +317,7 @@ console.log(languages);
 
                     folderName.appendChild(reloadButton);
                     folderName.appendChild(document.createTextNode(folder));
-                    iframeContainerBackground.appendChild(folderName);
+                    iframeContainer.appendChild(folderName);
 
                     content.appendChild(iframeContainer);
                 }
@@ -342,13 +326,13 @@ console.log(languages);
 
         function saveFilters() {
             const checkedSizes = Array.from(document.querySelectorAll('#filter-list input:checked')).map(input => input.value);
-            const checkedLanguages = Array.from(document.querySelectorAll('#language-list input:checked')).map(input => input.value);
-            const checkedVariants = Array.from(document.querySelectorAll('#variant-list input:checked')).map(input => input.value);
+            // const checkedLanguages = Array.from(document.querySelectorAll('#language-list input:checked')).map(input => input.value);
+            // const checkedVariants = Array.from(document.querySelectorAll('#variant-list input:checked')).map(input => input.value);
 
             const params = new URLSearchParams();
             checkedSizes.forEach(size => params.append('size', size));
-            checkedLanguages.forEach(language => params.append('language', language));
-            checkedVariants.forEach(variant => params.append('variant', variant));
+            // checkedLanguages.forEach(language => params.append('language', language));
+            // checkedVariants.forEach(variant => params.append('variant', variant));
 
             const url = `${window.location.origin}${window.location.pathname}?${params.toString()}`;
             navigator.clipboard.writeText(url).then(() => {
@@ -373,4 +357,3 @@ console.log(languages);
     </script>
 </body>
 </html>
-

@@ -78,7 +78,6 @@ function animateBird() {
     var tl = gsap.timeline({});
 
     tl.add('start');
-    // repeat:7, yoyo:true,
     tl.to("#birdWingR", 0.5, {rotation:-30, rotationX:-10, repeat:9, yoyo:true, ease:Power1.easeInOut}, "start");
     tl.to("#birdWingL", 0.5, {rotation:-40, rotationX:-10, repeat:9, yoyo:true, ease:Power1.easeInOut}, "start+=0.1");
 
