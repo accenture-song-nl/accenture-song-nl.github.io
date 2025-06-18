@@ -34,8 +34,8 @@ function getAnimation(){
     rolloverTL.to("#spaceWrapper", 0.5, {clipPath:"polygon(-68% 0%, 173% 0%, 31% 75%)", repeat:1, yoyo:true, ease:Sine.easeInOut}, "start");
     rolloverTL.to("#birdWingR", 0.5, {rotation:-30, rotationX:-10, repeat:3, yoyo:true, ease:Power1.easeInOut}, "start");
     rolloverTL.to("#birdWingL", 0.5, {rotation:-40, rotationX:-10, repeat:3, yoyo:true, ease:Power1.easeInOut}, "start+=0.1");
-    rolloverTL.to("#couple", 0.5, {y:-10, repeat:1, yoyo:true, ease:Sine.easeInOut}, "start");
-    rolloverTL.to(["#scarfWrapper1", "#scarfWrapper2", "#scarfWrapper3", "#flame1", "#flame2"], 0.75, {y:-20, repeat:1, yoyo:true, ease:Sine.easeInOut}, "start");
+    rolloverTL.to(["#couple", "#bootWoman"], 0.5, {y:-10, repeat:1, yoyo:true, ease:Sine.easeInOut}, "start");
+    rolloverTL.to(["#scarfWrapper1", "#scarfWrapper2", "#scarfWrapper3", "#flame1", "#flame2"], 0.65, {y:-20, repeat:1, yoyo:true, ease:Sine.easeInOut}, "start");
 
     masterTL = gsap.timeline({repeat:2});
 
@@ -78,6 +78,7 @@ function animateBird() {
     var tl = gsap.timeline({});
 
     tl.add('start');
+    // repeat:7, yoyo:true,
     tl.to("#birdWingR", 0.5, {rotation:-30, rotationX:-10, repeat:9, yoyo:true, ease:Power1.easeInOut}, "start");
     tl.to("#birdWingL", 0.5, {rotation:-40, rotationX:-10, repeat:9, yoyo:true, ease:Power1.easeInOut}, "start+=0.1");
 
