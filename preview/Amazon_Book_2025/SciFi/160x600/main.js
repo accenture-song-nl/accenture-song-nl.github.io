@@ -46,8 +46,8 @@ function getAnimation(){
         gsap.set("#copy", {opacity:0});
         gsap.set("#copy2", {opacity:1});
     }}, "start+=1");
-    masterTL.from("#portalWrapper", 0.5, {opacity:0, ease:Sine.easeOut}, "start+=1.5");
-    masterTL.to("#portalWrapper", 1, {height:"100%", ease:Power1.easeIn}, "start+=2");
+    // masterTL.from("#portalWrapper", 0.5, {opacity:0, ease:Sine.easeOut}, "start+=1.5");
+    // masterTL.to("#portalWrapper", 1, {height:"100%", ease:Power1.easeIn}, "start+=2");
     masterTL.from("#portalPerson", 1.5, {opacity:0, x:30, scale:0.75, ease:Power1.easeOut}, "start+=2.5");
     
     masterTL.to("#banner", 0.5, {}, "start+=9.3");

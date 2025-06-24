@@ -46,11 +46,11 @@ function getAnimation(){
         gsap.set("#copy", {opacity:0});
         gsap.set("#copy2", {opacity:1});
     }}, "start+=1");
-    masterTL.from("#portalWrapper", 0.5, {opacity:0, ease:Sine.easeOut}, "start+=1.5");
-    masterTL.to("#portalWrapper", 1, {height:"100%", ease:Power1.easeIn}, "start+=2");
+    // masterTL.from("#portalWrapper", 0.5, {opacity:0, ease:Sine.easeOut}, "start+=1.5");
+    // masterTL.to("#portalWrapper", 1, {height:"100%", ease:Power1.easeIn}, "start+=2");
     masterTL.from("#portalPerson", 1.5, {opacity:0, x:15, scale:0.75, ease:Power1.easeOut}, "start+=2.5");
-    masterTL.from("#alien", 2, {x:-20, y:80, ease: "back.out(1.2)"}, "start+=3");
-    masterTL.from("#alien", 2, {scale:0.5, ease: "back.out(1)"}, "start+=3");
+    masterTL.from("#alien", 3, {x:-20, y:80, ease: Sine.easeOut}, "start+=3");
+    masterTL.from("#alien", 3, {scale:0.5, ease: Sine.easeOut}, "start+=3");
     
     masterTL.to("#banner", 0.5, {}, "start+=9.3");
 
@@ -67,7 +67,7 @@ function animateAsteroid() {
     tl.to("#asteroid", 2.5, {x:-90, yoyo:true, ease:Sine.easeInOut}, "start+=1.25");
     tl.to("#asteroid", 1.25, {x:0, yoyo:true, ease:Sine.easeIn}, "start+=3.75");
     
-    tl.to("#asteroid", 2.5, {scale:0.2, ease:Sine.easeInOut}, "start");
+    tl.to("#asteroid", 2.5, {scale:0.5, ease:Sine.easeInOut}, "start");
     tl.to("#asteroid", 2.5, {scale:1, ease:Sine.easeInOut}, "start+=2.5");
     
     tl.to("#asteroid", 0.01, {zIndex:1, ease:Sine.easeInOut}, "start");

@@ -46,11 +46,11 @@ function getAnimation(){
         gsap.set("#copy", {opacity:0});
         gsap.set("#copy2", {opacity:1});
     }}, "start+=1");
-    masterTL.from("#portalWrapper", 0.5, {opacity:0, ease:Sine.easeOut}, "start+=1.5");
-    masterTL.to("#portalWrapper", 1, {height:"100%", ease:Power1.easeIn}, "start+=2");
+    // masterTL.from("#portalWrapper", 0.5, {opacity:0, ease:Sine.easeOut}, "start+=1.5");
+    // masterTL.to("#portalWrapper", 1, {height:"100%", ease:Power1.easeIn}, "start+=2");
     masterTL.from("#portalPerson", 1.5, {opacity:0, x:30, scale:0.75, ease:Power1.easeOut}, "start+=2.5");
-    masterTL.from("#alien", 2, {x:-90, y:170, ease: "back.out(1.2)"}, "start+=3");
-    masterTL.from("#alien", 2, {scale:0.5, ease: "back.out(1)"}, "start+=3");
+    masterTL.from("#alien", 3, {x:-90, y:170, ease: Sine.easeOut}, "start+=3");
+    masterTL.from("#alien", 3, {scale:0.5, ease: Sine.easeOut}, "start+=3");
     // masterTL.add(birdTL, "start+=4");
     
     masterTL.to("#banner", 0.5, {}, "start+=9.3");

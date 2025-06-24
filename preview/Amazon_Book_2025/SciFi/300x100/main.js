@@ -42,13 +42,10 @@ function getAnimation(){
         gsap.set("#copy2", {opacity:1});
     }}, "start");
 
-    masterTL.from("#alien", 2, {x:-100, y:100, ease: "back.out(1.2)"}, "start+=1");
-    masterTL.from("#alien", 2, {scale:0.5, ease: "back.out(1)"}, "start+=1");
-
-   
+    masterTL.from("#alien", 3, {x:-100, y:100, ease: Sine.easeOut}, "start+=1");
+    masterTL.from("#alien", 3, {scale:0.5, ease: Sine.easeOut}, "start+=1");
 
     masterTL.to("#banner", 0.5, {}, "start+=9.3");
     
     console.log(masterTL.duration());
-
 }
