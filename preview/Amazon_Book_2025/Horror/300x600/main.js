@@ -37,9 +37,8 @@ function getAnimation(){
     rolloverTL.to("#monsterWrapper", 1, {y:3, x:10, repeat:1, yoyo:true, ease:Power1.easeInOut}, "start");
     rolloverTL.to("#arm1", 1, {rotation:-20, yoyo:true, repeat:1, ease:Power2.easeInOut}, "start");
     rolloverTL.to("#arm2", 1, {rotation:40, yoyo:true, repeat:1, ease:Sine.easeInOut}, "start");
-    rolloverTL.to("#skeleton", 0.75, {rotation:-5, yoyo:true, repeat:1, ease:Power1.easeInOut}, "start");
+    rolloverTL.to("#skeleton", 0.75, {rotation:-15, yoyo:true, repeat:1, ease:Power1.easeInOut}, "start");
     rolloverTL.to("#gremlin", 0.9, {x:-5, yoyo:true, repeat:1, ease:"bac1.inOut(1.4)"}, "start");
-    // rolloverTL.to("#gremlin", 0.18, {y:-2, repeat:9, yoyo:true, ease:Sine.easeInOut}, "start");
 
 
     masterTL = gsap.timeline({repeat:2});
@@ -48,15 +47,15 @@ function getAnimation(){
         gsap.set("#loaderWrapper", {display:"none"});
     }}, 0)
     masterTL.add("start");
-    masterTL.from("#copy", 0.5, {opacity:0, ease:Sine.easeOut}, "start");
     masterTL.from("#spaceWrapper", 2, {clipPath:"polygon(30% 0%, 30% 0%, 33% 75%)", ease:Sine.easeInOut}, "start+=0.5");
+        masterTL.from("#copy", 1, {clipPath:"polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%)", ease:Sine.easeInOut, onComplete:function(){
+        gsap.set("#copy", {opacity:0});
+        gsap.set("#copy2", {opacity:1});
+    }}, "start+=1");
     masterTL.from("#gremlin", 0.75, {y:100, ease:"back.out(1.4)"}, "start+=1");
     masterTL.to("#gremlin", 2, {x:10, ease:"bac1.inOut(1.4)"}, "start+=1.75");
-    // masterTL.to("#gremlin", 0.16666666666, {y:-2, repeat:5, yoyo:true, ease:Sine.easeInOut}, "start+=1.75");
     masterTL.to("#gremlin", 4, {x:-10, y:5, ease:"back.inOut(1.4)"}, "start+=3.75");
-    // masterTL.to("#gremlin", 0.16666666666, {y:-1, repeat:11, yoyo:true, ease:Sine.easeInOut}, "start+=2.75");
     masterTL.to("#gremlin", 2, {x:0, y:0, ease:"back.inOut(1.4)"}, "start+=7.75");
-    // masterTL.to("#gremlin", 0.16666666666, {y:-1, repeat:5, yoyo:true, ease:Sine.easeInOut}, "start+=4.75");
     masterTL.add(skeletonTL, "start+=2");
     
     masterTL.add(monsterTL, "start+=2.5");
@@ -67,11 +66,11 @@ function getAnimation(){
 }
 
 function animateSkeleton() {
-    var tl = gsap.timeline({repeat:1});
+    var tl = gsap.timeline({repeat:0});
 
     tl.add('start');
-    tl.to("#skeleton", 1.9, {rotation:-10, ease:Power1.easeInOut}, "start");
-    tl.to("#skeleton", 1.9, {rotation:0, ease:Power1.easeInOut}, "start+=1.9");
+    tl.to("#skeleton", 4, {rotation:-30, y:5, ease:Power1.easeInOut}, "start");
+    tl.to("#skeleton", 4, {rotation:0, y:0, ease:Power1.easeInOut}, "start+=4");
 
     return tl;
 }

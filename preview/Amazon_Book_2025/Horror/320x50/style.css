@@ -7,8 +7,8 @@ img, div, object{
 }
 
 #banner{
-    width: 300px;
-    height: 600px;
+    width: 320px;
+    height: 50px;
     overflow: hidden;
     background-color: #000000;
     color: #fff;
@@ -27,7 +27,7 @@ img, div, object{
     height: 50px;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0.5);
 }
 
 #loader{
@@ -62,82 +62,25 @@ img, div, object{
     top:0;
 }
 
+#bg2,
+#copy,
 #copy2,
-#eye1,
-#eye2,
-#arm2,
-#arm1,
-#monster,
 #logo,
-#bg,
-#copy{
+#bg{
     width: 100%;
-}
-
-#spaceWrapper{
-    background: #000;
     top: 0px;
-    width: 150%;
-    height: 100%;
-    clip-path: polygon(-109% 0%, 180% 0%, 33% 75%);
 }
 
-#reset{
-    width: 300px;
-    height: 600px;
-    left: 0;
-    top: 0;
+#gremlin{
+    width: 100%;
+    bottom: 0;
 }
+
 
 #copy{
-    width: 300px;
-    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+    clip-path: polygon(0 0, 66% 0%, 66% 100%, 0% 100%);
 }
 
 #copy2{
     opacity: 0;
-}
-
-#bookBg{
-    width: 100%;
-    top: 0;
-}
-
-#gremlinWrapper{
-    width: 130px;
-    height: 144px;
-    overflow: hidden;
-    border-radius: 0px 0px 69px 77px;
-    left: 73px;
-    top: -71px;
-}
-
-#gremlin{
-    width: 300px;
-    left: -73px;
-    top: 51px;
-}
-
-#skeleton{
-    width: 300px;
-    right: 0;
-    transform-origin: 40px 307px;
-}
-
-#monsterWrapper{
-    width: 100%;
-    height: 100%;
-}
-
-#arm1{
-    transform-origin: 257px 155px;
-}
-
-#arm2{
-    transform-origin: 200px 189px;
-}
-
-#eye2{
-    top: 17px;
-    left: -17px;
 }
