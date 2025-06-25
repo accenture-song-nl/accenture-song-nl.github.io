@@ -6,7 +6,7 @@ function init() {
 
     document.querySelector("#mainExit").addEventListener("mouseover", function () {
         if (masterTL.progress() == 1) {
-            getMousePos();
+            // getMousePos();
             rolloverTL.play(0);
         }
     })
@@ -44,10 +44,14 @@ function getAnimation(){
     masterTL.to("#loaderWrapper", 0.2, {opacity:0, ease:Sine.easeInOut, onComplete:function(){
         gsap.set("#loaderWrapper", {display:"none"});
     }}, 0)
-    masterTL.from("#copy", 0.5, {opacity:0, ease:Sine.easeOut}, "start");
     masterTL.from("#spaceWrapper", 2, {clipPath:"polygon(30% 0%, 30% 0%, 33% 75%)", ease:Sine.easeInOut}, "start+=0.5");
     
     masterTL.to(vikingTL, 10,{progress:1, ease:Sine.easeOut}, "start");
+    
+    masterTL.from("#copy", 1, {clipPath:"polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%)", ease:Sine.easeInOut, onComplete:function(){
+        gsap.set("#copy", {opacity:0});
+        gsap.set("#copy2", {opacity:1});
+    }}, "start+=1");
     
     masterTL.from("#castleFire2", 0.5,{scale:0, ease:Sine.easeOut}, "start+=1.4");
     masterTL.to("#castleFire2", 1.6,{scaleX:1.1, scaleY:1.3, repeat:4, yoyo:true, ease:Sine.easeInOut}, "start+=1.9");
@@ -92,7 +96,7 @@ function animateViking() {
 
     tl.add('start');
     tl.from("#vikingWrapper", 9, {x:100, ease:Power0.easeNone}, "start");
-    tl.from("#shield", 1.8, {x:-50, y:-20, yoyo:true, repeat:4, ease:Sine.easeInOut}, "start");
+    // tl.from("#shield", 1.8, {x:-50, y:-20, yoyo:true, repeat:4, ease:Sine.easeInOut}, "start");
     tl.from("#vikingWrapper", 1.8, {y:10, yoyo:true, repeat:4, ease:Sine.easeInOut}, "start");
     
     tl.to("#vikingFire", 1.8, {rotation:12, scaleX:1.2, scaleY:0.9, yoyo:true, repeat:4, ease:Sine.easeInOut}, "start");
