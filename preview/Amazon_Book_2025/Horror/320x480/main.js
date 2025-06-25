@@ -37,7 +37,7 @@ function getAnimation(){
     rolloverTL.to("#monsterWrapper", 1, {y:3, x:10, repeat:1, yoyo:true, ease:Power1.easeInOut}, "start");
     rolloverTL.to("#arm1", 1, {rotation:-20, yoyo:true, repeat:1, ease:Power2.easeInOut}, "start");
     rolloverTL.to("#arm2", 1, {rotation:40, yoyo:true, repeat:1, ease:Sine.easeInOut}, "start");
-    rolloverTL.to("#skeleton", 0.75, {rotation:-15, yoyo:true, repeat:1, ease:Power1.easeInOut}, "start");
+    rolloverTL.to("#skeleton", 0.75, {rotation:10, yoyo:true, repeat:1, ease:Power1.easeInOut}, "start");
 
 
     masterTL = gsap.timeline({repeat:2});
@@ -64,7 +64,7 @@ function animateSkeleton() {
     var tl = gsap.timeline({repeat:0});
 
     tl.add('start');
-    tl.to("#skeleton", 4, {rotation:-30, y:5, ease:Power1.easeInOut}, "start");
+    tl.to("#skeleton", 4, {rotation:20, y:2, ease:Power1.easeInOut}, "start");
     tl.to("#skeleton", 4, {rotation:0, y:0, ease:Power1.easeInOut}, "start+=4");
 
     return tl;

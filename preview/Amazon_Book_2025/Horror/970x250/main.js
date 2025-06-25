@@ -74,7 +74,7 @@ function animateMonster() {
     var tl = gsap.timeline({});
 
     tl.add('start');
-    tl.from("#monsterWrapper", 2, {y:200, x:200, ease:Power1.easeOut}, "start");
+    tl.from("#monsterWrapper", 2, {y:250, x:200, ease:Power1.easeOut}, "start");
     tl.fromTo("#arm1", 2, {rotation:-105}, {rotation:5, ease:Power1.easeOut}, "start");
     tl.fromTo("#arm2", 3, {rotation:-65}, {rotation:30, ease:Power2.easeOut}, "start");
     tl.to("#arm1", 1.5, {rotation:-75, ease:Power1.easeInOut}, "start+=2");

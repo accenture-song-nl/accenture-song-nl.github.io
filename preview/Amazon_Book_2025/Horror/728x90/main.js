@@ -43,7 +43,7 @@ function getAnimation(){
         gsap.set("#copy2", {opacity:1});
     }}, "start+=1");
     masterTL.from("#gremlin", 0.75, {y:100, ease:"back.out(1.4)"}, "start+=1");
-    masterTL.to("#gremlin", 2, {x:10, ease:"bac1.inOut(1.4)"}, "start+=1.75");
+    masterTL.to("#gremlin", 2, {x:7, ease:"bac1.inOut(1.4)"}, "start+=1.75");
     masterTL.to("#gremlin", 4, {x:-10, y:5, ease:"back.inOut(1.4)"}, "start+=3.75");
     masterTL.to("#gremlin", 2, {x:0, y:0, ease:"back.inOut(1.4)"}, "start+=7.75");
 
