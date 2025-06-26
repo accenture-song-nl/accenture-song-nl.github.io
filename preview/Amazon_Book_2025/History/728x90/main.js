@@ -97,7 +97,7 @@ function animateViking() {
     var tl = gsap.timeline({repeat:0});
 
     tl.add('start');
-    tl.from("#vikingWrapper", 9, {x:100, ease:Power0.easeNone}, "start");
+    tl.from("#vikingWrapper", 9, {x:60, ease:Power0.easeNone}, "start");
     tl.from("#shield", 1.8, {x:-25, y:-10, yoyo:true, repeat:4, ease:Sine.easeInOut}, "start");
     tl.from("#vikingWrapper", 1.8, {y:10, yoyo:true, repeat:4, ease:Sine.easeInOut}, "start");
     
