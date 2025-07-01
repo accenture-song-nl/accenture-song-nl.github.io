@@ -116,11 +116,10 @@ img, div, object{
 }
 
 #monsterWrapper{
-    width: 100%;
+   width: 970px;
     height: 100%;
-    left: 5px;
-    transform: scale(1.2);
-    top: -17px;
+    left: -82px;
+    top: -1px;
 }
 
 #arm1{
@@ -139,12 +138,12 @@ img, div, object{
 
 #eye1{
     width: 300px;
-    top: -88px;
-    left: 239px;
+    top: -117px;
+    left: 322px;
 }
 
 #eye2{
     width: 300px;
-    top: -106px;
-    left: 255px;
+    top: -138px;
+    left: 342px;
 }
