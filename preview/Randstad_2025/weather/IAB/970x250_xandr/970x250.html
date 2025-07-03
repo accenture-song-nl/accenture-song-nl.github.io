@@ -1,0 +1,175 @@
+<html> 
+<head> 
+
+<script type="text/javascript" src="https://acdn.adnxs.com/html5-lib/1.4.1/appnexus-html5-lib.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script type="text/javascript">
+	window.onload = () => {
+		addEventListener();
+		startAnimation();
+	};
+
+	  function exitClick() {
+        screenad.click();
+      }
+
+      function addEventListener() {
+        if (document.getElementById("click-area")) {
+          document.getElementById("click-area").addEventListener("click", exitClick);
+          document.getElementById("click-area").addEventListener("mouseover", onOver);
+          document.getElementById("click-area").addEventListener("mouseout", onOut);
+        }
+      }
+      function onOver() {
+        gsap.to('.cta', 0.4, {opacity:0})
+        gsap.to('.ctaOver', 0.4, {opacity:1})
+      }
+
+      function onOut() {
+        gsap.to('.cta', 0.4, {opacity:1})
+        gsap.to('.ctaOver', 0.4, {opacity:0})
+      }
+      function startAnimation() {
+        var tl = gsap.timeline({paused:true});
+        tl.add('start')
+        tl.from('#stageContent', 0.7, {backgroundColor: "#0f1941"}, 'start')
+        tl.from('.circularImage', 0.7, {xPercent:100}, 'start+=1' )
+        tl.from('.tagline', 0.3, {opacity:0}, 'start+=1.6' )
+        tl.from('.text01', 0.3, {opacity:0}, 'start+=2' )
+        tl.from('.ctaContainer', 0.3, {scale:0.5 ,ease: "back.out(1.7)",}, 'start+=2.5' )
+        tl.from('.ctaContainer', 0.1, {opacity:0}, 'start+=2.5' )
+        tl.play(0);
+      }
+</script>
+<style type="text/css">
+	body, div{
+		margin:0;
+		padding:0;
+	}
+
+	#stageContent {
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		width: 968px;
+		height: 248px;
+		border: 1px solid rgb(85, 103, 112);
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+		/* background-color: rgb(248, 248, 248); */
+		background-color: #2175d9;
+		overflow: hidden;
+	}
+
+	#stageTemplateName {
+		position: absolute;
+		right: 15px;
+		bottom: 15px;
+	 	font-family: Verdana;
+		font-size: 11px;
+		color: rgb(85, 103, 112);
+		font-weight: normal;
+		text-decoration: none;
+	}
+
+	#stageLogo {
+		position: absolute;
+		left: 9px;
+		top: 9px;
+		width: 118px;
+		height: 30px;
+		-webkit-background-size: 100%;
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+		background-image: url(WARM_logo.png);
+		background-size: 100% 100%;
+		background-position: 0px 0px;
+		background-repeat: no-repeat;
+	}
+
+	#click-area{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		cursor: pointer;
+	}
+
+	.guide{
+        position: absolute;
+        top:0;
+        left:0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        opacity: 0.6;
+      }
+
+      .logo{
+        position: absolute;
+		left: 22px;
+		width: 95px;
+		bottom: 22px;
+      }
+
+	  .circularImage{
+		position: absolute;
+		right: 0;
+		top: 0;
+	  }
+
+      .text01{
+        position: absolute;
+		top: 22px;
+		left: 21px;
+		/* width: 639px; */
+      }
+
+      .tagline{
+        position: absolute;
+		top: 207px;
+		right: 23px;
+		width: 170px;
+		display: none;
+      }
+
+      .ctaContainer{
+        position: absolute;
+		width: 184px;
+		left: 502px;
+		top: 161px;
+      }
+
+      .cta, .ctaOver{
+        position: absolute;
+        width: 100%;
+        height: auto;
+      }
+
+      .ctaOver{
+        opacity: 0;
+      }
+</style>
+</head>
+
+<body>
+	
+	<div id="stageContent">
+
+		<img class="circularImage" src="./circular_image.png" />
+		<!-- <img class="guide" src="./guide.png" /> -->
+		<img class="tagline" src="./tagline.png" />
+		<img class="text01" src="./text01.png" />
+		<img class="logo" src="./logo.png" />
+  
+		<div class="ctaContainer">
+		  <img class="cta" src="./cta.png" />
+		  <img class="ctaOver" src="./cta-over.png" />
+		</div>
+
+		<!-- <img class="guide" src="./guide.jpg" /> -->
+
+		<a class="click-area" id="click-area" href="javascript:void(0)" onClick="window.open(APPNEXUS.getClickTag(), '_blank');"></a>
+	</div>
+
+</body>
+</html>
