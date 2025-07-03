@@ -42,8 +42,11 @@ function getAnimation(){
         gsap.set("#loaderWrapper", {display:"none"});
     }}, 0)
     masterTL.add("start");
-    masterTL.from("#copy", 0.5, {opacity:0, ease:Sine.easeOut}, "start");
     masterTL.from("#spaceWrapper", 2, {clipPath:"polygon(30% 0%, 30% 0%, 31% 75%)", ease:Sine.easeInOut}, "start+=0.5");
+    masterTL.from("#copy", 1, {clipPath:"polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%)", ease:Sine.easeInOut, onComplete:function(){
+        gsap.set("#copy", {opacity:0});
+        gsap.set("#copy2", {opacity:1});
+    }}, "start+=1");
     
     masterTL.add("heli", "-=1.3");
     masterTL.from("#heliRotor", 0.5, {rotation:380, repeat:13, ease:Power0.easeNone}, "heli");

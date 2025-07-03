@@ -1,0 +1,173 @@
+body{
+    margin: 0;
+}
+
+img, div, object{
+    position: absolute;
+}
+
+#banner{
+    width: 300px;
+    height: 250px;
+    overflow: hidden;
+    background-color: #000000;
+    color: #fff;
+}
+
+#loaderWrapper{
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    pointer-events: none;
+    top:0;
+}
+
+#loaderCenter{
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#loader{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    border: 3px solid #222d3f;
+    border-top: 3px solid #ff9900;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#border{
+    width: 100%;
+    height: 100%;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    top: 0;
+}
+
+#mainExit{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 999;
+    position: absolute;
+    top:0;
+}
+
+#person,
+#copy2,
+#flame2,
+#flame1,
+#couple,
+#logo,
+#bg,
+#copy{
+    width: 100%;
+}
+
+#spaceWrapper{
+    background: #000;
+    top: 0px;
+    width: 150%;
+    height: 100%;
+    clip-path: polygon(-128% 0%, 194% 0%, 33% 70%);
+}
+
+#reset{
+    width: 970px;
+    height: 250px;
+}
+
+#copy{
+    clip-path: polygon(0 0, 70% 0%, 70% 100%, 0% 100%);
+}
+
+#copy2{
+    opacity: 0;
+}
+
+#bookBg{
+    width: 100%;
+    top: 0;
+}
+
+#bookBg{
+    width: 300px;
+}
+
+#coupleWrapper{
+    width: 100%;
+    height: 100%;
+    top: -1px;
+    left: -324px;
+    transform: scale(0.73);
+}
+
+#scarfWrapper3,
+#scarfWrapper2,
+#scarfWrapper1{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#scarfBack,
+#scarfFront2,
+#scarfWrapper3,
+#scarfWrapper1{
+    right: 0;
+}
+
+#scarfBack,
+#scarfFront2,
+#scarfFront1{
+    width: 970px;
+}
+
+#flame1{
+    transform-origin: 418px 140px;
+}
+
+#flame2{
+    transform-origin: 560px 102px;
+}
+
+#birdWrapper{
+     width: 300px;
+    height: 600px;
+    transform-origin: 127px 49px;
+    top: -19px;
+    left: 145px;
+    transform: scale(0.7);
+}
+
+#flower1,
+#flower2,
+#flower3,
+#flower4{
+    width: 300px;
+}
+
+#bird{
+    width: 100%;
+}
+
+#birdWingR{
+    width: 100%;
+    transform-origin: 127px 49px;
+}
+
+#birdWingL{
+    width: 100%;
+    transform-origin: 127px 49px;
+    top: 4px;
+    left: -6px;
+}

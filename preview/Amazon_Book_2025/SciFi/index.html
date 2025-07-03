@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Iframes</title>
+    <title>Accenture Song Previews</title>
     <style>
-        body {
+       body {
             display: flex;
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -39,9 +39,21 @@
             flex-wrap: wrap;
             gap: 20px;
             overflow-y: auto;
+            flex-direction: column;
+            align-items: start;
         }
         .iframe-container {
             display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* background-color: #fff; */
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .iframe-container-background{
+                        display: flex;
             flex-direction: column;
             align-items: center;
             background-color: #fff;
@@ -51,6 +63,8 @@
             height: auto; /* Adjust height to fit content */
         }
         iframe {
+            width: 0;
+            height: 0;
             border: none;
             margin-bottom: 10px;
             border-radius: 4px;
@@ -91,7 +105,6 @@
             cursor: pointer;
             font-size: 0.9em;
             margin-top: 20px;
-            display: none;
         }
         .save-button:hover, .reset-button:hover {
             background-color: #218838;
@@ -113,9 +126,16 @@
     </div>
     <div id="content"></div>
     <script>
-        const hardcodedPaths = [
+          const hardcodedPaths = [
+              "160x600",
               "300x600",
-              "970x250"
+              "300x50",
+              "300x100",
+              "300x250",
+              "320x50",
+              "320x480",
+              "728x90",
+              "970x250",
             // Add more hardcoded paths as needed
         ];
 
