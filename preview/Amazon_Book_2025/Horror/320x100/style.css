@@ -62,16 +62,7 @@ img, div, object{
     top:0;
 }
 
-#bg{
-    transform: scale(1.025);
-    transform-origin: 0 100%;
-    left: -1px;
-}
-
-#fire1,
-#vikingFire,
-#shield,
-#viking,
+#bg2,
 #copy,
 #copy2,
 #logo,
@@ -85,71 +76,6 @@ img, div, object{
 
 #copy2{
     opacity: 0;
-}
-
-#vikingWrapper{
-    width: 970px;
-    height: 250px;
-    top: -68px;
-    left: -299px;
-    transform: scale(0.52);
-}
-
-#shield{
-    top: 0px;
-    left: 0px;
-}
-
-#vikingFire{
-    transform-origin: 620px 72px;
-}
-
-#fireWrapper{
-    width: 300px;
-    height: 600px;
-    transform: scale(0.53);
-    transform-origin: 0px 0px;
-    left: -173px;
-    top: 9px;
-}
-
-#castleFire1{
-    transform-origin: 40px 202px;
-    width: 300px;
-    left: 228px;
-    top: -106px;
-}
-
-#castleFire2{
-    transform-origin: 92px 153px;
-    width: 300px;
-    left: 235px;
-    top: -103px;
-}
-
-#castleFire3{
-    transform-origin: 131px 189px;
-    width: 300px;
-    left: 229px;
-    top: -101px;
-}
-
-#castleFire4{
-    transform-origin: 168px 159px;
-    width: 300px;
-    left: 241px;
-    top: -102px;
-}
-
-#castleFire5{
-    transform-origin: 198px 217px;
-    width: 300px;
-    left: 242px;
-    top: -96px;
-}
-
-#fire1{
-    transform-origin: 185px 100px;
 }
 
 .guide{
