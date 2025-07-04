@@ -7,7 +7,7 @@ img, div, object{
 }
 
 #banner{
-    width: 300px;
+    width: 320px;
     height: 100px;
     overflow: hidden;
     background-color: #000000;
@@ -91,6 +91,7 @@ img, div, object{
 #butterfly1L,
 #butterfly1{
     transform: rotate(30deg);
+    top: -5px;
 }
 
 #butterfly1{
@@ -113,4 +114,12 @@ img, div, object{
 
 #butterfly2Wrapper img{
     transform-origin: 215px 72px;
+}
+
+.guide{
+    position: absolute;
+    top:0;
+    left:0;
+    opacity: 0.5;
+    pointer-events: none;
 }
