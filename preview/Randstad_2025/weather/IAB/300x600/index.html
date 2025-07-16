@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+
+    <script type="text/javascript" src="https://acdn.adnxs.com/html5-lib/1.4.1/appnexus-html5-lib.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .stage-content {
+        position: absolute;
+        width: 300px;
+        height: 600px;
+        font-family: Verdana;
+        font-style: normal;
+        text-decoration: none;
+        cursor: pointer;
+        background-color: #2175d9;
+        overflow: hidden;
+      }
+      .stage-background {
+        width: 100%;
+        height: 100%;
+        /* background: #ebebeb; */
+        -webkit-box-shadow: inset 0px 0px 0px 1px #34454e;
+        -moz-box-shadow: inset 0px 0px 0px 1px #34454e;
+        box-shadow: inset 0px 0px 0px 1px #34454e;
+      }
+      .weborama {
+        position: absolute;
+        color: rgb(85, 103, 112);
+        right: 5px;
+      }
+      .template-name {
+        bottom: 21px;
+        font-size: 11px;
+        font-weight: 700;
+      }
+      .template-size {
+        bottom: 5px;
+        font-size: 9px;
+        font-weight: 400;
+      }
+      
+      .click-area {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        z-index: 200;
+        background-color: #fff;
+        background-color: rgba(255, 0, 0, 0);
+      }
+
+      .guide{
+        position: absolute;
+        pointer-events: none;
+        opacity: 0.6;
+        top:0;
+        left:0;
+      }
+
+      .circular-image{
+        position: absolute;
+        bottom: 0px;
+      }
+
+      .tagline{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        display: none;
+      }
+
+      .ctaContainer{
+        position: absolute;
+        top: 530px;
+        left: 150px;
+        width: 122px;
+      }
+
+      .logo{
+        position: absolute;
+        left: 29px;
+        bottom: 28px;
+        width: 87px;
+      }
+
+      .cta, .ctaOver{
+        position: absolute;
+        width: 100%;
+      }
+
+      .ctaOver{
+        opacity: 0;
+      }
+      
+      .text01{
+        position: absolute;
+        left: 28px;
+        top: 27px;
+        /* width: 214px; */
+      }
+    </style>
+
+    <script type="text/javascript">
+      function exitClick() {
+        screenad.click();
+      }
+
+      function addEventListener() {
+        if (document.getElementById("click-area")) {
+          document.getElementById("click-area").addEventListener("click", exitClick);
+          document.getElementById("click-area").addEventListener("mouseover", onOver);
+          document.getElementById("click-area").addEventListener("mouseout", onOut);
+        }
+      }
+      function onOver() {
+        gsap.to('.cta', 0.4, {opacity:0})
+        gsap.to('.ctaOver', 0.4, {opacity:1})
+      }
+
+      function onOut() {
+        gsap.to('.cta', 0.4, {opacity:1})
+        gsap.to('.ctaOver', 0.4, {opacity:0})
+      }
+      function startAnimation() {
+        var tl = gsap.timeline({paused:true});
+        tl.add('start')
+        tl.from('.stage-content', 0.7, {backgroundColor: "#0f1941"}, 'start')
+        tl.from('.circular-image', 0.7, {yPercent:100}, 'start+=1' )
+        // tl.from('.tagline', 0.3, {opacity:0}, 'start+=1.6' )
+        tl.from('.text01', 0.3, {opacity:0}, 'start+=2' )
+        tl.from('.ctaContainer', 0.3, {scale:0.5 ,ease: "back.out(1.7)",}, 'start+=2.5' )
+        tl.from('.ctaContainer', 0.1, {opacity:0}, 'start+=2.5' )
+        tl.play(0);
+      }
+      window.onload = () => {
+        addEventListener();
+        startAnimation();
+      };
+    </script>
+  </head>
+
+  <body>
+    <div class="stage-content">
+      <a class="click-area" id="click-area" href="javascript:void(0)" onClick="window.open(APPNEXUS.getClickTag(), '_blank');"></a>
+
+      <div class="stage-background"></div>
+      <img class="circular-image" src="circular_image.png" />
+
+      <div class="ctaContainer">
+        <img class="cta" src="./cta.png" />
+        <img class="ctaOver" src="./cta-over.png" />
+      </div>
+
+
+      <!-- <img class="tagline" src="tagline.png" /> -->
+      <img class="logo" src="logo.png" />
+      <img class="text01" src="text01.png" />
+
+
+      <!-- <img class="guide" src="guide.jpg" /> -->
+    </div>
+  </body>
+</html>
