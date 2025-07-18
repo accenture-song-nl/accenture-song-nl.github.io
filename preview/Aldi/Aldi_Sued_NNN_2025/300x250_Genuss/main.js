@@ -16,8 +16,7 @@ function init() {
     })
 
     document.querySelector("#mainExit").addEventListener("click", function(){
-        // masterTL.progress(1);
-        masterTL.pause();
+        masterTL.progress(1);
     })
 
     getAnimation();
@@ -52,19 +51,19 @@ function getAnimation(){
 
     masterTL.add("showText2");
     masterTL.from("#text2", 0.5, {x:-50, opacity:0, ease:Sine.easeOut}, "showText2");
-    masterTL.from("#highlight2Wrapper", 0.5, {width:0, ease:Sine.easeInOut}, "showText2+=0.5");
+    masterTL.from("#highlight2Wrapper", 0.5, {width:0, ease:Sine.easeInOut}, "showText2");
     masterTL.to("#text2", 0.5, {opacity:0, ease:Sine.easeIn}, "showText2+=2");
     masterTL.to("#highlight2Wrapper", 0.5, {width:0, ease:Sine.easeInOut}, "showText2+=2.25");
     
     masterTL.add("showText3");
     masterTL.from("#text3", 0.5, {x:-50, opacity:0, ease:Sine.easeOut}, "showText3");
-    masterTL.from("#highlight3Wrapper", 0.5, {width:0, ease:Sine.easeInOut}, "showText3+=0.5");
+    masterTL.from("#highlight3Wrapper", 0.5, {width:0, ease:Sine.easeInOut}, "showText3");
     masterTL.to("#text3", 0.5, {opacity:0, ease:Sine.easeIn}, "showText3+=2");
     masterTL.to("#highlight3Wrapper", 0.5, {width:0, ease:Sine.easeInOut}, "showText3+=2.25");
     
     masterTL.add("showText4");
     masterTL.from("#text4", 0.5, {x:-50, opacity:0, ease:Sine.easeOut}, "showText4");
-    masterTL.from("#highlight4Wrapper", 0.5, {width:0, ease:Sine.easeInOut}, "showText4+=0.5");
+    masterTL.from("#highlight4Wrapper", 0.5, {width:0, ease:Sine.easeInOut}, "showText4");
     masterTL.to("#text4", 0.5, {opacity:0, ease:Sine.easeIn}, "showText4+=2");
     masterTL.to("#highlight4Wrapper", 0.5, {width:0, ease:Sine.easeInOut}, "showText4+=2.25");
     
