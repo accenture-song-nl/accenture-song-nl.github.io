@@ -16,8 +16,8 @@ function init() {
     })
 
     document.querySelector("#mainExit").addEventListener("click", function(){
-        // masterTL.progress(1);
-        masterTL.pause();
+        masterTL.progress(1);
+        // masterTL.pause();
     })
 
     getAnimation();
