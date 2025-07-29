@@ -16,8 +16,8 @@ function init() {
     })
 
     document.querySelector("#mainExit").addEventListener("click", function(){
-        masterTL.progress(1);
-        // masterTL.pause();
+        // masterTL.progress(1);
+        masterTL.pause();
     })
 
     getAnimation();
@@ -30,13 +30,13 @@ function getAnimation(){
     masterTL.add("intro")
     masterTL.from("#bg", 1, {scale:1.2, ease:Sine.easeInOut}, "intro");
     masterTL.from("#pups", 1, {scale:0.75, ease:Sine.easeInOut}, "intro");
-    masterTL.from("#logoPP", 0.5, {y:-100, ease:Power2.easeOut}, "intro+=1");
+    masterTL.from("#logoPP", 0.5, {y:-100, ease:Power2.easeOut}, "intro+=0.5");
     //masterTL.from("#frame", 1, {opacity:0, x:-50, y:10, rotation:-20, ease:Power2.easeOut}, "intro+=1.2");
     
     masterTL.add("text1", "+=0.3")
-    masterTL.to("#logoPP", 0.5, {y:-100, ease:Power2.easeIn}, "text1");
-    masterTL.to(["#pups", "#frame"], 0.3, {opacity:0, ease:Power2.easeIn}, "text1+=0.5");
-    masterTL.to("#bg", 1, {objectPosition: "50% 26%", height: "107px", ease:Sine.easeInOut}, "text1+=1.2");
+    masterTL.to("#logoPP", 0.5, {y:-100, ease:Power2.easeIn}, "text1+=0.5");
+    masterTL.to("#pups", 0.5, {y: 70, scale:0, ease:Power2.easeIn}, "text1+=0.6");
+    masterTL.to("#bg", 1, {objectPosition: "50% 26%", height: "107px", top: '2px', left:'-1px', ease:Sine.easeInOut}, "text1+=0.7");
     masterTL.from("#text1", 0.5, {opacity:0, y:-20, ease:Power2.easeIn}, "text1+=1.5");
     masterTL.from("#sticker1", 0.5, {x:100, opacity: 0, ease:Power2.easeOut}, "text1+=2.1");
     masterTL.from("#highlight1Wrapper", 1, {width:0, ease:Power2.easeOut}, "text1+=1.9");
@@ -58,7 +58,7 @@ function getAnimation(){
     masterTL.to("#date02", 1, {x:-300, ease:Power2.easeOut}, "secondDate+=2.7");
     
     masterTL.add("endScreen", "-=1");
-    masterTL.to("#bg", 0.3, {height:"280px", objectPosition: "0", top: "-30px", scale: 1, borderRadius: 0, ease:Sine.easeInOut}, "endScreen+=0.8");
+    masterTL.to("#bg", 0.3, {height:"280px", objectPosition: "0", left: 0, top: "-30px", scale: 1, borderRadius: 0, ease:Sine.easeInOut}, "endScreen+=0.8");
     masterTL.to("#bluePanel", 0, {height:143, width: "280px", left: "10px", ease:Sine.easeInOut}, "endScreen+=0.8");
     masterTL.to("#bluePanel", 0, {borderRadius:"15px 15px 0px 0px", zIndex: 0, ease:Sine.easeInOut}, "endScreen+=0.8");
     masterTL.from("#bluePanel", 1, {y:200, ease:Sine.easeInOut}, "endScreen+=0.8");

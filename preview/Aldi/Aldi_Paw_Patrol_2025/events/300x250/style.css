@@ -90,11 +90,16 @@ img, div, object{
 }
 
 #bg{
-    scale: 0.96; 
-    border-radius: 20px;
+    scale: 0.98 0.98; 
+    border-radius: 5px;
     object-fit: cover;
     overflow: hidden;
     height: 96.5%;
+    left: -1px;
+}
+
+#text2{
+    left: 5px;
 }
 
 
