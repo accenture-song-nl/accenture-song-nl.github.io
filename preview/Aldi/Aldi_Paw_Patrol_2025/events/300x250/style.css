@@ -90,7 +90,7 @@ img, div, object{
 }
 
 #bg{
-    scale: 0.98 0.98; 
+    scale: 0.97 0.96; 
     border-radius: 5px;
     object-fit: cover;
     overflow: hidden;
@@ -100,6 +100,10 @@ img, div, object{
 
 #text2{
     left: 5px;
+}
+
+#logo{
+    right: 1px;
 }
 
 
