@@ -35,8 +35,8 @@ function getAnimation(){
     
     masterTL.add("text1", "+=0.3")
     masterTL.to("#logoPP", 0.5, {y:-100, ease:Power2.easeIn}, "text1+=0.5");
-    masterTL.to("#pups", 0.5, {y: 70, scale:0, ease:Power2.easeIn}, "text1+=0.6");
-    masterTL.to("#bg", 1, {objectPosition: "50% 26%", height: "107px", top: '2px', left:'-1px', ease:Sine.easeInOut}, "text1+=0.7");
+    masterTL.to("#pups", 0.95, {y: 85, scale: 0.8, objectPosition: "0% 0%", height: 0, ease:Sine.easeInOut}, "text1+=0.75");
+    masterTL.to("#bg", 1, {objectPosition: "50% 21%", height: "107px", top: '3px', left:'-1px', ease:Sine.easeInOut}, "text1+=0.7");
     masterTL.from("#text1", 0.5, {opacity:0, y:-20, ease:Power2.easeIn}, "text1+=1.5");
     masterTL.from("#sticker1", 0.5, {x:100, opacity: 0, ease:Power2.easeOut}, "text1+=2.1");
     masterTL.from("#highlight1Wrapper", 1, {width:0, ease:Power2.easeOut}, "text1+=1.9");

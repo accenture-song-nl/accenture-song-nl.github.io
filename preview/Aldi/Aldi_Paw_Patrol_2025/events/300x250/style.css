@@ -91,20 +91,23 @@ img, div, object{
 
 #bg{
     scale: 0.97 0.96; 
-    border-radius: 5px;
+    border-radius: 10px;
     object-fit: cover;
     overflow: hidden;
     height: 96.5%;
-    left: -1px;
 }
 
-#text2{
+#pups{
+    object-fit: cover;
+}
+
+/* #text2{
     left: 5px;
-}
+} */
 
-#logo{
+/* #logo{
     right: 1px;
-}
+} */
 
 
 #highlight1Wrapper{
