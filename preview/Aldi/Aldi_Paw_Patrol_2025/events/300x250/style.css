@@ -99,6 +99,7 @@ img, div, object{
 
 #pups{
     object-fit: cover;
+    object-position: 0;
 }
 
 /* #text2{
