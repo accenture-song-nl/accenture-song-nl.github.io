@@ -35,6 +35,7 @@ function getAnimation(){
     masterTL.add("text1", "+=1")
     masterTL.to("#logoPP", 0.5, {y:-100, ease:Power2.easeIn}, "text1");
     masterTL.from("#text1", 0.5, {opacity:0, y:-20, ease:Power2.easeIn}, "text1+=0.5");
+    masterTL.to("#bg", 1, {top: "-35px", ease:Sine.easeInOut}, "text1+=1");
     masterTL.to("#bluePanel", 1, {borderRadius:"15px 15px 0px 0px", height:143, ease:Sine.easeInOut}, "text1+=1");
     masterTL.from("#stickerDate", 1, {y:160, ease:Sine.easeInOut}, "text1+=1");
     masterTL.from("#sticker1", 1, {y:180, ease:Sine.easeInOut}, "text1+=1");
@@ -70,6 +71,7 @@ function getAnimation(){
     masterTL.to("#cta1", 0.3, {scale:0, ease:Sine.easeIn}, "endScreen");
     
     masterTL.to("#bluePanel", 0.3, {height:153, ease:Sine.easeInOut}, "endScreen+=0.8");
+    masterTL.to("#bg", 0.3, {top: "-45px", ease:Sine.easeInOut}, "endScreen+=0.8");
     masterTL.to("#text1", 0.5, {opacity:1, ease:Power2.easeIn}, "endScreen+=0.8");
     masterTL.from("#winImage", 1, {x:300, ease:Power2.easeOut}, "endScreen+=0.8");
     masterTL.from("#winText", 1, {x:280, ease:Power2.easeOut}, "endScreen+=0.8");
