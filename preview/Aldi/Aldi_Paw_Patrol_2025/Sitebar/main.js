@@ -21,7 +21,8 @@ function init() {
     })
 
     document.querySelector("#mainExit").addEventListener("click", function(){
-        masterTL.progress(1);
+        // masterTL.progress(1);
+        masterTL.pause();
     })
 }
 
@@ -83,12 +84,13 @@ function getAnimation(){
     masterTL.to("#stickerBadge", 1, {y:1400, ease:Sine.easeInOut}, "showAlbum");
     masterTL.to("#text1", 0.5, {opacity:1, ease:Power2.easeIn}, "showAlbum");
     masterTL.to("#text2", 0.8, {scale:0.6, y:-27, ease:Power2.easeIn}, "showAlbum");
-    masterTL.to(["#pups", "#frame"], 1, {scale:0, ease:Power2.easeIn}, "showAlbum+=0.3");
+    masterTL.to(["#pups", "#frame"], 1.5, {scale:0.4, ease:Power2.easeIn}, "showAlbum+=0.3");
     masterTL.from("#album", 1, {x:1000, ease:Power2.easeOut}, "showAlbum+=0.8");
     masterTL.from("#albumText", 1, {x:1100, ease:Power2.easeOut}, "showAlbum+=0.8");
     masterTL.from("#price", 1, {x:1200, ease:Power2.easeOut}, "showAlbum+=0.8");
     masterTL.from("#cta1", 0.5, {scale:0, ease:Back.easeOut}, "showAlbum+=1.5");
     masterTL.to("#cta1", 0.5, {scale:1.1, repeat:1, yoyo:true, ease:Power2.easeInOut}, "showAlbum+=2.5");
+    masterTL.to(["#pups", "#frame"], 0.2, {opacity:0, ease:Power2.easeIn}, "showAlbum+=1.8");
     
     masterTL.add("endScreen", "+=0.5")
     masterTL.to("#album", 1, {x:-1000, ease:Power2.easeOut}, "endScreen");
