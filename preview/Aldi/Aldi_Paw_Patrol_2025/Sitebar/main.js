@@ -81,9 +81,9 @@ function getAnimation(){
     masterTL.to("#sticker2", 1, {y:1200, ease:Sine.easeInOut}, "showAlbum");
     masterTL.to("#sticker3", 1, {y:1000, ease:Sine.easeInOut}, "showAlbum");
     masterTL.to("#stickerBadge", 1, {y:1400, ease:Sine.easeInOut}, "showAlbum");
-    masterTL.to(["#pups", "#frame"], 0.3, {opacity:0, ease:Power2.easeIn}, "showAlbum");
     masterTL.to("#text1", 0.5, {opacity:1, ease:Power2.easeIn}, "showAlbum");
     masterTL.to("#text2", 0.8, {scale:0.6, y:-27, ease:Power2.easeIn}, "showAlbum");
+    masterTL.to(["#pups", "#frame"], 1, {scale:0, ease:Power2.easeIn}, "showAlbum+=0.3");
     masterTL.from("#album", 1, {x:1000, ease:Power2.easeOut}, "showAlbum+=0.8");
     masterTL.from("#albumText", 1, {x:1100, ease:Power2.easeOut}, "showAlbum+=0.8");
     masterTL.from("#price", 1, {x:1200, ease:Power2.easeOut}, "showAlbum+=0.8");
