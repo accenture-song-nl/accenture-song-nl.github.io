@@ -55,18 +55,18 @@ function getAnimation(){
     masterTL.to("#sticker", 0.3, {rotationY:0, ease:Sine.easeInOut}, "product2+=3.65");
     masterTL.to("#sticker", 0.3, {rotationY:-90, ease:Sine.easeInOut}, "product2+=5");
     masterTL.to("#product2", 1, {x:300, ease:Sine.easeIn}, "product2+=5");
+    masterTL.to("#date1", 1, {x:150, ease:Sine.easeIn}, "product2+=5");
+    masterTL.to("#logo", 1, {opacity:0, ease:Sine.easeIn}, "product2+=5");
     
-    masterTL.add("product3", "-=0.5")
-    masterTL.from("#product3", 1, {x:-300, ease:Sine.easeOut}, "product3");
-    masterTL.from("#priceBlock3", 1, {x:-350, ease:Sine.easeOut}, "product3");
-    masterTL.to("#priceBlock3", 0.3, {rotationY:-90, ease:Sine.easeInOut}, "product3+=3.5");
-    masterTL.to("#sticker", 0.3, {rotationY:0, ease:Sine.easeInOut}, "product3+=3.65");
-    masterTL.to("#sticker", 0.3, {rotationY:-90, ease:Sine.easeInOut}, "product3+=5");
-    masterTL.to("#product3", 1, {x:300, ease:Sine.easeIn}, "product3+=5");
-    masterTL.to("#date1", 1, {x:150, ease:Sine.easeIn}, "product3+=5");
-    masterTL.to("#logo", 1, {opacity:0, ease:Sine.easeIn}, "product3+=5");
+    // masterTL.add("product3", "-=0.5")
+    // masterTL.from("#product3", 1, {x:-300, ease:Sine.easeOut}, "product3");
+    // masterTL.from("#priceBlock3", 1, {x:-350, ease:Sine.easeOut}, "product3");
+    // masterTL.to("#priceBlock3", 0.3, {rotationY:-90, ease:Sine.easeInOut}, "product3+=3.5");
+    // masterTL.to("#sticker", 0.3, {rotationY:0, ease:Sine.easeInOut}, "product3+=3.65");
+    // masterTL.to("#sticker", 0.3, {rotationY:-90, ease:Sine.easeInOut}, "product3+=5");
+    // masterTL.to("#product3", 1, {x:300, ease:Sine.easeIn}, "product3+=5");
     
-    masterTL.add("end", "-=0.5")
+    masterTL.add("end")
     masterTL.from("#logoEnd", 0.5, {y:20, opacity:0, ease:Sine.easeOut}, "end");
     masterTL.from("#ctaLeft", 0.5, {scale:0, transformOrigin:"50% 95%", ease:Back.easeOut}, "end");
     masterTL.from("#ctaRight", 0.01, {opacity:0, ease:Sine.easeOut}, "end+=0.7");
