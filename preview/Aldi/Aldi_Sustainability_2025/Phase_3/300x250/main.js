@@ -24,7 +24,7 @@ function init() {
 
 function getAnimation(){
 
-    masterTL = gsap.timeline({paused:true});
+    masterTL = gsap.timeline({paused:true, repeat:1});
     masterTL.add("start")
     masterTL.to("#loaderWrapper", 0.2, {opacity:0, ease:Sine.easeInOut}, 0)
     masterTL.add("start");
@@ -39,20 +39,20 @@ function getAnimation(){
     masterTL.from("#text2", 0.5, {y:200, ease:Sine.easeOut}, "showFrame2+=1.5")
     masterTL.from("#extraInfo", 0.5, {x:200, ease:Sine.easeOut}, "showFrame2+=1.75")
     masterTL.from("#carrot", 1, {y:150, ease: "back.out(1.2)"}, "showFrame2+=2")
-    masterTL.to(["#text2", "#carrot", "#extraInfo"], 0.5, {opacity:0, ease:Sine.easeInOut}, "showFrame2+=4.5")
+    masterTL.to(["#text2", "#carrot", "#extraInfo"], 0.5, {opacity:0, ease:Sine.easeInOut}, "showFrame2+=7")
 
     masterTL.add("showFrame3")
 
     masterTL.to("#logo", 0.5, {scale:2.1, left:105, top: 37, ease:Sine.easeInOut}, "showFrame3")
     masterTL.from("#tagline", 0.3, {opacity:0, ease:Sine.easeOut}, "showFrame3+=0.5")
-    masterTL.from("#text4HighlightWrapper", 0.5, {y:200, ease:Sine.easeOut}, "showFrame3+=1")
-    masterTL.from(["#text3HighlightWrapper"], 0.5, {width:0, ease:Sine.easeOut}, "showFrame3+=1.7")
 
     masterTL.add("endScreen")
     
     masterTL.from("#ctaLeft", 0.5, {scale:0, transformOrigin:"50% 95%", ease:Back.easeOut}, "endscreen");
     masterTL.from("#ctaRight", 0.01, {opacity:0, ease:Sine.easeOut}, "endscreen+=0.7");
     masterTL.from("#ctaRight", 0.3, {x:-50, ease:Sine.easeOut}, "endscreen+=0.7");
+    
+    masterTL.to("#banner", 0.5, {}, "14.5");
 
     masterTL.play();
 
