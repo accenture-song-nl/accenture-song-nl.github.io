@@ -55,7 +55,7 @@ img, div, object{
     height: 1200px;
     left: 0px;
     overflow: hidden;
-    background: #ed6b6a;
+    background: #00b8f3;
     color: #fff;
 }
 
@@ -71,12 +71,12 @@ img, div, object{
 }
 
 #bgBorder{
-    width: 536px;
-    height: 854px;
+    width: 537px;
+    height: 750px;
     left: 50%;
     transform: translateX(-50%);
     border-radius: 20px;
-    top: 35px;
+    top: 30px;
     box-shadow: 0px 0px 0px 3000px #00b8f3;
 }
 
@@ -91,8 +91,8 @@ img, div, object{
     width: 100%;
 }
 
-#sticker2,
-#sticker,
+#carrot,
+#extraInfo,
 #textB,
 #text1,
 #text2,
