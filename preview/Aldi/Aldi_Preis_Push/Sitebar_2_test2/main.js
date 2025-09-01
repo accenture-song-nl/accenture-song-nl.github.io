@@ -54,14 +54,14 @@ function getAnimation(){
     masterTL = gsap.timeline({paused:true});
     masterTL.to("#loaderWrapper", 0.2, {opacity:0, ease:Sine.easeInOut}, 0)
     masterTL.add("intro")
-    masterTL.from("#bg", 2.5, {scale:1.5, ease:Power3.easeInOut}, "intro");
+    masterTL.from("#bg", 2, {x:1200, ease:Power3.easeInOut}, "intro");
     masterTL.from("#logo", 0.5, {scale:0, ease:Back.easeOut}, "intro+=1");
-    masterTL.from("#bgBorder", 1, {scale:5, ease:Sine.easeOut}, "intro+=1");
+    // masterTL.from("#bgBorder", 1, {scale:5, ease:Sine.easeOut}, "intro+=1");
     masterTL.from("#text1", 0.5, {x:-1200, ease:Sine.easeOut}, "intro+=2");
     masterTL.from("#highlightWrapper1", 0.75, {width:0, ease:Sine.easeOut}, "intro+=2.5");
     
-    masterTL.to("#bgBorder", 0.5, {width:0, height:0, ease:Sine.easeOut}, "intro+=5");
-    masterTL.to("#bg", 0.5, {scale:0.8, ease:Sine.easeOut}, "intro+=5");
+    // masterTL.to("#bgBorder", 0.5, {width:0, height:0, ease:Sine.easeOut}, "intro+=5");
+    masterTL.to("#bg", 1, {x:1200, ease:Sine.easeIn}, "intro+=5");
     masterTL.to("#text1", 0.5, {x:1200, ease:Sine.easeIn}, "intro+=5");
     masterTL.to("#highlightWrapper1", 0.75, {x:1200, ease:Sine.easeIn}, "intro+=5");
     
