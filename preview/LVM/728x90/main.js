@@ -19,8 +19,8 @@ function init(clickTAGvalue) {
 
     document.querySelector("#mainExit").addEventListener("click", function(){
         clickTAGvalue = dhtml.getVar('clickTAG', 'http://www.example.com');
-        // masterTL.progress(1).pause();
-        masterTL.pause();
+        window.open(clickTAGvalue);
+        masterTL.progress(1).pause();
         
     })
 
