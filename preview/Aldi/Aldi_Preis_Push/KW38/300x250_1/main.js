@@ -37,6 +37,7 @@ function getAnimation(){
     masterTL.to("#bg", 0.5, {scale:0.8, ease:Sine.easeOut}, "intro+=5");
     masterTL.to("#text1", 0.5, {x:300, ease:Sine.easeIn}, "intro+=5");
     masterTL.to("#highlightWrapper1", 0.75, {x:300, ease:Sine.easeIn}, "intro+=5");
+    masterTL.to("#logo", 1, {x:-9, y:-9, ease:Sine.easeInOut}, "intro+=5");
     
     masterTL.from("#date1", 0.5, {x:150, ease:Sine.easeOut}, "intro+=5.5");
     masterTL.from("#product1", 1, {x:-300, ease:Sine.easeOut}, "intro+=5.5");
