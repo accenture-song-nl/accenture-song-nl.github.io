@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="ad.size" content="width=300,height=600">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://s0.2mdn.net/ads/studio/cached_libs/gsap_3.9.1_min.js"></script>
+    <script src="SplitText.min.js"></script>
+    <script src="DrawSVGPlugin.min.js"></script>
+    <script src="main.js"></script>
+    
+    <script type="text/javascript">
+        var clickTag = "https://www.google.com/"; 
+    </script>
+</head>
+<body>
+    <div id="banner">
+
+        <div id="introPanel"></div>
+        <img id="bg" src="bg.jpg">
+        
+        <div id="payrollWrapper">
+            <div id="payrollText">Payroll Status</div>
+            <div id="payrollTaskText"><span id="payrollTaskNr">31</span> tasks</div>
+            <div id="payrollTaskTotal">out of 40<BR>completed</div>
+
+            <div id="payrollLine"></div>
+            <div id="payrollBar"></div>
+        </div>
+        
+        <div id="headcountWrapper">
+            <div id="headcountText">Headcount</div>
+            <div id="bar1" class="bar"></div>
+            <div id="bar2" class="bar"></div>
+            <div id="bar3" class="bar"></div>
+            <div id="bar4" class="bar"></div>
+            <div id="bar5" class="bar"></div>
+            <div id="bar6" class="bar"></div>
+            <div id="bar7" class="bar"></div>
+            <div id="bar8" class="bar"></div>
+            <div id="line1" class="line"></div>
+            <div id="line2" class="line"></div>
+            <div id="line3" class="line"></div>
+            <div id="line4" class="line"></div>
+            <div id="line5" class="line"></div>
+            <div id="line6" class="line"></div>
+            <div id="line7" class="line"></div>
+            <div id="line8" class="line"></div>
+        </div>
+
+        <div id="retentionWrapper">
+            <div id="retentionText">Retention</div>
+            <div id="retentionNr"><span>91</span>%</div>
+            <svg id="retentionSVG" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 131.02 131.02">
+            <defs>
+                <style>
+                .cls-1 {
+                    fill: none;
+                    stroke: #13352c;
+                    stroke-width: 1.82px;
+                }
+                
+                .cls-2 {
+                    fill: none;
+                    stroke: #e5ff1f;
+                    stroke-width: 10px;
+                }
+                </style>
+            </defs>
+            <path class="cls-1" d="M65.53,5.3c33.42,0,60.5,26.86,60.5,59.97,0,33.11-27.08,59.97-60.5,59.97S5.03,98.39,5.03,65.27,32.11,5.3,65.53,5.3Z"/>
+            <path id="retentionLine" class="cls-2" d="M65.53,5.3c33.42,0,60.5,26.86,60.5,59.97,0,33.11-27.08,59.97-60.5,59.97S5.03,98.39,5.03,65.27,32.11,5.3,65.53,5.3Z"/>
+            </svg>
+        </div>
+
+        <div id="text1">Work works better<BR>when payroll runs<BR>smarter</div>
+
+        <img id="logo" src="logo.png">
+        <div id="taglineWrapper">
+            <div id="tagline">HR, Pay, &<BR>Workforce<BR>Management</div>
+        </div>
+
+        <div id="cta">Learn more <span id="arrow">></span></div>
+
+        <div id="border"></div>
+        <div id="loaderWrapper">
+            <div id="loaderCenter">
+                <div id="loader"></div>
+            </div>
+        </div>
+    
+        <div id="mainExit"></div>
+    </div>
+            
+</body>
+
+</html>
