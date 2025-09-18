@@ -4,14 +4,20 @@ window.onload = function () {
 
 function init() {
 
-    document.querySelector("#mainExit").addEventListener("mouseover", function () {
-        if (masterTL.progress() == 1) {
+    var arrowTL = gsap.timeline({});
+    arrowTL.to("#arrow", 0.2, {x:10, ease:Power2.easeInOut});
+    arrowTL.to("#arrow", 0.0000001, {x:-10, ease:Power2.easeInOut});
+    arrowTL.to("#arrow", 0.2, {x:0, ease:Power2.easeInOut});
+
+    document.querySelector("#mainExit").addEventListener("mouseover", function () {    
+        if (masterTL.progress() > 0.16) {
            gsap.to("#cta", 0.3, {scale:1.05, ease:Power2.easeInOut});
+              arrowTL.play(0);
         }
     })
     
     document.querySelector("#mainExit").addEventListener("mouseout", function(){
-        if(masterTL.progress() == 1){
+        if(masterTL.progress() > 0.16){
             gsap.to("#cta", 0.3, {scale:1, ease:Power2.easeInOut});
         }
     })

@@ -116,10 +116,17 @@ img, div, object{
     font-size: 18px;
 }
 
-#arrow{
+#arrowWrapper{
     font-size: 26px;
     position: relative;
-    top: 2px;
+    bottom: -14px;
+    overflow: hidden;
+    display: inline-block;
+}
+
+#arrow{
+    position: relative;
+    display: inline-block;
 }
 
 #payrollWrapper{
