@@ -36,7 +36,7 @@ img, div, object{
     height: 50px;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0.5);
 }
 
 #loader{
@@ -83,6 +83,13 @@ img, div, object{
     top: 7px;
     left: 16px;
     transform-origin: 0px 0px;
+}
+
+#text1{
+    top: 8px;
+    left: 138px;
+    font-size: 10.5px;
+    line-height: 11px;
 }
 
 #taglineWrapper{

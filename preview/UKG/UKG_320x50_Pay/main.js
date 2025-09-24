@@ -10,6 +10,8 @@ function loadLocalDynamic() {
 
     document.querySelector('#logo').src = localDynamicData.logo;
 
+    document.querySelector('#text1').innerHTML = localDynamicData.text1[size];
+
     document.querySelector('#tagline').innerHTML = localDynamicData.tagline;
     document.querySelector('#ctaText').innerHTML = localDynamicData.ctaText;
 
@@ -39,9 +41,8 @@ function init() {
     })
 
     document.querySelector("#mainExit").addEventListener("click", function(){
-        // window.open(clickTag, '_blank');
-        // masterTL.progress(1).pause();
-        masterTL.pause();
+        window.open(clickTag, '_blank');
+        masterTL.progress(1).pause();
     })
 }
 
@@ -49,6 +50,8 @@ function init() {
 function getAnimation(){
 
     var introTL = animateIntro();
+
+    var text1Split = new SplitText("#text1", {type: "lines"});
 
     masterTL = gsap.timeline({repeat:2, paused:true});
 
@@ -66,11 +69,13 @@ function animateIntro() {
     var tl = gsap.timeline({repeat:0});
 
     var taglineSplit = new SplitText("#tagline", {type: "lines"});
+    var text1Split = new SplitText("#text1", {type: "lines"});
 
     tl.add('start');
     tl.to("#introPanel", 1, {height:12, ease:Power2.easeInOut}, "start");
     tl.to("#logo", 1, {scale:0.65, ease:Power2.easeInOut}, "start");
     tl.from(taglineSplit.lines, 0.5, {x:-100, stagger:0.2, ease:Sine.easeOut}, "start+=1");
+    tl.from(text1Split.lines, 0.5, {y:10, opacity:0, stagger:0.2, ease:Sine.easeOut}, "start+=1");
     tl.from("#cta", 0.5, {y:100, ease:Power2.easeOut}, "start+=1");
 
     return tl;
