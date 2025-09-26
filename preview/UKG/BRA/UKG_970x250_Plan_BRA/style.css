@@ -91,7 +91,7 @@ img, div, object{
 }
 
 #text1{
-    top: 94px;
+    top: 84px;
     left: 44px;
     font-size: 31px;
     line-height: 31px;
@@ -196,6 +196,7 @@ img, div, object{
     font-size: 19px;
     left: 19px;
     top: 14px;
+    width: 190px;
 }
 
 #headcountBarsWrapper{

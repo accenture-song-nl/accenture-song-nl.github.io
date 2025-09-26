@@ -1,6 +1,6 @@
 localDynamicData = {
 	"variationName": "BRA_Pay",
-	"campaignName": "BRA_",
+	"campaignName": "BRA",
 	"dimensionName": {
 		"160x600": "UKG_160x600_Pay_BRA",
 		"300x250": "UKG_300x250_Pay_BRA",
@@ -12,12 +12,12 @@ localDynamicData = {
 	"bg": "./bg.jpg",
 	"logo": "./logo.png",
 	"text1": {
-		"160x600": "O trabalho é mais eficiente quando a folha de pagamento é gerenciada de forma mais inteligente",
-		"300x250": "O trabalho é mais eficiente quando a folha de pagamento é gerenciada de forma mais inteligente",
-		"300x600": "O trabalho é mais eficiente quando a folha de pagamento é gerenciada de forma mais inteligente",
-		"320x50": "O trabalho é mais eficiente quando a folha de pagamento é gerenciada de forma mais inteligente",
-		"728x90": "O trabalho é mais eficiente quando a folha de pagamento é gerenciada de forma mais inteligente",
-		"970x250": "O trabalho é mais eficiente quando a folha de pagamento é gerenciada de forma mais inteligente"
+		"160x600": "O trabalho é mais eficiente com uma folha de pagamento mais inteligente",
+		"300x250": "O trabalho é mais eficiente com uma folha de pagamento mais inteligente",
+		"300x600": "O trabalho é mais eficiente com uma folha de pagamento mais inteligente",
+		"320x50": "O trabalho é mais eficiente com uma folha de pagamento mais inteligente",
+		"728x90": "O trabalho é mais eficiente com uma folha de pagamento mais inteligente",
+		"970x250": "O trabalho é mais eficiente com uma folha de pagamento mais inteligente"
 	},
 	"tagline": "Gestão de RH,<BR>Pagamento e<BR>Força de Trabalho",
 	"ctaText": "Saiba mais ",

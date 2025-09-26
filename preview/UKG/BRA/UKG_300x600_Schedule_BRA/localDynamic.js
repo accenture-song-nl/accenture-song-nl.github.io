@@ -11,11 +11,11 @@ localDynamicData = {
 	"bg": "./bg.jpg",
 	"logo": "./logo.png",
 	"text1": {
-		"160x600": "O trabalho é mais eficiente quando as habilidades certas estão no lugar certo",
-		"300x250": "O trabalho é mais eficiente quando as habilidades certas estão no lugar certo",
-		"300x600": "O trabalho é mais eficiente quando as habilidades certas estão no lugar certo",
-		"728x90": "O trabalho é mais eficiente quando as habilidades certas estão no lugar certo",
-		"970x250": "O trabalho é mais eficiente quando as habilidades certas estão no lugar certo"
+		"160x600": "O trabalho é eficiente quando o talento certo estão no lugar certo",
+		"300x250": "O trabalho é eficiente quando o talento certo estão no lugar certo",
+		"300x600": "O trabalho é eficiente quando o talento certo estão no lugar certo",
+		"728x90": "O trabalho é eficiente quando o talento certo estão no lugar certo",
+		"970x250": "O trabalho é eficiente quando o talento certo estão no lugar certo"
 	},
 	"tagline": "Gestão de RH,<BR>Pagamento e<BR>Força de Trabalho",
 	"ctaText": "Saiba mais ",

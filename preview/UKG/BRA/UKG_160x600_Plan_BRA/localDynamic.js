@@ -11,11 +11,11 @@ localDynamicData = {
 	"bg": "./bg.jpg",
 	"logo": "./logo.png",
 	"text1": {
-		"160x600": "O trabalho é mais eficiente quando a compreensão da força de trabalho está na palma da sua mão",
-		"300x250": "O trabalho é mais eficiente quando a compreensão da força de trabalho está na palma da sua mão",
-		"300x600": "O trabalho é mais eficiente quando a compreensão da força de trabalho está na palma da sua mão",
-		"728x90": "O trabalho é mais eficiente quando a compreensão da força de trabalho está na palma da sua mão",
-		"970x250": "O trabalho é mais eficiente quando a compreensão da força de trabalho está na palma da sua mão"
+		"160x600": "O trabalho é eficiente quando você compreende melhor a sua força de trabalho",
+		"300x250": "O trabalho é eficiente quando você compreende melhor a sua força de trabalho",
+		"300x600": "O trabalho é eficiente quando você compreende melhor a sua força de trabalho",
+		"728x90": "O trabalho é eficiente quando você com-<BR>preende melhor a sua força de trabalho",
+		"970x250": "O trabalho é eficiente quando você compreende melhor a sua força de trabalho"
 	},
 	"tagline": "Gestão de RH,<BR>Pagamento e<BR>Força de Trabalho",
 	"ctaText": "Saiba mais ",

@@ -182,7 +182,7 @@ img, div, object{
 
 #headcountWrapper{
     width: 108px;
-    height: 99px;
+    height: 109px;
     left: 163px;
     top: 55px;
     background: #48dad0;
@@ -203,7 +203,7 @@ img, div, object{
     height: 100%;
     transform-origin: 0px 0px;
     transform: scale(0.53);
-    bottom: -47px;
+    bottom: -52px;
 }
 
 #headcountWrapper .bar{
