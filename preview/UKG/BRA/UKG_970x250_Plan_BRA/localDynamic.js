@@ -19,7 +19,7 @@ localDynamicData = {
 	},
 	"tagline": "Gestão de RH,<BR>Pagamento e<BR>Força de Trabalho",
 	"ctaText": "Saiba mais ",
-	"lineText": "Productivity Rate",
+	"lineText": "Taxa de Produtividade",
 	"lineTaskWord": "de",
 	"lineTaskTotal": {
 		"160x600": "4 tarefas concluídas",
@@ -28,7 +28,7 @@ localDynamicData = {
 		"728x90": "4 tarefas<BR>concluídas",
 		"970x250": "4 tarefas<BR>concluídas"
 	},
-	"barsText": "Global<BR>Headcount",
+	"barsText": "Número Global de Funcionários",
 	"circleText": "Retenção",
 	"animation1": "bars",
 	"animation2": "circle",

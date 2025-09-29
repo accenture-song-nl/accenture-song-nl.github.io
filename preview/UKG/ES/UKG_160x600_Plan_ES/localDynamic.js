@@ -19,7 +19,7 @@ localDynamicData = {
 	},
 	"tagline": "RR. HH., nóminas<BR>y gestión de<BR>personal",
 	"ctaText": "Descubrir más ",
-	"lineText": "Productivity Rate",
+	"lineText": "Tasa de productividad",
 	"lineTaskWord": "tareas",
 	"lineTaskTotal": {
 		"160x600": "de 4 completadas",
@@ -28,7 +28,7 @@ localDynamicData = {
 		"728x90": "de 4<BR>completadas",
 		"970x250": "de 4<BR>completadas"
 	},
-	"barsText": "Global<BR>Headcount",
+	"barsText": "Número total de empleados a nivel mundial",
 	"circleText": "Retención de personal",
 	"animation1": "bars",
 	"animation2": "circle",

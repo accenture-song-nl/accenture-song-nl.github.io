@@ -71,7 +71,7 @@ function animateIntro() {
     tl.add('start');
     tl.to("#introPanel", 1, {height:24, ease:Power2.easeInOut}, "start");
     tl.to("#logo", 1, {scale:0.73, y:-7, ease:Power2.easeInOut}, "start");
-    tl.from(taglineSplit.lines, 0.5, {x:-100, stagger:0.2, ease:Sine.easeOut}, "start+=1");
+    tl.from(taglineSplit.lines, 0.5, {x:-120, stagger:0.2, ease:Sine.easeOut}, "start+=1");
     tl.from(text1Split.lines, 0.5, {y:10, opacity:0, stagger:0.2, ease:Sine.easeOut}, "start+=1");
     tl.from("#cta", 0.5, {y:100, ease:Power2.easeOut}, "start+=1");
 

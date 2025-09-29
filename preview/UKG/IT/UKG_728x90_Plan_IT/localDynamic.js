@@ -19,7 +19,7 @@ localDynamicData = {
 	},
 	"tagline": "Gestione di risorse<BR>umane, retribuzione<BR>e personale",
 	"ctaText": "Scopri di più ",
-	"lineText": "Productivity Rate",
+	"lineText": "Tasso di produttività",
 	"lineTaskWord": "attività",
 	"lineTaskTotal": {
 		"160x600": "su 4 completate",
@@ -28,7 +28,7 @@ localDynamicData = {
 		"728x90": "su 4<BR>completate",
 		"970x250": "su 4<BR>completate"
 	},
-	"barsText": "Global<BR>Headcount",
+	"barsText": "Numero di dipendenti a livello globale",
 	"circleText": "Fidelizzazione",
 	"animation1": "bars",
 	"animation2": "circle",

@@ -12,12 +12,12 @@ localDynamicData = {
 	"bg": "./bg.jpg",
 	"logo": "./logo.png",
 	"text1": {
-		"160x600": "Il lavoro va bene, e meglio, quando puoi gestire meglio le buste paga",
-		"300x250": "Il lavoro va bene, e meglio, quando puoi gestire meglio le buste paga",
-		"300x600": "Il lavoro va bene, e meglio, quando puoi gestire meglio le buste paga",
-		"320x50": "Il lavoro va bene, e meglio, quando puoi gestire meglio le buste paga",
-		"728x90": "Il lavoro va bene, e meglio, quando puoi gestire meglio le buste paga",
-		"970x250": "Il lavoro va bene, e meglio, quando puoi gestire meglio le buste paga"
+		"160x600": "Il Lavoro va bene, quando puoi gestire meglio le buste paga",
+		"300x250": "Il Lavoro va bene, quando puoi gestire meglio le buste paga",
+		"300x600": "Il Lavoro va bene, quando puoi gestire meglio le buste paga",
+		"320x50": "Il Lavoro va bene, quando puoi gestire meglio le buste paga",
+		"728x90": "Il Lavoro va bene, quando puoi gestire meglio le buste paga",
+		"970x250": "Il Lavoro va bene, quando puoi gestire meglio le buste paga"
 	},
 	"tagline": "Gestione di risorse<BR>umane, retribuzione<BR>e personale",
 	"ctaText": "Scopri di più ",
