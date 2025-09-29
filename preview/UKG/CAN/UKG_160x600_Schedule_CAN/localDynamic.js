@@ -13,7 +13,7 @@ localDynamicData = {
 	"text1": {
 		"160x600": "Mieux travailler, c’est assigner les bonnes compétences aux bons endroits",
 		"300x250": "Mieux travailler, c’est assigner les bonnes compétences aux bons endroits",
-		"300x600": "Mieux travailler, c’est assigner les bonnes compétences aux bons endroits",
+		"300x600": "Mieux travailler,<BR>c’est assigner les bonnes compétences aux bons endroits",
 		"728x90": "Mieux travailler, c’est assigner les bonnes compétences aux bons endroits",
 		"970x250": "Mieux travailler, c’est assigner les bonnes compétences aux bons endroits"
 	},
