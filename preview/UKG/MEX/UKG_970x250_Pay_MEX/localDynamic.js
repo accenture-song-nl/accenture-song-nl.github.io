@@ -14,7 +14,7 @@ localDynamicData = {
 	"text1": {
 		"160x600": "El trabajo funciona cuando la nómina se gestiona de forma inteligente",
 		"300x250": "El trabajo funciona cuando la nómina se gestiona de forma inteligente",
-		"300x600": "El trabajo funciona cuando la nómina se gestiona de forma inteligente",
+		"300x600": "El trabajo funciona cuando la nómina<BR>se gestiona de forma inteligente",
 		"320x50": "El trabajo funciona cuando la nómina se gestiona de forma inteligente",
 		"728x90": "El trabajo funciona cuando la nómina se gestiona de forma inteligente",
 		"970x250": "El trabajo funciona cuando la nómina se gestiona de forma inteligente"

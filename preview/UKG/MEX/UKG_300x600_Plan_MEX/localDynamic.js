@@ -13,7 +13,7 @@ localDynamicData = {
 	"text1": {
 		"160x600": "El trabajo funciona cuando comprender a tu fuerza laboral está al alcance de tu mano",
 		"300x250": "El trabajo funciona cuando comprender a tu fuerza laboral está al alcance de tu mano",
-		"300x600": "El trabajo funciona cuando comprender a tu fuerza laboral está al alcance de tu mano",
+		"300x600": "El trabajo funciona cuando comprender a tu fuerza laboral está al alcance de<BR>tu mano",
 		"728x90": "El trabajo funciona cuando comprender a tu fuerza laboral está al alcance de tu mano",
 		"970x250": "El trabajo funciona cuando comprender a tu fuerza laboral está al alcance de tu mano"
 	},
