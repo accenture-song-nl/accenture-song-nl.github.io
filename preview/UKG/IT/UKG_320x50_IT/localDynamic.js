@@ -14,7 +14,7 @@ localDynamicData = {
 	"text1": {
 		"160x600": "Il Lavoro va bene, quando puoi gestire meglio le buste paga",
 		"300x250": "Il Lavoro va bene, quando puoi gestire meglio le buste paga",
-		"300x600": "Il Lavoro va bene, quando puoi gestire meglio le buste paga",
+		"300x600": "Il Lavoro va bene, quando puoi<BR>gestire meglio le buste paga",
 		"320x50": "Il Lavoro va bene, quando puoi gestire meglio le buste paga",
 		"728x90": "Il Lavoro va bene, quando puoi gestire meglio le buste paga",
 		"970x250": "Il Lavoro va bene, quando puoi gestire meglio le buste paga"
