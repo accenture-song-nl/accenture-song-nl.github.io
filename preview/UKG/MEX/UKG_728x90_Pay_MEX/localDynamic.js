@@ -12,12 +12,12 @@ localDynamicData = {
 	"bg": "./bg.jpg",
 	"logo": "./logo.png",
 	"text1": {
-		"160x600": "El trabajo funciona cuando la nómina se gestiona de forma inteligente",
-		"300x250": "El trabajo funciona cuando la nómina se gestiona de forma inteligente",
-		"300x600": "El trabajo funciona cuando la nómina<BR>se gestiona de forma inteligente",
-		"320x50": "El trabajo funciona cuando la nómina se gestiona de forma inteligente",
-		"728x90": "El trabajo funciona cuando la nómina se gestiona de forma inteligente",
-		"970x250": "El trabajo funciona cuando la nómina se gestiona de forma inteligente"
+		"160x600": "El trabajo es más eficiente cuando la nómina se gestiona de forma más inteligente",
+		"300x250": "El trabajo es más eficiente cuando la nómina se gestiona de forma más inteligente",
+		"300x600": "El trabajo es más eficiente cuando la nómina se gestiona de forma más inteligente",
+		"320x50": "El trabajo es más eficiente cuando la nómina se gestiona de forma más inteligente",
+		"728x90": "El trabajo es más eficiente cuando la nómina se gestiona de forma más inteligente",
+		"970x250": "El trabajo es más eficiente cuando la nómina se gestiona de forma más inteligente"
 	},
 	"tagline": "Gestión de RR.HH.,<BR>Nómina y<BR>Fuerza Laboral",
 	"ctaText": "Más información ",

@@ -11,11 +11,11 @@ localDynamicData = {
 	"bg": "./bg.jpg",
 	"logo": "./logo.png",
 	"text1": {
-		"160x600": "El trabajo funciona cuando el talento correcto está en el lugar indicado",
-		"300x250": "El trabajo funciona cuando el talento correcto está en el lugar indicado",
-		"300x600": "El trabajo funciona cuando el talento correcto está en el lugar indicado",
-		"728x90": "El trabajo funciona cuando el talento correcto está en el lugar indicado",
-		"970x250": "El trabajo funciona cuando el talento correcto está en el lugar indicado"
+		"160x600": "El trabajo es más eficiente cuando las habilidades correctas están en el lugar correcto",
+		"300x250": "El trabajo es más eficiente cuando las habilidades correctas están en el lugar correcto",
+		"300x600": "El trabajo es más eficiente cuando las habilidades correctas están en el lugar correcto",
+		"728x90": "El trabajo es más eficiente cuando las habilidades correctas están en el lugar correcto",
+		"970x250": "El trabajo es más eficiente cuando las habilidades correctas están en el lugar correcto"
 	},
 	"tagline": "Gestión de RR.HH.,<BR>Nómina y<BR>Fuerza Laboral",
 	"ctaText": "Más información ",
