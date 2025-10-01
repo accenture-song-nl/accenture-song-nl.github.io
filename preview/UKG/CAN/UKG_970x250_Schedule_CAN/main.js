@@ -10,6 +10,12 @@ function loadLocalDynamic() {
         document.querySelector("#payrollTaskText").style.top = "81px";
     }
 
+    if(localDynamicData.campaignName == "IT"){
+        console.log("Italy, headcountText font size is smaller with js"); 
+        document.querySelector("#headcountText").style.fontSize = "17px";
+        document.querySelector("#headcountText").style.width = "180px";
+    }
+
     var bannerW = document.querySelector("#banner").offsetWidth;
     var bannerH = document.querySelector("#banner").offsetHeight;
     var size = bannerW+"x"+bannerH;

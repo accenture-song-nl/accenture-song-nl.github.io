@@ -12,12 +12,12 @@ localDynamicData = {
 	"bg": "./bg.jpg",
 	"logo": "./logo.png",
 	"text1": {
-		"160x600": "Les compétences requises aux bons endroits. Le travail va mieux",
-		"300x250": "Les compétences requises aux bons endroits. Le travail va mieux",
-		"300x600": "Les compétences requises aux bons endroits. Le travail va mieux",
-		"320x50": "Les compétences requises aux bons endroits. Le travail va mieux",
-		"728x90": "Les compétences requises aux bons endroits. Le travail va mieux",
-		"970x250": "Les compétences requises aux bons endroits. Le travail va mieux"
+		"160x600": "Mieux travailler, c’est gérer la paie plus intelligemment",
+		"300x250": "Mieux travailler, c’est gérer la paie plus intelligemment",
+		"300x600": "Mieux travailler, c’est gérer la paie plus intelligemment",
+		"320x50": "Mieux travailler, c’est gérer la paie plus intelligemment",
+		"728x90": "Mieux travailler, c’est gérer la paie plus intelligemment",
+		"970x250": "Mieux travailler, c’est gérer la paie plus intelligemment"
 	},
 	"tagline": "RH, paie<BR>et gestion<BR>des effectifs",
 	"ctaText": "En savoir plus ",
