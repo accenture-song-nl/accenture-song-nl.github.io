@@ -4,6 +4,11 @@ window.onload = function () {
 
 function loadLocalDynamic() {
 
+    if(localDynamicData.campaignName == "DE"){
+        console.log("Germany, payrollText font size is smaller with js"); 
+        document.querySelector("#payrollTaskText").style.fontSize = "15px";
+    }
+
     var bannerW = document.querySelector("#banner").offsetWidth;
     var bannerH = document.querySelector("#banner").offsetHeight;
     var size = bannerW+"x"+bannerH;

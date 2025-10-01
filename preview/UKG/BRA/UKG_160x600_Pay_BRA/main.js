@@ -14,6 +14,10 @@ function loadLocalDynamic() {
         console.log("italy, tagline font size is smaller with js"); 
         document.querySelector("#tagline").style.fontSize = "7px";
     }
+    else if(localDynamicData.campaignName == "MEX"){
+        console.log("Mexico, tagline font size is smaller with js"); 
+        document.querySelector("#tagline").style.fontSize = "7px";
+    }
 
 
     var bannerW = document.querySelector("#banner").offsetWidth;
