@@ -14,7 +14,7 @@ localDynamicData = {
 	"text1": {
 		"160x600": "Mieux travailler, c’est gérer la paie plus intelligemment",
 		"300x250": "Mieux travailler, c’est gérer la paie plus intelligemment",
-		"300x600": "Mieux travailler, c’est gérer la paie plus intelligemment",
+		"300x600": "Mieux travailler,<BR>c’est gérer la paie plus intelligemment",
 		"320x50": "Mieux travailler, c’est gérer la paie plus intelligemment",
 		"728x90": "Mieux travailler, c’est gérer la paie plus intelligemment",
 		"970x250": "Mieux travailler, c’est gérer la paie plus intelligemment"

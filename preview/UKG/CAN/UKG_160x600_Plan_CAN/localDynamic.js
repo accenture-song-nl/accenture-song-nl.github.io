@@ -13,7 +13,7 @@ localDynamicData = {
 	"text1": {
 		"160x600": "Un clic. La compréhension profonde de ses équipes. Le travail va mieux",
 		"300x250": "Un clic. La compréhension profonde de ses équipes. Le travail va mieux",
-		"300x600": "Un clic. La compréhension profonde de ses équipes. Le travail va mieux",
+		"300x600": "Un clic. La compréhension profonde de ses équipes. Le travail<BR>va mieux",
 		"728x90": "Un clic. La compréhension profonde de ses équipes. Le travail va mieux",
 		"970x250": "Un clic. La compréhension profonde de ses équipes. Le travail va mieux"
 	},

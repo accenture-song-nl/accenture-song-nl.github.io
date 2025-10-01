@@ -11,7 +11,7 @@ localDynamicData = {
 	"bg": "./bg.jpg",
 	"logo": "./logo.png",
 	"text1": {
-		"160x600": "Les compétences requises aux bons endroits. Le travail va mieux",
+		"160x600": "Les compétences requises aux bons endroits.<BR>Le travail va mieux",
 		"300x250": "Les compétences requises aux bons endroits. Le travail va mieux",
 		"300x600": "Les compétences requises aux bons endroits. Le travail va mieux",
 		"728x90": "Les compétences requises aux bons endroits. Le travail va mieux",
