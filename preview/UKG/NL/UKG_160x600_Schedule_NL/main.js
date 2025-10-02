@@ -9,9 +9,14 @@ function loadLocalDynamic() {
     if(localDynamicData.campaignName == "BRA"){
         console.log("brasil, tagline font size is smaller with js"); 
         document.querySelector("#tagline").style.fontSize = "7px";
+        document.querySelector("#retentionText").style.width = "120px";
     }
     else if(localDynamicData.campaignName == "IT"){
         console.log("italy, tagline font size is smaller with js"); 
+        document.querySelector("#tagline").style.fontSize = "7px";
+    }
+    else if(localDynamicData.campaignName == "MEX"){
+        console.log("Mexico, tagline font size is smaller with js"); 
         document.querySelector("#tagline").style.fontSize = "7px";
     }
 

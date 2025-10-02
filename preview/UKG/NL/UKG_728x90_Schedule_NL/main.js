@@ -4,6 +4,11 @@ window.onload = function () {
 
 function loadLocalDynamic() {
 
+    if(localDynamicData.campaignName == "MEX"){
+        console.log("Mexico, Text1 font size is smaller with js"); 
+        document.querySelector("#text1").style.fontSize = "18px";
+    }
+
     var bannerW = document.querySelector("#banner").offsetWidth;
     var bannerH = document.querySelector("#banner").offsetHeight;
     var size = bannerW+"x"+bannerH;

@@ -4,6 +4,18 @@ window.onload = function () {
 
 function loadLocalDynamic() {
 
+    if(localDynamicData.campaignName == "DE"){
+        console.log("Germany, payrollText font size is smaller with js"); 
+        document.querySelector("#payrollTaskText").style.fontSize = "28px";
+        document.querySelector("#payrollTaskText").style.top = "88px";
+    }
+
+    if(localDynamicData.campaignName == "IT"){
+        console.log("Italy, headcountText font size is smaller with js"); 
+        document.querySelector("#headcountText").style.fontSize = "17px";
+        document.querySelector("#headcountText").style.width = "180px";
+    }
+
     var bannerW = document.querySelector("#banner").offsetWidth;
     var bannerH = document.querySelector("#banner").offsetHeight;
     var size = bannerW+"x"+bannerH;

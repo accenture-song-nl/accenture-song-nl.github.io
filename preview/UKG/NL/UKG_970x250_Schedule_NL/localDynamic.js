@@ -11,11 +11,11 @@ localDynamicData = {
 	"bg": "./bg.jpg",
 	"logo": "./logo.png",
 	"text1": {
-		"160x600": "Werk werkt als<BR>de juiste mensen<BR>op de juist<BR>plek zitten",
-		"300x250": "Werk werkt<BR>als de juiste<BR>mensen op de<BR>juist plek zitten",
-		"300x600": "Werk werkt als de juiste mensen op de juist plek zitten",
-		"728x90": "Werk werkt als de juiste mensen<BR>op de juist plek zitten",
-		"970x250": "Werk werkt als de juiste mensen op de juist plek zitten"
+		"160x600": "Werk werkt als<BR>de juiste mensen<BR>op de juiste<BR>plek zitten",
+		"300x250": "Werk werkt<BR>als de juiste<BR>mensen op de<BR>juiste plek zitten",
+		"300x600": "Werk werkt als de juiste mensen op de juiste plek zitten",
+		"728x90": "Werk werkt als de juiste mensen<BR>op de juiste plek zitten",
+		"970x250": "Werk werkt als de juiste mensen op de juiste plek zitten"
 	},
 	"tagline": "HR, Payroll- en<BR>Workforce<BR>Management",
 	"ctaText": "Meer informatie ",
