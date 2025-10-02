@@ -28,7 +28,7 @@ localDynamicData = {
 		"728x90": "sur 4<BR>réalisées",
 		"970x250": "sur 4<BR>réalisées"
 	},
-	"barsText": "Heures sup",
+	"barsText": "Heures sup.",
 	"circleText": "Shifts effectués",
 	"animation1": "circle",
 	"animation2": "line",
