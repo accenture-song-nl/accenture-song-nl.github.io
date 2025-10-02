@@ -16,12 +16,12 @@ localDynamicData = {
 		"300x250": "Arbeit funktioniert besser, wenn die Gehalt-sabrechnung intelligenter abgewickelt wird",
 		"300x600": "Arbeit funktioniert besser, wenn die Gehaltsabrechnung intelligenter abgewickelt wird",
 		"320x50": "Arbeit funktioniert besser, wenn die Gehaltsabrechnung intelligenter abgewickelt wird",
-		"728x90": "Arbeit funktioniert besser, wenn die Gehaltsabrechnung intelligenter abgewickelt wird",
+		"728x90": "Arbeit funktioniert besser mit einer intelligenteren Gehaltsabrechnung",
 		"970x250": "Arbeit funktioniert besser, wenn die Gehaltsabrechnung intelligenter abgewickelt wird"
 	},
 	"tagline": "HR, Payroll &<BR>Workforce<BR>Management",
 	"ctaText": "Mehr erfahren ",
-	"lineText": "Statut de la paie",
+	"lineText": "Lohn- und Gehaltsabrechnung",
 	"lineTaskWord": "Aufgaben",
 	"lineTaskTotal": {
 		"160x600": "von 4 erledigt",
@@ -31,7 +31,7 @@ localDynamicData = {
 		"728x90": "von 4<BR>erledigt",
 		"970x250": "von 4<BR>erledigt"
 	},
-	"barsText": "Effectif",
+	"barsText": "Personalstärke",
 	"circleText": "Personalbindung",
 	"animation1": "line",
 	"animation2": "bars",

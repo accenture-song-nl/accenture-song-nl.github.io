@@ -28,7 +28,7 @@ localDynamicData = {
 		"728x90": "von 4<BR>erledigt",
 		"970x250": "von 4<BR>erledigt"
 	},
-	"barsText": "Anzahl der Mitarbeiter weltweit",
+	"barsText": "Mitarbeitende weltweit",
 	"circleText": "Personalbindung",
 	"animation1": "bars",
 	"animation2": "circle",
