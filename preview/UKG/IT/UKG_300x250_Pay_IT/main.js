@@ -14,6 +14,10 @@ function loadLocalDynamic() {
         document.querySelector("#headcountText").style.fontSize = "9px";
     }
 
+    if(localDynamicData.campaignName == "BRA"){
+        document.querySelector("#retentionText").style.width = "89px";
+    }
+
     var bannerW = document.querySelector("#banner").offsetWidth;
     var bannerH = document.querySelector("#banner").offsetHeight;
     var size = bannerW+"x"+bannerH;
