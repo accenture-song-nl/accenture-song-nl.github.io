@@ -11,11 +11,11 @@ localDynamicData = {
 	"bg": "./bg.jpg",
 	"logo": "./logo.png",
 	"text1": {
-		"160x600": "Un clic. La compréhension profonde de ses équipes. Le travail va mieux",
-		"300x250": "Un clic. La compréhension profonde de ses équipes. Le travail va mieux",
-		"300x600": "Un clic. La compréhension profonde de ses équipes. Le travail<BR>va mieux",
-		"728x90": "Un clic. La compréhension profonde de ses équipes. Le travail va mieux",
-		"970x250": "Un clic. La compréhension profonde de ses équipes. Le travail va mieux"
+		"160x600": "Mieux travailler, c’est comprendre ses équipes en un clic",
+		"300x250": "Mieux travailler, c’est comprendre ses équipes en un clic",
+		"300x600": "Mieux travailler, c’est comprendre ses équipes en un clic",
+		"728x90": "Mieux travailler, c’est comprendre ses équipes en un clic",
+		"970x250": "Mieux travailler, c’est comprendre ses équipes en un clic"
 	},
 	"tagline": "RH, paie<BR>et gestion<BR>des effectifs",
 	"ctaText": "En savoir plus ",

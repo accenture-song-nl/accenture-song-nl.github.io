@@ -11,11 +11,11 @@ localDynamicData = {
 	"bg": "./bg.jpg",
 	"logo": "./logo.png",
 	"text1": {
-		"160x600": "Les compétences requises aux bons endroits.<BR>Le travail va mieux",
-		"300x250": "Les compétences requises aux bons endroits. Le travail va mieux",
-		"300x600": "Les compétences requises aux bons endroits. Le travail va mieux",
-		"728x90": "Les compétences requises aux bons endroits. Le travail va mieux",
-		"970x250": "Les compétences requises aux bons endroits. Le travail va mieux"
+		"160x600": "Mieux travailler, c’est affecter les bonnes compétences aux bons endroits",
+		"300x250": "Mieux travailler, c’est affecter les bonnes compétences aux bons endroits",
+		"300x600": "Mieux travailler, c’est affecter les bonnes compétences aux bons endroits",
+		"728x90": "Mieux travailler, c’est affecter les bonnes compétences aux bons endroits",
+		"970x250": "Mieux travailler, c’est affecter les bonnes compétences aux bons endroits"
 	},
 	"tagline": "RH, paie<BR>et gestion<BR>des effectifs",
 	"ctaText": "En savoir plus ",
@@ -28,7 +28,7 @@ localDynamicData = {
 		"728x90": "sur 4<BR>terminées",
 		"970x250": "sur 4<BR>terminées"
 	},
-	"barsText": "Heures supplémentaires",
+	"barsText": "Heures sup.",
 	"circleText": "Quarts travaillés",
 	"animation1": "circle",
 	"animation2": "line",
