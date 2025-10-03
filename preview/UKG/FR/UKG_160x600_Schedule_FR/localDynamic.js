@@ -17,7 +17,7 @@ localDynamicData = {
 		"728x90": "La performance commence avec les bonnes personnes, aux bons endroits",
 		"970x250": "La performance commence avec les bonnes personnes, aux bons endroits"
 	},
-	"tagline": "RH, Paie, Gestion<BR>et Planification<BR>des effectifs",
+	"tagline": "RH, paie<BR>et gestion<BR>des effectifs",
 	"ctaText": "En savoir plus ",
 	"lineText": "Analyse de l'état de fatigue",
 	"lineTaskWord": "tâches",

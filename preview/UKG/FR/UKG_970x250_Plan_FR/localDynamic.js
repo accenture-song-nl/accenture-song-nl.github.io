@@ -17,7 +17,7 @@ localDynamicData = {
 		"728x90": "Mieux comprendre ses collaborateurs, c’est travailler mieux",
 		"970x250": "Mieux comprendre ses collaborateurs, c’est<BR>travailler mieux"
 	},
-	"tagline": "RH, Paie, Gestion<BR>et Planification<BR>des effectifs",
+	"tagline": "RH, paie<BR>et gestion<BR>des effectifs",
 	"ctaText": "En savoir plus ",
 	"lineText": "Taux de productivité",
 	"lineTaskWord": "tâches",

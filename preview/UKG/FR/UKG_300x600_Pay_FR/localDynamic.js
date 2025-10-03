@@ -19,7 +19,7 @@ localDynamicData = {
 		"728x90": "Une paie plus intelligente, c'est un<BR>travail plus fluide",
 		"970x250": "Une paie plus intelligente, c'est un travail plus fluide"
 	},
-	"tagline": "RH, Paie, Gestion<BR>et Planification<BR>des effectifs",
+	"tagline": "RH, paie<BR>et gestion<BR>des effectifs",
 	"ctaText": "En savoir plus ",
 	"lineText": "Statut de la paie",
 	"lineTaskWord": "tâches",
