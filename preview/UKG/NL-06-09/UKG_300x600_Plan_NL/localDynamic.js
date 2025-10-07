@@ -19,7 +19,7 @@ localDynamicData = {
 	},
 	"tagline": "HR, Payroll- en<BR>Workforce<BR>Management",
 	"ctaText": "Meer informatie ",
-	"lineText": "Productiviteitspercentage",
+	"lineText": "Productiviteits-percentage",
 	"lineTaskWord": "van de",
 	"lineTaskTotal": {
 		"160x600": "4 taken voltooid",
