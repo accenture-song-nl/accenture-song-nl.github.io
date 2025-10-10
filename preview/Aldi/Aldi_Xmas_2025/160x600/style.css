@@ -1,0 +1,130 @@
+body{
+    margin: 0;
+}
+
+img, div, object{
+    position: absolute;
+}
+
+#banner{
+    width: 160px;
+    height: 600px;
+    overflow: hidden;
+    background: #202b77;
+    color: #fff;
+}
+
+#border{
+    width: 100%;
+    height: 100%;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    
+}
+
+#loaderWrapper{
+    width: 100%;
+    height: 100%;
+    background: #202b77;
+    pointer-events: none;
+}
+
+#loaderCenter{
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#loader{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    border: 3px solid #fff;
+    border-top: 3px solid #fcbe00;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+#mainExit{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+#wText{
+    bottom: -2px;
+    right: 2px;
+    font-family: Arial;
+    font-size: 13px;
+}
+
+#brochure{
+    width: 100%;
+    transform: rotate(0deg);
+    left: -2px;
+}
+
+#introBg{
+    width: 100%;
+}
+
+#logo{
+    width: 53px;
+    left: 17px;
+    top: 17px;
+}
+
+#logo2{
+    width: 73px;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#text2,
+#text2Highlight,
+#text1,
+#text1Highlight{
+    width: 160px;
+}
+
+#text2HighlightWrapper,
+#text1HighlightWrapper{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#tagline{
+    width: 100%;
+}
+
+#endText{
+    width: 100%;
+}
+
+#ctaLeft,
+#ctaRight{
+    width: 100%;
+}
+
+#stars2,
+#stars1,
+#topic1,
+#topic2,
+#topic3{
+    width: 100%;
+}
+
+#sticker{
+    width: 100%;
+    transform-origin: 80px 538px;
+}
