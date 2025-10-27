@@ -28,11 +28,11 @@ function getAnimation(){
     masterTL = gsap.timeline({paused:true});
     masterTL.add("start")
     masterTL.to("#loaderWrapper", 0.2, {opacity:0, ease:Sine.easeInOut}, "start");
-    masterTL.from("#bg1Wrapper", 3, {y:-250, ease:Sine.easeOut}, "start")
-    masterTL.from("#bg2Wrapper", 3, {y:-100, ease:Sine.easeOut}, "start")
-    masterTL.from("#bg3Wrapper", 3, {y:-200, ease:Sine.easeOut}, "start")
-    masterTL.from("#bg4Wrapper", 3, {y:-120, ease:Sine.easeOut}, "start")
-    masterTL.from("#bg5Wrapper", 3, {y:-210, ease:Sine.easeOut}, "start")
+    masterTL.from("#bg1Wrapper", 3, {y:250, ease:Sine.easeOut}, "start")
+    masterTL.from("#bg2Wrapper", 3, {y:100, ease:Sine.easeOut}, "start")
+    masterTL.from("#bg3Wrapper", 3, {y:200, ease:Sine.easeOut}, "start")
+    masterTL.from("#bg4Wrapper", 3, {y:120, ease:Sine.easeOut}, "start")
+    masterTL.from("#bg5Wrapper", 3, {y:210, ease:Sine.easeOut}, "start")
     masterTL.from("#text1", 1, {x:300, ease:Power1.easeOut}, "start+=1")
     
     masterTL.to("#text1", 1, {x:-300, ease:Power1.easeIn}, "start+=4")
