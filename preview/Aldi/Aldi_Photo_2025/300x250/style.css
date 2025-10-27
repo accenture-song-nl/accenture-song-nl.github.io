@@ -78,16 +78,20 @@ img, div, object{
     width: 100%;
 }
 
+#bg5Wrapper,
 #bg1Wrapper,
 #bg2Wrapper,
 #bg3Wrapper,
 #bg4Wrapper{
-    width: 600px;
+    width: 300px;
+    height: 500px;
     display: flex;
-    flex-direction: row; 
-    right: 0;
+    flex-direction: column; 
+    top: 0;
+    left: 0;
 }
 
+#bg5Wrapper img,
 #bg1Wrapper img,
 #bg2Wrapper img,
 #bg3Wrapper img,
