@@ -28,8 +28,8 @@ function getAnimation(){
     masterTL.to("#loaderWrapper", 0.2, {opacity:0, ease:Sine.easeInOut}, 0)
     masterTL.add("start");
     masterTL.from("#bg", 3, {scale:1.1, ease:Sine.easeOut}, "start")
-    masterTL.from("#text1", 0.5, {x:200, ease:Sine.easeOut}, "start+=0.5")
-    masterTL.from("#text1HighlightWrapper", 0.7, {width:0, ease:Sine.easeInOut}, "start+=1.5")
+    masterTL.from("#text1", 0.5, {x:200, ease:Sine.easeOut}, "start")
+    masterTL.from("#text1HighlightWrapper", 0.7, {width:0, ease:Sine.easeInOut}, "start+=1")
     masterTL.to(["#text1", "#text1HighlightWrapper"], 0.5, {x:-200, opacity:0, ease:Sine.easeInOut}, "start+=3")
 
     masterTL.add("showFrame2")
