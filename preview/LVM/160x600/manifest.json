@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "title": "LVM 160x600",
+  "description": "HTML5 banner for Adform",
+  "width": "160",
+  "height": "600",
+  "events": {
+    "enabled": 1,
+    "list": {}
+  },
+  "clicktags": {
+    "clickTAG": "https://www.example.com"
+  },
+  "source": "index.html"
+}

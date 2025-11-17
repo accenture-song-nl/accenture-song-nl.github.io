@@ -50,16 +50,14 @@ function getAnimation(){
     masterTL.add("frame3", "-=0.5");
     masterTL.from("#bg3", 1.5, {scale:1.2, ease:Sine.easeInOut}, "frame3")
     masterTL.from("#text3A", 0.5, {x:-300, ease:Sine.easeOut}, "frame3+=1")
-    masterTL.from("#text3B", 0.5, {x:-300, ease:Sine.easeOut}, "frame3+=1.2")
-    // masterTL.from("#text3C", 0.5, {x:-250, ease:Sine.easeOut}, "frame3+=1.4")
-    // masterTL.from("#text3D", 0.5, {x:-250, ease:Sine.easeOut}, "frame3+=1.6")
-    masterTL.from("#cta", 0.5, {scale:0, ease:Back.easeOut}, "frame3+=4")
-    masterTL.to(["#bg3", "#text3A", "#text3B"], 0.5, {opacity:0, ease:Sine.easeOut}, "frame3+=6")
+    masterTL.from("#cta", 0.5, {scale:0, ease:Back.easeOut}, "frame3+=2")
+    masterTL.to(["#bg3", "#text3A"], 0.5, {opacity:0, ease:Sine.easeOut}, "frame3+=5")
     
     masterTL.add("frame4", "-=0.5");
     masterTL.from("#bg4", 1.5, {scale:1.2, ease:Sine.easeInOut}, "frame4")
     masterTL.from("#text4A", 0.5, {x:-250, ease:Sine.easeOut}, "frame4+=1")
     masterTL.from("#text4B", 0.5, {x:-250, ease:Sine.easeOut}, "frame4+=1.2")
+    masterTL.from("#text4C", 0.5, {x:-250, ease:Sine.easeOut}, "frame4+=1.4")
     
     masterTL.add("end", "+=1");
     masterTL.to("#cta", 0.2, {scale:1.1, ease:Sine.easeInOut}, "end")
