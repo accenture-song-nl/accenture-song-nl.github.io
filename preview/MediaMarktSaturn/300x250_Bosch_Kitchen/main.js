@@ -39,18 +39,14 @@ function getAnimation(){
 
     masterTL.add("start");
     masterTL.from("#campaign", 0.5, {opacity:0, ease:Power0.easeNone}, "start")
-    masterTL.from("#logo", 1, {y:70, ease:Sine.easeInOut}, "start+=0.5")
-    masterTL.from("#campaign", 1, {y:70, ease:Sine.easeInOut}, "start+=0.7")
-    masterTL.from("#circle1", 1, {scale:0, ease:Power3.easeOut}, "start+=1")
-    masterTL.from("#circle2", 1, {scale:0, ease:Back.easeOut}, "start+=1.2")
-    masterTL.from("#product", 0.5, {x:-300, ease:Sine.easeOut}, "start+=1.4")
-    masterTL.from("#price", 0.5, {x:300, ease:Sine.easeOut}, "start+=1.9")
-    masterTL.from("#cta", 0.5, {y:250, ease:Sine.easeOut}, "start+=2.3")
+    masterTL.from("#product", 0.5, {x:-300, ease:Power0.easeNone}, "start+=0.4")
+    masterTL.from("#price", 0.5, {x:300, ease:Power0.easeNone}, "start+=0.9")
+    masterTL.from("#cta", 0.5, {y:250, ease:Power0.easeNone}, "start+=1.3")
 
+    masterTL.to("#cta", 0.1, {x:5, repeat:3, yoyo:true, ease:Sine.easeInOut}, "start+=2")
     masterTL.to("#cta", 0.1, {x:5, repeat:3, yoyo:true, ease:Sine.easeInOut}, "start+=3")
-    masterTL.to("#cta", 0.1, {x:5, repeat:3, yoyo:true, ease:Sine.easeInOut}, "start+=4")
-
-    masterTL.to("#banner", 0.5, {}, "start+=4.5")
+    
+    masterTL.to("#banner", 0.5, {}, "start+=3.5")
     
     console.log(masterTL.duration())
     

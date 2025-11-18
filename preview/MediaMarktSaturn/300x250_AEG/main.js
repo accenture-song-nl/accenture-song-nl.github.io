@@ -7,6 +7,7 @@ function init(clickTAGvalue) {
     document.querySelector("#mainExit").addEventListener("mouseover", function(){
         if(masterTL.progress() == 1){
             gsap.to("#cta", 0.2, {opacity:0.8, ease:Sine.easeInOut});
+            gsap.to("#cta", 0.1, {x:5, repeat:3, yoyo:true, ease:Sine.easeInOut});
         }
     })
     
