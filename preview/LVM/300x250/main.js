@@ -57,7 +57,7 @@ function getAnimation(){
     masterTL.from("#bg4", 1.5, {scale:1.2, ease:Sine.easeInOut}, "frame4")
     masterTL.from("#text4A", 0.5, {x:-250, ease:Sine.easeOut}, "frame4+=1")
     masterTL.from("#text4B", 0.5, {x:-250, ease:Sine.easeOut}, "frame4+=1.2")
-    masterTL.from("#text4C", 0.5, {x:-250, ease:Sine.easeOut}, "frame4+=1.4")
+    // masterTL.from("#text4C", 0.5, {x:-250, ease:Sine.easeOut}, "frame4+=1.4")
     
     masterTL.add("end", "+=1");
     masterTL.to("#cta", 0.2, {scale:1.1, ease:Sine.easeInOut}, "end")
