@@ -50,7 +50,7 @@ function getAnimation(){
     masterTL.from("#info1", 1, {x:400, ease:Power1.easeOut}, "frame2+=0.5")
     masterTL.from("#star2", 1, {scale:0, ease:Power1.easeOut}, "frame2+=0.7")
     masterTL.from("#star2", 10, {rotation:-444, ease:Power0.easeNone}, "frame2+=0.7")
-    masterTL.from("#legal1", 0.5, {opacity:0, ease:Power1.easeOut}, "frame2+=1")
+    // masterTL.from("#legal1", 0.5, {opacity:0, ease:Power1.easeOut}, "frame2+=1")
     masterTL.from("#price1", 0.5, {scale:0, ease:Back.easeOut}, "frame2+=1.4")
     
     masterTL.from("#date", 0.5, {x:-200, ease:Power2.easeOut}, "frame2+=1.8")
@@ -59,12 +59,12 @@ function getAnimation(){
     masterTL.add("frame3", "start+=7");
     masterTL.to("#product1", 1, {x:-300, ease:Power1.easeIn}, "frame3")
     masterTL.to("#info1", 1, {x:-400, ease:Power1.easeIn}, "frame3")
-    masterTL.to("#legal1", 0.5, {opacity:0, ease:Power1.easeIn}, "frame3")
+    // masterTL.to("#legal1", 0.5, {opacity:0, ease:Power1.easeIn}, "frame3")
     masterTL.to("#price1", 0.5, {scale:0, ease:Power1.easeIn}, "frame3")
     
     masterTL.from("#product2", 1, {x:300, ease:Power1.easeOut}, "frame3+=0.5")
     masterTL.from("#info2", 1, {x:400, ease:Power1.easeOut}, "frame3+=0.5")
-    masterTL.from("#legal2", 0.5, {opacity:0, ease:Power1.easeOut}, "frame3+=1")
+    // masterTL.from("#legal2", 0.5, {opacity:0, ease:Power1.easeOut}, "frame3+=1")
     masterTL.from("#price2", 0.5, {scale:0, ease:Back.easeOut}, "frame3+=1.4")
     
     masterTL.add("frame4", "start+=11");
