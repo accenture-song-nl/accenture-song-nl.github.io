@@ -1,0 +1,184 @@
+body{
+    margin: 0;
+}
+
+img, div, object{
+    position: absolute;
+}
+
+#banner{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+#loaderWrapper{
+    width: 100%;
+    height: 100%;
+    background: #202b77;
+    pointer-events: none;
+}
+
+#loaderCenter{
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#loader{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    border: 3px solid #fff;
+    border-top: 3px solid #fdc300;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+#mainExit{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+#scaler{
+    width: 1200px;
+    height: 1200px;
+    left: 0px;
+    overflow: hidden;
+    background: #202b77;
+    color: #fff;
+}
+
+#extraScaler{
+    width: 1200px;
+    height: 1200px;
+    pointer-events: none;
+    transform-origin: 0px 0px;
+}
+
+#border{
+    width: 100%;
+    height: 100%;
+    border: 1px solid #000;
+    box-sizing: border-box; 
+}
+
+#bgBorderWrapper{
+    width: 300%;
+    height: 100%;
+    display: flex;
+}
+
+#bgBorder3,
+#bgBorder2,
+#bgBorder{
+    position: relative;
+    width: 1200px;
+}
+
+#bgBorder2{
+    left: -12px;
+}
+
+#bgBorder3{
+    left: -24px;
+}
+
+#bgWrapper{
+    top: 0;
+    right: 0;
+    width: 868px;
+    height: 1168px;
+    border-radius: 0px 0px 0px 24px;
+    overflow: hidden;
+    background: #202B78;
+}
+
+#logo,
+#deco2,
+#deco1,
+#cta,
+#endText,
+#tagline,
+#logoEnd,
+#info2,
+#legal2,
+#price2,
+#product2,
+#info1,
+#legal1,
+#price1,
+#product1,
+#age,
+#date,
+#star4,
+#star3,
+#star2,
+#star1,
+#bg,
+#text1C,
+#text1B,
+#text1A{
+    height: 100%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+#price2,
+#price1{
+    transform-origin: 440px 974px;
+}
+
+#endBg{
+    width: 100%;
+    height: 100%;
+    background: #202B78;
+}
+
+#endHighlightWrapper{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#endHighlight{
+    height: 1200px;
+}
+
+#cta{
+    transform-origin: 50% 95%;
+}
+
+#star1{
+    transform-origin: 94px 240px;
+}
+
+#star2{
+    transform-origin: 550px 600px;
+}
+
+#star3{
+    transform-origin: 140px 1012px;
+}
+
+#star4{
+    transform-origin: 192px 972px;
+}
+
+#deco1{
+    transform-origin: 25px 0px;
+}
+
+#deco2{
+    transform-origin: 280px 0px;
+}

@@ -1,0 +1,101 @@
+body{
+    margin: 0;
+}
+
+img, div, object{
+    position: absolute;
+}
+
+#banner{
+    width: 300px;
+    height: 250px;
+    overflow: hidden;
+    color: #fff;
+    background: #162259;
+}
+
+#border{
+    width: 100%;
+    height: 100%;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    
+}
+
+#loaderWrapper{
+    width: 100%;
+    height: 100%;
+    background: #162259;
+    pointer-events: none;
+}
+
+#loaderCenter{
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#loader{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    border: 3px solid #fff;
+    border-top: 3px solid #EE7100;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+#mainExit{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+#endLogo,
+#ctaLeft,
+#ctaRight,
+#text2,
+#text1,
+#product,
+#logo,
+#bg{
+    width: 100%;
+}
+
+#highlight2Wrapper,
+#highlight1Wrapper,
+#productLogoWrapper{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#highlight2,
+#highlight1,
+#productLogo{
+    width: 300px;
+}
+
+#bgBorder{
+    width: 284px;
+    height: 234px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    top: 8px;
+    box-shadow: 0px 0px 0px 3000px #202B78;
+}
+
+#endBg{
+    width: 100%;
+    height: 100%;
+    background: #162259;
+}

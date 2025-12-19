@@ -1,0 +1,165 @@
+body{
+    margin: 0;
+}
+
+img, div, object{
+    position: absolute;
+}
+
+#banner{
+    width: 300px;
+    height: 250px;
+    overflow: hidden;
+    background: #202b77;
+    color: #fff;
+}
+
+#border{
+    width: 100%;
+    height: 100%;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    
+}
+
+#loaderWrapper{
+    width: 100%;
+    height: 100%;
+    background: #202b77;
+    pointer-events: none;
+}
+
+#loaderCenter{
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#loader{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    border: 3px solid #fff;
+    border-top: 3px solid #fdc300;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+#mainExit{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+#wText{
+    bottom: -2px;
+    right: 2px;
+    font-family: Arial;
+    font-size: 13px;
+}
+
+#bgBorderWrapper{
+    width: 300%;
+    height: 100%;
+    display: flex;
+}
+
+#bgBorder3,
+#bgBorder2,
+#bgBorder{
+    position: relative;
+    width: 300px;
+}
+
+#bgBorder2{
+    left: -17px;
+}
+
+#bgBorder3{
+    left: -34px;
+}
+
+#bgWrapper{
+    top: 0;
+    right: 0;
+    width: 288px;
+    height: 238px;
+    border-radius: 0px 0px 0px 14px;
+    overflow: hidden;
+    background: #202B78;
+}
+
+#logo,
+#deco2,
+#deco1,
+#cta,
+#endText,
+#tagline,
+#logoEnd,
+#info2,
+#legal2,
+#price2,
+#product2,
+#info1,
+#legal1,
+#price1,
+#product1,
+#age,
+#date,
+#star2,
+#star1,
+#bg,
+#text1C,
+#text1B,
+#text1A{
+    width: 100%;
+}
+
+#price2,
+#price1{
+    transform-origin: 243px 183px;
+}
+
+#endBg{
+    width: 100%;
+    height: 100%;
+    background: #202B78;
+}
+
+#endHighlightWrapper{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#endHighlight{
+    width: 300px;
+}
+
+#cta{
+    transform-origin: 50% 95%;
+}
+
+#star1{
+    transform-origin: 35px 205px;
+}
+
+#star2{
+    transform-origin: 198px 38px;
+}
+
+#deco1{
+    transform-origin: 25px 0px;
+}
+
+#deco2{
+    transform-origin: 280px 0px;
+}
