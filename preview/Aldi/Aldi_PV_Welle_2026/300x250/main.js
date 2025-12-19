@@ -34,7 +34,7 @@ function getAnimation(){
     masterTL.from("#sticker", 0.7, {scale:0, rotation:-600, ease:Back.easeOut}, "start+=1")
     
     masterTL.add("frame2", "+=1");
-    masterTL.to("#highlight1Wrapper", 0.4, {x:50, opacity:0, ease:Sine.easeInOut}, "frame2")
+    masterTL.to("#highlight1Wrapper", 0.4, {opacity:0, ease:Sine.easeInOut}, "frame2")
     masterTL.to("#text1", 0.5, {x:50, opacity:0, ease:Sine.easeInOut}, "frame2")
     masterTL.to("#sticker", 0.7, {scale:0, rotation:600, ease:Back.easeIn}, "frame2")
     masterTL.from("#date", 0.5, {x:130, ease:Sine.easeOut}, "frame2+=0.5")
