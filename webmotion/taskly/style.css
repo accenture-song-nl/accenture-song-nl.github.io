@@ -32,6 +32,42 @@ body {
 
 header {
     margin-bottom: 60px;
+    position: relative;
+}
+
+.language-switcher {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    gap: 8px;
+}
+
+.lang-btn {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.lang-btn:hover {
+    background: rgba(255, 255, 255, 0.35);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.lang-btn.active {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-color: #667eea;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
 }
 
 header h1 {
@@ -291,6 +327,45 @@ main p {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 15px;
+    margin-bottom: 20px;
+}
+
+.reset-week-btn {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: auto;
+    padding: 6px 0;
+    margin: 0 auto;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid transparent;
+    border-radius: 0;
+    color: #999;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.reset-week-btn.visible {
+    display: flex;
+}
+
+.reset-week-btn:hover {
+    color: #666;
+    border-bottom-color: rgba(150, 150, 150, 0.4);
+}
+
+.reset-week-btn:active {
+    transform: scale(0.98);
+}
+
+.reset-week-btn svg {
+    flex-shrink: 0;
+    width: 14px;
+    height: 14px;
 }
 
 .day-column {
@@ -699,6 +774,79 @@ main p {
     transition: all 0.2s ease;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.task-stack {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.stack-layers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+
+.stack-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 6px;
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.stack-layer:nth-child(1) {
+    transform: translateY(16px) translateX(10px) scale(0.95);
+    opacity: 0.6;
+}
+
+.stack-layer:nth-child(2) {
+    transform: translateY(12px) translateX(7px) scale(0.965);
+    opacity: 0.7;
+}
+
+.stack-layer:nth-child(3) {
+    transform: translateY(8px) translateX(5px) scale(0.98);
+    opacity: 0.8;
+}
+
+.stack-layer:nth-child(4) {
+    transform: translateY(4px) translateX(3px) scale(0.99);
+    opacity: 0.9;
+}
+
+.stack-layer:nth-child(5) {
+    transform: translateY(2px) translateX(1px) scale(0.995);
+    opacity: 0.95;
+}
+
+.task-stack .unassigned-task-item {
+    position: relative;
+    z-index: 10;
+    margin-bottom: 0;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.stack-count {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 9px;
+    border-radius: 12px;
+    margin-left: auto;
+    min-width: 26px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.4);
 }
 
 .unassigned-task-item:hover {
@@ -1157,6 +1305,67 @@ main p {
     padding: 30px;
 }
 
+.modal-confirm {
+    max-width: 480px;
+    text-align: center;
+    padding: 35px;
+}
+
+.modal-confirm h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.confirm-message {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.confirm-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.confirm-buttons button {
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.cancel-btn {
+    background: rgba(150, 150, 150, 0.1);
+    color: #666;
+    border: 1px solid rgba(150, 150, 150, 0.3);
+}
+
+.cancel-btn:hover {
+    background: rgba(150, 150, 150, 0.2);
+    border-color: rgba(150, 150, 150, 0.5);
+}
+
+.confirm-btn {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.confirm-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+}
+
+.confirm-btn:active {
+    transform: translateY(0);
+}
+
 .modal-large h2 {
     flex-shrink: 0;
     margin-bottom: 25px;
@@ -1169,7 +1378,8 @@ main p {
     overflow-y: auto;
     padding-right: 10px;
     max-height: calc(80vh - 120px);
-    align-items: start;
+    align-items: stretch;
+    grid-auto-rows: 1fr;
 }
 
 .all-tasks-modal-list::-webkit-scrollbar {
@@ -1197,6 +1407,9 @@ main p {
     transform: scale(0.95);
     margin-bottom: 0;
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .all-tasks-modal-list .task-item .task-header {
