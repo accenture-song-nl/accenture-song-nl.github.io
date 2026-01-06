@@ -85,13 +85,19 @@ img, div, object{
     width: 100%;
 }
 
-#highlight1Wrapper{
+#highlight1BWrapper,
+#highlight1CWrapper,
+#highlight1DWrapper,
+#highlight1AWrapper{
     width: 100%;
     height: 100%;
     overflow: hidden;
 }
 
-#highlight1{
+#highlight1B,
+#highlight1C,
+#highlight1D,
+#highlight1A{
     width: 300px;
 }
 

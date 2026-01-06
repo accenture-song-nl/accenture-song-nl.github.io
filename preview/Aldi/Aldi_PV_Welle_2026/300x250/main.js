@@ -30,11 +30,14 @@ function getAnimation(){
         gsap.set("#loaderWrapper", {display:"none"});
     }}, "start")
     masterTL.from("#text1", 0.5, {x:-50, opacity:0, ease:Sine.easeInOut}, "start+=0.2")
-    masterTL.from("#highlight1Wrapper", 0.5, {width:0, ease:Sine.easeInOut}, "start+=0.8")
-    masterTL.from("#sticker", 0.7, {scale:0, rotation:-600, ease:Back.easeOut}, "start+=1")
+    masterTL.from("#sticker", 0.7, {scale:0, rotation:-600, ease:Back.easeOut}, "start+=0.5")
+    masterTL.from("#highlight1AWrapper", 0.5, {width:0, ease:Sine.easeInOut}, "start+=0.8")
+    masterTL.from("#highlight1BWrapper", 0.5, {width:0, ease:Sine.easeInOut}, "start+=1.6")
+    masterTL.from("#highlight1CWrapper", 0.5, {width:0, ease:Sine.easeInOut}, "start+=2.4")
+    masterTL.from("#highlight1DWrapper", 0.5, {width:0, ease:Sine.easeInOut}, "start+=3")
     
     masterTL.add("frame2", "+=1");
-    masterTL.to("#highlight1Wrapper", 0.5, {x:50, opacity:0, ease:Sine.easeInOut}, "frame2")
+    masterTL.to(["#highlight1AWrapper", "#highlight1BWrapper", "#highlight1CWrapper", "#highlight1DWrapper"], 0.5, {x:50, opacity:0, ease:Sine.easeInOut}, "frame2")
     masterTL.to("#text1", 0.5, {x:50, opacity:0, ease:Sine.easeInOut}, "frame2")
     masterTL.to("#sticker", 0.7, {scale:0, rotation:600, ease:Back.easeIn}, "frame2")
     masterTL.from("#date", 0.5, {x:130, ease:Sine.easeOut}, "frame2+=0.5")
