@@ -5,9 +5,101 @@ let taskInstances = []; // Weekly task instances
 let currentWeekOffset = 0; // 0 = this week, -1 = last week, 1 = next week
 let expandedDay = null; // Track which day is expanded
 let persons = []; // List of persons
+let currentLanguage = localStorage.getItem('taskly_language') || 'en'; // Default language
+
+// Translation function
+function t(key) {
+    return translations[currentLanguage][key] || key;
+}
+
+// Get translated day names
+function getDayNames() {
+    return [
+        t('monday').substring(0, 3),
+        t('tuesday').substring(0, 3),
+        t('wednesday').substring(0, 3),
+        t('thursday').substring(0, 3),
+        t('friday').substring(0, 3),
+        t('saturday').substring(0, 3),
+        t('sunday').substring(0, 3)
+    ];
+}
+
+// Update frequency label based on input value
+function updateFrequencyLabel(input, label) {
+    if (!input || !label) return;
+    const value = parseInt(input.value) || 1;
+    label.textContent = value === 1 ? t('time') : t('times');
+}
+
+// Update all translatable elements
+function updateLanguage() {
+    // Update elements with data-i18n attribute
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        element.textContent = t(key);
+    });
+    
+    // Update placeholders
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+        const key = element.getAttribute('data-i18n-placeholder');
+        element.placeholder = t(key);
+    });
+    
+    // Update titles
+    document.querySelectorAll('[data-i18n-title]').forEach(element => {
+        const key = element.getAttribute('data-i18n-title');
+        element.title = t(key);
+    });
+    
+    // Update frequency labels
+    updateFrequencyLabel(document.getElementById('frequencyAmount'), document.getElementById('frequencyLabel'));
+    updateFrequencyLabel(document.getElementById('editFrequencyAmount'), document.getElementById('editFrequencyLabel'));
+    
+    // Re-render the calendar with translated day names
+    renderTasks();
+    
+    // Save language preference
+    localStorage.setItem('taskly_language', currentLanguage);
+}
+
+// Switch language
+function switchLanguage(lang) {
+    currentLanguage = lang;
+    
+    // Update active button
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('data-lang') === lang) {
+            btn.classList.add('active');
+        }
+    });
+    
+    updateLanguage();
+}
 
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Taskly loaded successfully!');
+    
+    // Initialize language - set active button
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        if (btn.getAttribute('data-lang') === currentLanguage) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
+    
+    // Initialize language
+    updateLanguage();
+    
+    // Add language switcher event listeners
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const lang = this.getAttribute('data-lang');
+            switchLanguage(lang);
+        });
+    });
     
     // Load tasks from localStorage
     loadTasks();
@@ -33,6 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const prevWeekArrow = document.getElementById('prevWeekArrow');
     const nextWeekArrow = document.getElementById('nextWeekArrow');
     const todayBtn = document.getElementById('todayBtn');
+    const resetWeekBtn = document.getElementById('resetWeekBtn');
     
     // Update Today button visibility
     function updateTodayButton() {
@@ -44,6 +137,26 @@ document.addEventListener('DOMContentLoaded', function() {
             todayBtn.style.opacity = '1';
         }
     }
+    
+    // Reset week's tasks functionality
+    resetWeekBtn.addEventListener('click', function() {
+        const confirmResetModal = document.getElementById('confirmResetModal');
+        confirmResetModal.style.display = 'block';
+    });
+    
+    // Confirm reset modal handlers
+    const confirmResetModal = document.getElementById('confirmResetModal');
+    const confirmResetBtn = document.getElementById('confirmResetBtn');
+    const cancelResetBtn = document.getElementById('cancelResetBtn');
+    
+    confirmResetBtn.addEventListener('click', function() {
+        confirmResetModal.style.display = 'none';
+        resetWeekTasks();
+    });
+    
+    cancelResetBtn.addEventListener('click', function() {
+        confirmResetModal.style.display = 'none';
+    });
     
     // Arrow button functionality
     prevWeekArrow.addEventListener('click', function() {
@@ -120,12 +233,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Update frequency label based on input value
-    function updateFrequencyLabel(input, label) {
-        const value = parseInt(input.value) || 1;
-        label.textContent = value === 1 ? 'time' : 'times';
-    }
-    
     const frequencyAmountInput = document.getElementById('frequencyAmount');
     const frequencyLabel = document.getElementById('frequencyLabel');
     const editFrequencyAmountInput = document.getElementById('editFrequencyAmount');
@@ -137,6 +244,38 @@ document.addEventListener('DOMContentLoaded', function() {
     
     editFrequencyAmountInput.addEventListener('input', function() {
         updateFrequencyLabel(this, editFrequencyLabel);
+    });
+    
+    // Extract only emoji from emoji input fields
+    const taskEmojiInput = document.getElementById('taskEmoji');
+    const editTaskEmojiInput = document.getElementById('editTaskEmoji');
+    
+    function extractEmoji(input) {
+        // Extract only the emoji (first character or emoji sequence) from the value
+        const value = input.value.trim();
+        if (value) {
+            // Match emoji at the start and remove any text after it
+            const emojiMatch = value.match(/^(\p{Emoji_Presentation}|\p{Emoji}\uFE0F)/u);
+            if (emojiMatch) {
+                input.value = emojiMatch[0];
+            }
+        }
+    }
+    
+    taskEmojiInput.addEventListener('input', function() {
+        extractEmoji(this);
+    });
+    
+    taskEmojiInput.addEventListener('change', function() {
+        extractEmoji(this);
+    });
+    
+    editTaskEmojiInput.addEventListener('input', function() {
+        extractEmoji(this);
+    });
+    
+    editTaskEmojiInput.addEventListener('change', function() {
+        extractEmoji(this);
     });
     
     // Close modal when clicking outside of it
@@ -153,6 +292,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         if (event.target === allTasksModal) {
             allTasksModal.style.display = 'none';
+        }
+        if (event.target === confirmResetModal) {
+            confirmResetModal.style.display = 'none';
         }
     });
     
@@ -211,6 +353,11 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Render tasks
         renderTasks();
+        
+        // Update the manage tasks modal if it's open
+        if (allTasksModal.style.display === 'block') {
+            openAllTasksModal();
+        }
         
         // Reset form and close modal
         taskForm.reset();
@@ -455,42 +602,64 @@ function updateWeekDisplay() {
 }
 
 function generateTaskInstances(task) {
-    // Generate instances for the next 4 weeks
-    for (let weekOffset = 0; weekOffset <= 4; weekOffset++) {
-        const { start } = getWeekBounds(weekOffset);
-        const weekKey = start.toISOString().split('T')[0];
-        
-        let instancesNeeded = 0;
-        
-        // Calculate how many instances are needed for this week
-        switch(task.frequencyPeriod) {
-            case 'day':
-                instancesNeeded = task.frequencyAmount * 7;
-                break;
-            case 'week':
-                instancesNeeded = task.frequencyAmount;
-                break;
-            case 'month':
-                instancesNeeded = Math.ceil(task.frequencyAmount / 4);
-                break;
-            case 'year':
-                instancesNeeded = Math.ceil(task.frequencyAmount / 52);
-                break;
-        }
-        
-        // Create instances for this week
-        for (let i = 0; i < instancesNeeded; i++) {
-            const instanceId = `${task.id}-${weekKey}-${i}`;
+    // For monthly tasks, generate one instance per month
+    if (task.frequencyPeriod === 'month' && task.frequencyAmount === 1) {
+        // Generate instances for current month and next 2 months
+        for (let monthOffset = 0; monthOffset <= 2; monthOffset++) {
+            const now = new Date();
+            const targetMonth = new Date(now.getFullYear(), now.getMonth() + monthOffset, 1);
+            const monthKey = `${targetMonth.getFullYear()}-${String(targetMonth.getMonth() + 1).padStart(2, '0')}`;
+            const instanceId = `${task.id}-${monthKey}`;
             
             // Only add if it doesn't exist
             if (!taskInstances.find(inst => inst.id === instanceId)) {
                 taskInstances.push({
                     id: instanceId,
                     taskId: task.id,
-                    weekKey: weekKey,
+                    monthKey: monthKey,
                     completed: false,
-                    instanceNumber: i + 1
+                    instanceNumber: 1
                 });
+            }
+        }
+    } else {
+        // Generate instances for the next 4 weeks
+        for (let weekOffset = 0; weekOffset <= 4; weekOffset++) {
+            const { start } = getWeekBounds(weekOffset);
+            const weekKey = start.toISOString().split('T')[0];
+            
+            let instancesNeeded = 0;
+            
+            // Calculate how many instances are needed for this week
+            switch(task.frequencyPeriod) {
+                case 'day':
+                    instancesNeeded = task.frequencyAmount * 7;
+                    break;
+                case 'week':
+                    instancesNeeded = task.frequencyAmount;
+                    break;
+                case 'month':
+                    instancesNeeded = Math.ceil(task.frequencyAmount / 4);
+                    break;
+                case 'year':
+                    instancesNeeded = Math.ceil(task.frequencyAmount / 52);
+                    break;
+            }
+            
+            // Create instances for this week
+            for (let i = 0; i < instancesNeeded; i++) {
+                const instanceId = `${task.id}-${weekKey}-${i}`;
+                
+                // Only add if it doesn't exist
+                if (!taskInstances.find(inst => inst.id === instanceId)) {
+                    taskInstances.push({
+                        id: instanceId,
+                        taskId: task.id,
+                        weekKey: weekKey,
+                        completed: false,
+                        instanceNumber: i + 1
+                    });
+                }
             }
         }
     }
@@ -524,6 +693,31 @@ function saveTasks() {
     localStorage.setItem('tasklyInstances', JSON.stringify(taskInstances));
 }
 
+function resetWeekTasks() {
+    const { start } = getWeekBounds(currentWeekOffset);
+    const weekKey = start.toISOString().split('T')[0];
+    
+    // Get all instances for the current viewing week
+    const weekInstances = taskInstances.filter(inst => inst.weekKey === weekKey);
+    
+    // Reset all instances for this week
+    weekInstances.forEach(instance => {
+        // Remove assignment
+        delete instance.assignedDay;
+        // Mark as incomplete
+        instance.completed = false;
+        // Remove completion timestamp
+        delete instance.completedAt;
+        delete instance.completedMonth;
+    });
+    
+    // Save and re-render
+    saveTasks();
+    renderTasks();
+    
+    console.log(`Reset ${weekInstances.length} tasks for week ${weekKey}`);
+}
+
 function renderTasks() {
     const allTasksContainer = document.getElementById('allTasks');
     const daysGrid = document.getElementById('daysGrid');
@@ -533,14 +727,27 @@ function renderTasks() {
     const { start, end } = getWeekBounds(currentWeekOffset);
     const weekKey = start.toISOString().split('T')[0];
     
+    // Get current month key
+    const now = new Date();
+    const currentMonthKey = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`;
+    
     // Get instances for current week
-    const weekInstances = taskInstances.filter(inst => inst.weekKey === weekKey);
+    let weekInstances = taskInstances.filter(inst => inst.weekKey === weekKey);
+    
+    // Add monthly instances for current month (if not completed)
+    const monthlyInstances = taskInstances.filter(inst => 
+        inst.monthKey === currentMonthKey && !inst.completed
+    );
+    
+    // Combine weekly and monthly instances
+    weekInstances = [...weekInstances, ...monthlyInstances];
+    
     const unassignedInstances = weekInstances.filter(inst => !inst.completed && !inst.assignedDay);
     const completedInstances = weekInstances.filter(inst => inst.completed);
     
     // Render all tasks (master list)
     if (tasks.length === 0) {
-        allTasksContainer.innerHTML = '<p class="empty-state">No tasks yet! Click the + button to add one 🚀</p>';
+        allTasksContainer.innerHTML = `<p class="empty-state">${t('noTasksYet')}</p>`;
     } else {
         allTasksContainer.innerHTML = tasks.map(task => createMasterTaskHTML(task)).join('');
     }
@@ -550,17 +757,27 @@ function renderTasks() {
     
     // Render unassigned tasks
     if (unassignedInstances.length === 0) {
-        unassignedTasksContainer.innerHTML = '<p class="empty-state">No unassigned tasks! 🎉</p>';
+        unassignedTasksContainer.innerHTML = `<p class="empty-state">${t('noUnassignedTasks')}</p>`;
     } else {
-        unassignedTasksContainer.innerHTML = unassignedInstances.map(instance => {
-            const task = tasks.find(t => t.id === instance.taskId);
-            return createDraggableTaskHTML(task, instance);
+        // Group instances by task ID
+        const groupedTasks = {};
+        unassignedInstances.forEach(instance => {
+            if (!groupedTasks[instance.taskId]) {
+                groupedTasks[instance.taskId] = [];
+            }
+            groupedTasks[instance.taskId].push(instance);
+        });
+        
+        // Render grouped tasks
+        unassignedTasksContainer.innerHTML = Object.values(groupedTasks).map(instances => {
+            const task = tasks.find(t => t.id === instances[0].taskId);
+            return createStackedTaskHTML(task, instances);
         }).join('');
     }
     
     // Render completed tasks for this week
     if (completedInstances.length === 0) {
-        completedTasksContainer.innerHTML = '<p class="empty-state">Nothing completed yet! You got this 💪</p>';
+        completedTasksContainer.innerHTML = `<p class="empty-state">${t('nothingCompleted')}</p>`;
     } else {
         completedTasksContainer.innerHTML = completedInstances.map(instance => {
             const task = tasks.find(t => t.id === instance.taskId);
@@ -574,6 +791,9 @@ function renderTasks() {
     // Update score overview
     updateScoreOverview(weekInstances);
     
+    // Update reset button visibility
+    updateResetButtonVisibility(weekInstances);
+    
     // Add drag-and-drop listeners to unassigned tasks container
     const unassignedContainer = document.getElementById('unassignedTasks');
     unassignedContainer.addEventListener('dragover', handleDragOver);
@@ -582,11 +802,26 @@ function renderTasks() {
     console.log('Added unassign drop listeners');
 }
 
+function updateResetButtonVisibility(weekInstances) {
+    const resetBtn = document.getElementById('resetWeekBtn');
+    
+    // Check if there are any assigned or completed tasks for this week
+    const hasAssignedOrCompletedTasks = weekInstances.some(inst => 
+        inst.assignedDay || inst.completed
+    );
+    
+    if (hasAssignedOrCompletedTasks) {
+        resetBtn.classList.add('visible');
+    } else {
+        resetBtn.classList.remove('visible');
+    }
+}
+
 function openAllTasksModal() {
     const modalContent = document.getElementById('allTasksModalContent');
     
     if (tasks.length === 0) {
-        modalContent.innerHTML = '<p class="empty-state">No tasks yet! Click the + button to add one 🚀</p>';
+        modalContent.innerHTML = `<p class="empty-state">${t('noTasksYet')}</p>`;
     } else {
         modalContent.innerHTML = tasks.map(task => createMasterTaskHTML(task)).join('');
         
@@ -770,8 +1005,14 @@ function toggleTaskInstanceCompletion(instanceId) {
         // Add completion timestamp
         if (instance.completed) {
             instance.completedAt = new Date().toISOString();
+            
+            // For monthly tasks, mark the month as completed
+            if (instance.monthKey) {
+                instance.completedMonth = instance.monthKey;
+            }
         } else {
             delete instance.completedAt;
+            delete instance.completedMonth;
         }
         saveTasks();
         renderTasks();
@@ -873,7 +1114,7 @@ function renderDailyCalendar(weekInstances) {
     const today = new Date();
     today.setHours(0, 0, 0, 0);
     
-    const dayNames = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+    const dayNames = getDayNames();
     const daysHTML = [];
     
     for (let i = 0; i < 7; i++) {
@@ -895,7 +1136,7 @@ function renderDailyCalendar(weekInstances) {
         const emojiIcons = dayInstances.map(instance => {
             const task = tasks.find(t => t.id === instance.taskId);
             const completedClass = instance.completed ? 'completed' : '';
-            return `<span class="day-task-icon ${completedClass}" title="${task.name}">${task.emoji}</span>`;
+            return `<span class="day-task-icon ${completedClass}">${task.emoji}</span>`;
         }).join('');
         
         // Create full task list for expanded view
@@ -911,9 +1152,9 @@ function renderDailyCalendar(weekInstances) {
                     <span class="day-date">${currentDay.getDate()}/${currentDay.getMonth() + 1}</span>
                     <span class="day-task-count">${incompleteCount}</span>
                 </div>
-                <div class="day-icons">${emojiIcons || '<span class="empty-day-text">No tasks</span>'}</div>
+                <div class="day-icons">${emojiIcons || `<span class="empty-day-text">${t('noTasks')}</span>`}</div>
                 <div class="day-tasks" data-day="${dayKey}">
-                    ${tasksHTML || '<p class="empty-state">No tasks for this day</p>'}
+                    ${tasksHTML || `<p class="empty-state">${t('noTasksForThisDay')}</p>`}
                 </div>
             </div>
         `);
@@ -993,6 +1234,34 @@ function createDraggableTaskHTML(task, instance) {
             </div>
         </div>
     `;
+}
+
+function createStackedTaskHTML(task, instances) {
+    const count = instances.length;
+    
+    if (count === 1) {
+        // Single instance - render normally
+        return createDraggableTaskHTML(task, instances[0]);
+    } else {
+        // Multiple instances - render as stack (show up to 5 layers)
+        const layersToShow = Math.min(count, 5);
+        return `
+            <div class="task-stack" data-task-id="${task.id}">
+                <div class="stack-layers">
+                    ${Array.from({ length: layersToShow }, (_, index) => `
+                        <div class="stack-layer"></div>
+                    `).join('')}
+                </div>
+                <div class="unassigned-task-item stack-top" draggable="true" data-instance-id="${instances[0].id}">
+                    <div class="unassigned-task-content">
+                        <span class="unassigned-task-emoji">${task.emoji}</span>
+                        <span class="unassigned-task-name">${task.name}</span>
+                        <span class="stack-count">×${count}</span>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
 }
 
 function createDayTaskHTML(task, instance) {
