@@ -72,10 +72,8 @@ img, div, object{
 #logoEnd,
 #badge2,
 #badge1,
-#info1,
-#info2,
-#legal1,
-#legal2,
+#disclaimer1,
+#disclaimer2,
 #price2,
 #price1,
 #product2,
@@ -85,11 +83,6 @@ img, div, object{
 #sticker,
 #logo{
     width: 100%;
-}
-
-#legal1,
-#legal2{
-    top: 99999px;
 }
 
 #highlight1BWrapper,

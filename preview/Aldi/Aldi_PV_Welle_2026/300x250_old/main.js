@@ -41,24 +41,24 @@ function getAnimation(){
     masterTL.from("#date", 0.5, {x:130, ease:Sine.easeOut}, "frame2+=0.5")
     masterTL.from("#product1", 1, {x:300, ease:Sine.easeOut}, "frame2+=0.5")
     masterTL.from("#price1", 0.5, {scale:0, ease:Back.easeOut}, "frame2+=1")
-    masterTL.from("#info1", 0.5, {opacity:0, ease:Sine.easeOut}, "frame2+=1.5")
-    masterTL.from("#legal1", 0.5, {opacity:0, ease:Sine.easeOut}, "frame2+=1.5")
+    masterTL.from("#disclaimer1", 0.5, {opacity:0, ease:Sine.easeOut}, "frame2+=1.5")
+    masterTL.from("#disclaimer2", 0.5, {opacity:0, ease:Sine.easeOut}, "frame2+=1.5")
     masterTL.to("#price1", 0.3, {rotationY:90, ease:Sine.easeInOut}, "frame2+=2.5")
     masterTL.from("#badge1", 0.3, {rotationY:-90, ease:Sine.easeIn}, "frame2+=2.8")
     
     masterTL.add("frame3", "+=1");
     masterTL.to("#product1", 1, {x:-300, ease:Sine.easeIn}, "frame3")
     masterTL.to(["#badge1", "#price1"], 1, {x:-400, ease:Sine.easeIn}, "frame3")
-    masterTL.to(["#info1", "#legal1"], 0.5, {opacity:0, ease:Sine.easeIn}, "frame3")
+    masterTL.to(["#disclaimer1", "#disclaimer2"], 0.5, {opacity:0, ease:Sine.easeIn}, "frame3")
     masterTL.from("#product2", 1, {x:300, ease:Sine.easeOut}, "frame3+=0.5")
     masterTL.from("#price2", 0.5, {scale:0, ease:Back.easeOut}, "frame3+=1")
-    masterTL.from("#info2", 0.5, {opacity:0, ease:Sine.easeOut}, "frame3+=1.5")
-    masterTL.from("#legal2", 0.5, {opacity:0, ease:Sine.easeOut}, "frame3+=1.5")
+    masterTL.to("#disclaimer1", 0.5, {opacity:1, ease:Sine.easeOut}, "frame3+=1.5")
+    masterTL.to("#disclaimer2", 0.5, {opacity:1, ease:Sine.easeOut}, "frame3+=1.5")
     masterTL.to("#price2", 0.3, {rotationY:90, ease:Sine.easeInOut}, "frame3+=2.5")
     masterTL.from("#badge2", 0.3, {rotationY:-90, ease:Sine.easeIn}, "frame3+=2.8")
     
     masterTL.add("endscreen", "+=1");
-    masterTL.to(["#price2", "#date", "#product2", "#badge2", "#info2", "#legal2", "#logo"], 0.5, {opacity:0, ease:Sine.easeInOut}, "endscreen");
+    masterTL.to(["#price2", "#date", "#product2", "#badge2", "#disclaimer1", "#disclaimer2", "#logo"], 0.5, {opacity:0, ease:Sine.easeInOut}, "endscreen");
     masterTL.from("#logoEnd", 0.5, {opacity:0, y:50, ease:Sine.easeOut}, "endscreen+=0.5")
     masterTL.from("#tagline", 0.5, {opacity:0, y:50, ease:Sine.easeOut}, "endscreen+=0.8")
     masterTL.from("#ctaLeft", 0.5, {scale:0, ease:Back.easeOut}, "endscreen+=1.2")
