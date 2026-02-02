@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="ad.size" content="width=1130,height=250">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://s0.2mdn.net/ads/studio/cached_libs/gsap_3.9.1_min.js"></script>
+    <script type="text/javascript">
+      var clickTag = "http://www.google.com";
+    </script>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <div id="banner">
+        <img id="bg" src="bg.jpg">
+        <a href="#clicktag" id="mainExit" target="_blank"></a> 
+        <video id="vid" playsinline muted>
+            <source src="video.mp4" type="video/mp4">
+        </video>
+        <div id="videoControls">
+            <button type="button" id="play"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M3 22v-20l18 10-18 10z"/></svg></button>
+            <button type="button" id="pause"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M11 22h-4v-20h4v20zm6-20h-4v20h4v-20z"/></svg></button>
+            <button type="button" id="mute"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M9 18h-7v-12h7v12zm2-12v12l11 6v-24l-11 6z"/></svg></button>
+            <button type="button" id="unmute"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M22 1.269l-18.455 22.731-1.545-1.269 3.841-4.731h-1.827v-10h4.986v6.091l2.014-2.463v-3.628l5.365-2.981 4.076-5.019 1.545 1.269zm-10.986 15.926v.805l8.986 5v-16.873l-8.986 11.068z"/></svg></button>
+        </div>
+        <button type="button" id="playBig">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-3 17v-10l9 5.146-9 4.854z"/></svg>  
+        </button>
+        <div id="loaderWrapper">
+            <div id="loaderCenter">
+                <div id="loader"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

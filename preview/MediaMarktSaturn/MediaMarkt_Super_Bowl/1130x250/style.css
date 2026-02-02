@@ -1,0 +1,107 @@
+#banner {
+    position: relative;
+    width: 970px;
+    height: 250px;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    cursor: pointer;
+    overflow: hidden;
+    background: #036eb1;
+}
+
+div, img, video, a, button{
+    position: absolute;
+}
+
+button{
+    border: 0px;
+}
+
+#vid{
+    opacity: 0;
+    width: 444px;
+    height: 250px;
+    background: #000;
+    cursor: pointer;
+    top: 0px;
+    right: 0px;
+}
+
+#playBig{
+    top: 74px;
+    right: 175px;
+    fill: #fff;
+    width: 100px;
+    height: 100px;
+    background: transparent;
+    pointer-events: none;
+    border: 0px;
+}
+
+#play,
+#mute{
+    display: none;
+}
+
+#pause,
+#play{
+    top: -999999999px;
+}
+
+#videoControls{
+    bottom: 0px;
+    height: 30px;
+    width: 60px;
+    right: 10px;
+    display: none;
+}
+
+#videoControls svg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    fill: #fff;
+}
+
+#mute,
+#unmute{
+    right: 0px;
+}
+
+#loaderWrapper{
+    width: 100%;
+    height: 100%;
+    background: #029fdc;
+}
+
+#loaderCenter{
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#loader{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    border: 3px solid #fff;
+    border-top: 3px solid #029fdc;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#mainExit {
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
